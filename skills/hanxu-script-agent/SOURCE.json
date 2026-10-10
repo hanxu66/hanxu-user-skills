@@ -1,0 +1,43 @@
+{
+  "name": "hanxu-script-agent",
+  "original_type": "Agent",
+  "source_relative": "working-files/system-optimization/short-video-workflow-v3/agents/脚本Agent.md",
+  "source_sha256": "523a891ea5850b8f8e5aeceddbf18545b580c38174d7612ae1a9d7ac3f26ed2d",
+  "package_skill_sha256": "a8574ca3e00d8214e3aa5021a1255b07f50cdb212dfc9b8f5bb4f71b541d51de",
+  "version": "2026-10-10-mini-v1",
+  "dependencies": "Codex及用户自己的文本材料",
+  "cost": "Codex使用额度；工具或平台另按实际订阅/费用，不预估价格",
+  "license": "未设定商业许可/定价；没有自动赋予开源或转授权",
+  "validation": "YAML、链接及私人路径检查通过；完整真人任务效果未验证",
+  "reference_sources": [
+    "working-files/system-optimization/short-video-workflow-v3/skills/观点立意.md",
+    "working-files/system-optimization/short-video-workflow-v3/skills/内容结构.md",
+    "working-files/system-optimization/short-video-workflow-v3/skills/逐字稿.md",
+    "working-files/system-optimization/short-video-workflow-v3/skills/表达学习与应用.md",
+    "working-files/system-optimization/short-video-workflow-v3/standards/脚本执行标准.md"
+  ],
+  "script_sources": [],
+  "export_transformations": [
+    "身份与个人绝对路径参数化",
+    "只携带原方法和必要标准",
+    "内部状态/私有库用用户本地记录",
+    "保留当前个人自用原调用",
+    "导出文件由原文件生成，不独立维护"
+  ],
+  "reference_source_hashes": {
+    "working-files/system-optimization/short-video-workflow-v3/skills/观点立意.md": "eac59b0a06b148dd74128b7413ac29de638f3422eafcddeffe4f4330779f8c33",
+    "working-files/system-optimization/short-video-workflow-v3/skills/内容结构.md": "c585631294b39d081851bc4ad990f43e10effea33ec146cc799e88c83467f0ed",
+    "working-files/system-optimization/short-video-workflow-v3/skills/逐字稿.md": "fe4a7bb89b957b3ac74f0e0c319396f78eb1f25e6747a5d8bfa43286765a6fc0",
+    "working-files/system-optimization/short-video-workflow-v3/skills/表达学习与应用.md": "26a3b8287b0c81b4980dc938eca877825a2bc832432843d4db85c47741177bac",
+    "working-files/system-optimization/short-video-workflow-v3/standards/脚本执行标准.md": "ebec72345e60eab4e4bed29159daa343e33e6ddfb994fb8aa75654111073958d"
+  },
+  "script_source_hashes": {},
+  "package_files": {
+    "SKILL.md": "a8574ca3e00d8214e3aa5021a1255b07f50cdb212dfc9b8f5bb4f71b541d51de",
+    "references/表达学习与应用.md": "f95506c902d13f105fc3b927ac5aeb4381257eaab750757f3e78af130f03f8c9",
+    "references/脚本执行标准.md": "fcefa4df3cb4156c57ba119793933ad329dfd5e837efcf793088e2a169b5240f",
+    "references/观点立意.md": "8a68f75734b15ff4f089089fa11e09acceb205de79c89a9521078d329b43d8bb",
+    "references/内容结构.md": "be8d9bc382800fd0588b4c012db17162dc17fb90568e4939348bf177f1a2cb03",
+    "references/逐字稿.md": "a3d89e0d61f3907ff6b72056984a923487761942f0798f24d631ba248d39800c"
+  }
+}

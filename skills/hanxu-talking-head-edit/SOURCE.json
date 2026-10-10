@@ -1,0 +1,31 @@
+{
+  "name": "hanxu-talking-head-edit",
+  "original_type": "Skill",
+  "source_relative": "working-files/system-optimization/short-video-workflow-v3/skills/口播剪辑.md",
+  "source_sha256": "5b50b92a3a342052960b16172672b24ae9c09304413f17a2fed9876373471427",
+  "package_skill_sha256": "c359fffd334c7186801f285c97ddcf0365addaa038afd2a18ea6bcef9a95f27e",
+  "version": "2026-10-10-mini-v1",
+  "dependencies": "ChatCut Desktop及当前可用集成、剪映专业版、原片/转写；不含剪辑引擎",
+  "cost": "Codex使用额度；工具或平台另按实际订阅/费用，不预估价格",
+  "license": "未设定商业许可/定价；没有自动赋予开源或转授权",
+  "validation": "包结构检查通过，真实剪辑试跑未验证",
+  "reference_sources": [
+    "working-files/system-optimization/short-video-workflow-v3/standards/剪辑执行标准.md"
+  ],
+  "script_sources": [],
+  "export_transformations": [
+    "身份与个人绝对路径参数化",
+    "只携带原方法和必要标准",
+    "内部状态/私有库用用户本地记录",
+    "保留当前个人自用原调用",
+    "导出文件由原文件生成，不独立维护"
+  ],
+  "reference_source_hashes": {
+    "working-files/system-optimization/short-video-workflow-v3/standards/剪辑执行标准.md": "0861f159b3f9a81d9ebfd3bb1d1a7c5fa4e3f90b786b4e33176b30b16009ae32"
+  },
+  "script_source_hashes": {},
+  "package_files": {
+    "SKILL.md": "c359fffd334c7186801f285c97ddcf0365addaa038afd2a18ea6bcef9a95f27e",
+    "references/剪辑执行标准.md": "904c5cb9c6b6cf11c193345d49010592c1bc5acb4865b1b3ef0930032f60eb46"
+  }
+}

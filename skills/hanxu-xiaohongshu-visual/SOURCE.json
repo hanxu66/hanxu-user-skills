@@ -1,0 +1,43 @@
+{
+  "name": "hanxu-xiaohongshu-visual",
+  "original_type": "Agent",
+  "source_relative": "working-files/system-optimization/xiaohongshu-workflow-v3/agents/视觉制作Agent.md",
+  "source_sha256": "54ff62218881f243e08446bab45ab20ede5d7ca2776a712ba12d19fdb53d2e11",
+  "package_skill_sha256": "f7747e46bb65dc8055c6aaa4b3abdb0d554c6656c02098e5996bea3df6558f3f",
+  "version": "2026-10-10-mini-v1",
+  "dependencies": "Node.js、Sharp、中文字体、使用者图片",
+  "cost": "Codex使用额度；工具或平台另按实际订阅/费用，不预估价格",
+  "license": "未设定商业许可/定价；没有自动赋予开源或转授权",
+  "validation": "包结构及XHS-G新用户目录实图/尺寸/来源段落检查通过；XHS-M全链未试跑",
+  "reference_sources": [
+    "working-files/system-optimization/xiaohongshu-workflow-v3/skills/封面与素材选择.md",
+    "working-files/system-optimization/xiaohongshu-workflow-v3/skills/文字图文制作.md",
+    "working-files/system-optimization/xiaohongshu-workflow-v3/skills/模型图制作.md"
+  ],
+  "script_sources": [
+    "tools/render_xhs_full_article.mjs"
+  ],
+  "export_transformations": [
+    "身份与个人绝对路径参数化",
+    "只携带原方法和必要标准",
+    "内部状态/私有库用用户本地记录",
+    "保留当前个人自用原调用",
+    "导出文件由原文件生成，不独立维护"
+  ],
+  "reference_source_hashes": {
+    "working-files/system-optimization/xiaohongshu-workflow-v3/skills/封面与素材选择.md": "65448b396c4804fc5d6d0aa7bca46e130cb6d74a30e1382a8a016be7f2c28abf",
+    "working-files/system-optimization/xiaohongshu-workflow-v3/skills/文字图文制作.md": "728ddcea98280d43478595efb0dd4b79a8baabf9d52fdb31989f0bb680c94bef",
+    "working-files/system-optimization/xiaohongshu-workflow-v3/skills/模型图制作.md": "bb5e93a8121be946e34ffc151c0716345b9cbd1b9a9c3151e29289689a18a62c"
+  },
+  "script_source_hashes": {
+    "tools/render_xhs_full_article.mjs": "a9b44d10b2a623c393be5c9dcd3f7d4ea71c62045becaae7c6e4c45d7d18fd29"
+  },
+  "package_files": {
+    "package.json": "cb8a13eafa7415492ad1ba359324c810f52e21d858a95c28690b0f45c4cfe8cc",
+    "SKILL.md": "f7747e46bb65dc8055c6aaa4b3abdb0d554c6656c02098e5996bea3df6558f3f",
+    "references/模型图制作.md": "8ba0dc460548ebb3a11a13350d9bce0dfbfb97028a698dd2a8b37fa60457d066",
+    "references/文字图文制作.md": "96582590454ac66802e577d5def7a51ae357ada2a5932043ddf5f6a4cfe547fb",
+    "references/封面与素材选择.md": "72bc45ae9534e4f09ea9d4994beb22cab6012d8c3ce60c8c07961bbe7b428741",
+    "scripts/render_xhs_full_article.mjs": "a9b44d10b2a623c393be5c9dcd3f7d4ea71c62045becaae7c6e4c45d7d18fd29"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "name": "hanxu-public-account-series-visual",
+  "original_type": "Skill",
+  "source_relative": "working-files/system-optimization/public-account-workflow-v3/skills/公众号系列双图生成.md",
+  "source_sha256": "b729ed397e961dc9c91a77a5d3c04f744f81fa9f1cafe5217be975077201a286",
+  "package_skill_sha256": "04c6b6c6c44d6281bdc149ccc18c3a8eb27fe76dec5565df57da5c8d7ebea322",
+  "version": "2026-10-10-mini-v1",
+  "dependencies": "Node.js、Python3、Sharp、可用中文字体",
+  "cost": "Codex使用额度；工具或平台另按实际订阅/费用，不预估价格",
+  "license": "未设定商业许可/定价；没有自动赋予开源或转授权",
+  "validation": "包结构、原脚本新用户目录封面一/二及正文头图渲染、实际尺寸与图片回读通过；后台裁切未验证",
+  "reference_sources": [
+    "working-files/system-optimization/public-account-workflow-v3/standards/发布准备执行标准.md"
+  ],
+  "script_sources": [
+    "tools/render_public_account_series_visual.py",
+    "working-files/content-production/PA-2026-08-17-01-more-effort-less-human/series-visual-template-v0.1/render-series-visuals.mjs"
+  ],
+  "export_transformations": [
+    "身份与个人绝对路径参数化",
+    "只携带原方法和必要标准",
+    "内部状态/私有库用用户本地记录",
+    "保留当前个人自用原调用",
+    "导出文件由原文件生成，不独立维护"
+  ],
+  "reference_source_hashes": {
+    "working-files/system-optimization/public-account-workflow-v3/standards/发布准备执行标准.md": "f0fe0463f940a9783365eac9453faac62b53ac38635483e8c534a7389992c7c3"
+  },
+  "script_source_hashes": {
+    "tools/render_public_account_series_visual.py": "5440f03f6902a1db3192bde49b53666b5ade66db6195ed10a306da2a545bf01a",
+    "working-files/content-production/PA-2026-08-17-01-more-effort-less-human/series-visual-template-v0.1/render-series-visuals.mjs": "6bc32ff68071fba65b44a1b063253217b79d3088213ba348dbfe89cc0fed7653"
+  },
+  "package_files": {
+    "package.json": "b56da6b5066c952893d9ad6fb70723ce74805193358ad513c6a0d482d67624f9",
+    "SKILL.md": "04c6b6c6c44d6281bdc149ccc18c3a8eb27fe76dec5565df57da5c8d7ebea322",
+    "references/发布准备执行标准.md": "e5aac3cdf8668b79ba7dffb8d730156ea0705735507ce4fd0981e28b2e0ef855",
+    "scripts/render_public_account_series_visual.py": "5440f03f6902a1db3192bde49b53666b5ade66db6195ed10a306da2a545bf01a",
+    "assets/series-template/render-series-visuals.mjs": "6bc32ff68071fba65b44a1b063253217b79d3088213ba348dbfe89cc0fed7653"
+  }
+}

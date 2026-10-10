@@ -6,19 +6,23 @@
 
 | 能力 | 包 | 调用 |
 |---|---|---|
-| 短视频脚本 | [hanxu-script-agent.zip](hanxu-script-agent.zip) | `$hanxu-script-agent` |
-| 公众号成稿 | [hanxu-public-account-drafting.zip](hanxu-public-account-drafting.zip) | `$hanxu-public-account-drafting` |
-| 小红书视觉制作 | [hanxu-xiaohongshu-visual.zip](hanxu-xiaohongshu-visual.zip) | `$hanxu-xiaohongshu-visual` |
-| 外部对标研究 | [hanxu-external-benchmark-research.zip](hanxu-external-benchmark-research.zip) | `$hanxu-external-benchmark-research` |
-| 公众号标题生成 | [hanxu-public-account-title.zip](hanxu-public-account-title.zip) | `$hanxu-public-account-title` |
-| 公众号系列双图 | [hanxu-public-account-series-visual.zip](hanxu-public-account-series-visual.zip) | `$hanxu-public-account-series-visual` |
-| 口播剪辑 | [hanxu-talking-head-edit.zip](hanxu-talking-head-edit.zip) | `$hanxu-talking-head-edit` |
+| 短视频脚本 | [hanxu-script-agent.zip](packages/hanxu-script-agent.zip) | `$hanxu-script-agent` · [查看方法](skills/hanxu-script-agent/SKILL.md) |
+| 公众号成稿 | [hanxu-public-account-drafting.zip](packages/hanxu-public-account-drafting.zip) | `$hanxu-public-account-drafting` · [查看方法](skills/hanxu-public-account-drafting/SKILL.md) |
+| 小红书视觉制作 | [hanxu-xiaohongshu-visual.zip](packages/hanxu-xiaohongshu-visual.zip) | `$hanxu-xiaohongshu-visual` · [查看方法](skills/hanxu-xiaohongshu-visual/SKILL.md) |
+| 外部对标研究 | [hanxu-external-benchmark-research.zip](packages/hanxu-external-benchmark-research.zip) | `$hanxu-external-benchmark-research` · [查看方法](skills/hanxu-external-benchmark-research/SKILL.md) |
+| 公众号标题生成 | [hanxu-public-account-title.zip](packages/hanxu-public-account-title.zip) | `$hanxu-public-account-title` · [查看方法](skills/hanxu-public-account-title/SKILL.md) |
+| 公众号系列双图 | [hanxu-public-account-series-visual.zip](packages/hanxu-public-account-series-visual.zip) | `$hanxu-public-account-series-visual` · [查看方法](skills/hanxu-public-account-series-visual/SKILL.md) |
+| 口播剪辑 | [hanxu-talking-head-edit.zip](packages/hanxu-talking-head-edit.zip) | `$hanxu-talking-head-edit` · [查看方法](skills/hanxu-talking-head-edit/SKILL.md) |
 
-[下载七项合集](hanxu-seven-user-skills-mini-v1.zip) · [文件校验值](SHA256SUMS.txt)
+[下载七项合集](packages/hanxu-seven-user-skills-mini-v1.zip) · [文件校验值](packages/SHA256SUMS.txt)
+
+## 源码目录
+
+七项能力分别位于 `skills/<技能名>/`，每项有自己的 `SKILL.md` 和所需配套文件。`packages/` 保存同版本单项 ZIP、合集与校验值。
 
 ## 安装
 
-解压单项包，将包含 SKILL.md 的目录放入用户 ~/.agents/skills/，或项目根目录 .agents/skills/。
+任选一种方式：复制 `skills/` 下所需的单项目录，或下载并解压 `packages/` 下对应 ZIP。将包含 `SKILL.md` 的单项目录放入用户 `~/.agents/skills/`，或项目根目录 `.agents/skills/`。
 已有同名目录时先备份并比较。用 $技能名直接调用，或用对应任务描述触发。卸载时移除安装目录，保留用户材料和输出。
 
 两项视觉制作需要 Node.js、Sharp 和中文字体；在对应目录运行 npm install。公众号双图另需 Python 3。

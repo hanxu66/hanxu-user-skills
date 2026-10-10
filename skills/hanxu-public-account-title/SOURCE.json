@@ -1,0 +1,34 @@
+{
+  "name": "hanxu-public-account-title",
+  "original_type": "Skill",
+  "source_relative": "working-files/system-optimization/public-account-workflow-v3/skills/标题生成.md",
+  "source_sha256": "3ade7c06c614ee442fc7107d0a938b2eec02fafafd395811ded945639e8d45c2",
+  "package_skill_sha256": "1096d67f98a9efbadd577611a478d000dec85cde8efc943d8ceb09e33c99767a",
+  "version": "2026-10-10-mini-v1",
+  "dependencies": "Codex及用户自己的文本材料",
+  "cost": "Codex使用额度；工具或平台另按实际订阅/费用，不预估价格",
+  "license": "未设定商业许可/定价；没有自动赋予开源或转授权",
+  "validation": "YAML、链接及私人路径检查通过；完整真人任务效果未验证",
+  "reference_sources": [
+    "working-files/system-optimization/public-account-workflow-v3/standards/发布准备执行标准.md",
+    "working-files/system-optimization/public-account-workflow-v3/skills/标题研究.md"
+  ],
+  "script_sources": [],
+  "export_transformations": [
+    "身份与个人绝对路径参数化",
+    "只携带原方法和必要标准",
+    "内部状态/私有库用用户本地记录",
+    "保留当前个人自用原调用",
+    "导出文件由原文件生成，不独立维护"
+  ],
+  "reference_source_hashes": {
+    "working-files/system-optimization/public-account-workflow-v3/standards/发布准备执行标准.md": "f0fe0463f940a9783365eac9453faac62b53ac38635483e8c534a7389992c7c3",
+    "working-files/system-optimization/public-account-workflow-v3/skills/标题研究.md": "3c9d992dc1c7a7d02233bd865d59cad75799b50c768daf2ae2b4c421eb7872f0"
+  },
+  "script_source_hashes": {},
+  "package_files": {
+    "SKILL.md": "1096d67f98a9efbadd577611a478d000dec85cde8efc943d8ceb09e33c99767a",
+    "references/发布准备执行标准.md": "6141880c54e137de1d45283b029be2a95ddae70820f961fff8617debbeba693a",
+    "references/标题研究.md": "87c4ff216d2ecb18fedcdccbebe57e69b1d28b33cfd2ffffe0dec7c1737ac1a1"
+  }
+}

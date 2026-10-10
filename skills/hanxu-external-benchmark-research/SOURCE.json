@@ -1,0 +1,36 @@
+{
+  "name": "hanxu-external-benchmark-research",
+  "original_type": "Skill",
+  "source_relative": "working-files/system-optimization/short-video-workflow-v3/skills/外部对标研究.md",
+  "source_sha256": "cf0d5fa1ca1e9b58f2910335527ef548d749d87b493d183c37c17289f57e6a49",
+  "package_skill_sha256": "fafc7e88c9c80e5a200c509a8a02cf994118801b09686d06f71e68f152f5d56d",
+  "version": "2026-10-10-mini-v1",
+  "dependencies": "Python3；平台搜索使用用户现有合法浏览/工具",
+  "cost": "Codex使用额度；工具或平台另按实际订阅/费用，不预估价格",
+  "license": "未设定商业许可/定价；没有自动赋予开源或转授权",
+  "validation": "包结构、独立格式检查、有效/缺字段反例及用户自带库检查通过；真实平台研究/送达效果未验证",
+  "reference_sources": [
+    "working-files/system-optimization/short-video-workflow-v3/standards/选题执行标准.md"
+  ],
+  "script_sources": [
+    "tools/check_short_video_research_delivery.py"
+  ],
+  "export_transformations": [
+    "身份与个人绝对路径参数化",
+    "只携带原方法和必要标准",
+    "内部状态/私有库用用户本地记录",
+    "保留当前个人自用原调用",
+    "导出文件由原文件生成，不独立维护"
+  ],
+  "reference_source_hashes": {
+    "working-files/system-optimization/short-video-workflow-v3/standards/选题执行标准.md": "03e79e459a26e0214cbde228680b7cd34e6fb62a56afe8e7dd50894d53920d13"
+  },
+  "script_source_hashes": {
+    "tools/check_short_video_research_delivery.py": "e01081e11fd0fd8011a29f7a5f55bf8734c2b7cc8aebf3cb8ccfe306eeec2db9"
+  },
+  "package_files": {
+    "SKILL.md": "fafc7e88c9c80e5a200c509a8a02cf994118801b09686d06f71e68f152f5d56d",
+    "references/选题执行标准.md": "db43386c57d7fe1453abc24679808cc1c3e52b9e3c053c3abe74bd4ee8002736",
+    "scripts/check_short_video_research_delivery.py": "e01081e11fd0fd8011a29f7a5f55bf8734c2b7cc8aebf3cb8ccfe306eeec2db9"
+  }
+}

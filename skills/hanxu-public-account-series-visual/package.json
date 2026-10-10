@@ -1,0 +1,8 @@
+{
+  "name": "hanxu-public-account-series-visual",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "sharp": "^0.34.5"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "name": "hanxu-public-account-drafting",
+  "original_type": "Agent",
+  "source_relative": "working-files/system-optimization/public-account-workflow-v3/agents/成稿Agent.md",
+  "source_sha256": "2bf364dedb18ca74a64227969b43db4d57e0f3e94d79f96d026db80e55b7834f",
+  "package_skill_sha256": "fbd7d27866016894d7aef12555dc96761579901dd244f1468e8667a24bc72542",
+  "version": "2026-10-10-mini-v1",
+  "dependencies": "Codex及用户自己的文本材料",
+  "cost": "Codex使用额度；工具或平台另按实际订阅/费用，不预估价格",
+  "license": "未设定商业许可/定价；没有自动赋予开源或转授权",
+  "validation": "YAML、链接及私人路径检查通过；完整真人任务效果未验证",
+  "reference_sources": [
+    "working-files/system-optimization/public-account-workflow-v3/skills/证据整理.md",
+    "working-files/system-optimization/public-account-workflow-v3/skills/论证结构.md",
+    "working-files/system-optimization/public-account-workflow-v3/skills/正文写作.md",
+    "working-files/system-optimization/public-account-workflow-v3/standards/成稿执行标准.md"
+  ],
+  "script_sources": [],
+  "export_transformations": [
+    "身份与个人绝对路径参数化",
+    "只携带原方法和必要标准",
+    "内部状态/私有库用用户本地记录",
+    "保留当前个人自用原调用",
+    "导出文件由原文件生成，不独立维护"
+  ],
+  "reference_source_hashes": {
+    "working-files/system-optimization/public-account-workflow-v3/skills/证据整理.md": "b0a1534a6be4bff0d4de295a11ffcae0ebdb521f122a1b54c3ab46e30456dbc3",
+    "working-files/system-optimization/public-account-workflow-v3/skills/论证结构.md": "2bc1118f9dfe1c914ee2604bced25a07fb70a6796c72b5bda44c56ab29e75807",
+    "working-files/system-optimization/public-account-workflow-v3/skills/正文写作.md": "c11e7ee53e73c29bf72c4b964cbd7ed07b043c4747f9cd206a6fd0bafdd50dc9",
+    "working-files/system-optimization/public-account-workflow-v3/standards/成稿执行标准.md": "9a6e3d2d2f200917c95b77b8680d39b2dd4a56dff1d4e773d5ec6b0cea0e5baf"
+  },
+  "script_source_hashes": {},
+  "package_files": {
+    "SKILL.md": "fbd7d27866016894d7aef12555dc96761579901dd244f1468e8667a24bc72542",
+    "references/论证结构.md": "fa7daed308ce74595538164a46b95470e1c552923161da45efc432a2c98e8e7c",
+    "references/正文写作.md": "2e842174a7130d3a0c8c160566e0d7fe0bb24e94ec54c5f4dec50af866fa45b4",
+    "references/证据整理.md": "b4b777bfc139d5f88e19bbf40c4629880a0a0b270c0d1d4f8dd0eb70d8169643",
+    "references/成稿执行标准.md": "072ca2681b00051d7e84fe262beaa109c7af5ea872e1e7aaebc04f3a8a39cf52"
+  }
+}
