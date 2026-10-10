@@ -1,0 +1,4 @@
+interface:
+  display_name: "韩叙 · 小红书图文制作助手"
+  short_description: "把已经确定的逐页文案做成小红书封面和图文图片，并检查实际画面。"
+  default_prompt: "使用 $hanxu-xiaohongshu-visual，按我提供的逐页文案和品牌信息，制作一套小红书图文图片。"

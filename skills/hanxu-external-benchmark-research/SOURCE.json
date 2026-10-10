@@ -3,8 +3,8 @@
   "original_type": "Skill",
   "source_relative": "working-files/system-optimization/short-video-workflow-v3/skills/外部对标研究.md",
   "source_sha256": "cf0d5fa1ca1e9b58f2910335527ef548d749d87b493d183c37c17289f57e6a49",
-  "package_skill_sha256": "fafc7e88c9c80e5a200c509a8a02cf994118801b09686d06f71e68f152f5d56d",
-  "version": "2026-10-10-mini-v1",
+  "package_skill_sha256": "68e99262a1924c8a31990599c9f2ff2497534ed5026f3eb6550a10ca506ff59c",
+  "version": "2026-10-10-mini-v2",
   "dependencies": "Python3；平台搜索使用用户现有合法浏览/工具",
   "cost": "Codex使用额度；工具或平台另按实际订阅/费用，不预估价格",
   "license": "未设定商业许可/定价；没有自动赋予开源或转授权",
@@ -29,8 +29,16 @@
     "tools/check_short_video_research_delivery.py": "e01081e11fd0fd8011a29f7a5f55bf8734c2b7cc8aebf3cb8ccfe306eeec2db9"
   },
   "package_files": {
-    "SKILL.md": "fafc7e88c9c80e5a200c509a8a02cf994118801b09686d06f71e68f152f5d56d",
+    "README.md": "2bdaad7e3a06c9116455922620c0cae7fbb1d19bef2003c13b126cbf10921f8a",
+    "SKILL.md": "68e99262a1924c8a31990599c9f2ff2497534ed5026f3eb6550a10ca506ff59c",
+    "agents/openai.yaml": "4f63844868ff2a3431b1b73bf314204b9f9b36421bbf8f363c85969654bebe40",
     "references/选题执行标准.md": "db43386c57d7fe1453abc24679808cc1c3e52b9e3c053c3abe74bd4ee8002736",
     "scripts/check_short_video_research_delivery.py": "e01081e11fd0fd8011a29f7a5f55bf8734c2b7cc8aebf3cb8ccfe306eeec2db9"
-  }
+  },
+  "display_name": "韩叙 · 短视频选题调研助手",
+  "presentation_changes": [
+    "中文展示名、场景、输入与输出说明",
+    "中文目录介绍与调用示例",
+    "英文调用标识保留；原方法与标准不变"
+  ]
 }

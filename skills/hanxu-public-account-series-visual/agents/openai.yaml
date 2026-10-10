@@ -1,0 +1,4 @@
+interface:
+  display_name: "韩叙 · 公众号封面制作助手"
+  short_description: "根据已确定的文章标题和品牌信息，制作公众号封面或统一风格的系列双图。"
+  default_prompt: "使用 $hanxu-public-account-series-visual，用我的文章标题和品牌信息制作公众号封面，并检查实际图片。"

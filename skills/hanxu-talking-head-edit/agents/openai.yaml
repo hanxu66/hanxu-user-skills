@@ -1,0 +1,4 @@
+interface:
+  display_name: "韩叙 · 口播视频剪辑助手"
+  short_description: "把已录好的单人口播整理成节奏清楚、字幕准确的视频，需要实际剪辑工具。"
+  default_prompt: "使用 $hanxu-talking-head-edit，根据我的单人口播原片和剪辑要求，完成剪辑、字幕及成片检查。"

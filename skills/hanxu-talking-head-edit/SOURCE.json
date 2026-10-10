@@ -3,8 +3,8 @@
   "original_type": "Skill",
   "source_relative": "working-files/system-optimization/short-video-workflow-v3/skills/口播剪辑.md",
   "source_sha256": "5b50b92a3a342052960b16172672b24ae9c09304413f17a2fed9876373471427",
-  "package_skill_sha256": "c359fffd334c7186801f285c97ddcf0365addaa038afd2a18ea6bcef9a95f27e",
-  "version": "2026-10-10-mini-v1",
+  "package_skill_sha256": "047aec74b16812bf5e88130227d00e7ecbd984b0aae9c269ced84b1f915e1961",
+  "version": "2026-10-10-mini-v2",
   "dependencies": "ChatCut Desktop及当前可用集成、剪映专业版、原片/转写；不含剪辑引擎",
   "cost": "Codex使用额度；工具或平台另按实际订阅/费用，不预估价格",
   "license": "未设定商业许可/定价；没有自动赋予开源或转授权",
@@ -25,7 +25,15 @@
   },
   "script_source_hashes": {},
   "package_files": {
-    "SKILL.md": "c359fffd334c7186801f285c97ddcf0365addaa038afd2a18ea6bcef9a95f27e",
+    "README.md": "34359955f0a00ba98d5b0bacf39f6d0d7b774a8b2e2e3d498a830a72b5d30732",
+    "SKILL.md": "047aec74b16812bf5e88130227d00e7ecbd984b0aae9c269ced84b1f915e1961",
+    "agents/openai.yaml": "42ba126808f381a62f5a53359b81c555e270a9ab347bfbb1688aa0a1829857d2",
     "references/剪辑执行标准.md": "904c5cb9c6b6cf11c193345d49010592c1bc5acb4865b1b3ef0930032f60eb46"
-  }
+  },
+  "display_name": "韩叙 · 口播视频剪辑助手",
+  "presentation_changes": [
+    "中文展示名、场景、输入与输出说明",
+    "中文目录介绍与调用示例",
+    "英文调用标识保留；原方法与标准不变"
+  ]
 }

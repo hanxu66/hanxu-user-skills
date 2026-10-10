@@ -1,44 +1,55 @@
-# 韩叙方法：七项用户 Skill 包
+# 韩叙的七个内容创作助手
 
-版本：2026-10-10-mini-v1。由现有方法文件适配导出，原方法文件仍是维护来源。
+把你的选题、观点、文章和视频素材，交给电脑上的 AI，按韩叙的方法完成具体内容任务。
 
-## 下载与调用
+**先选你要做的事，再下载对应助手。** 每个助手都可以单独安装，不需要安装整套经营系统。版本：2026-10-10-mini-v2。
 
-| 能力 | 包 | 调用 |
+| 助手名称 | 什么时候用 | 安装包 |
 |---|---|---|
-| 短视频脚本 | [hanxu-script-agent.zip](packages/hanxu-script-agent.zip) | `$hanxu-script-agent` · [查看方法](skills/hanxu-script-agent/SKILL.md) |
-| 公众号成稿 | [hanxu-public-account-drafting.zip](packages/hanxu-public-account-drafting.zip) | `$hanxu-public-account-drafting` · [查看方法](skills/hanxu-public-account-drafting/SKILL.md) |
-| 小红书视觉制作 | [hanxu-xiaohongshu-visual.zip](packages/hanxu-xiaohongshu-visual.zip) | `$hanxu-xiaohongshu-visual` · [查看方法](skills/hanxu-xiaohongshu-visual/SKILL.md) |
-| 外部对标研究 | [hanxu-external-benchmark-research.zip](packages/hanxu-external-benchmark-research.zip) | `$hanxu-external-benchmark-research` · [查看方法](skills/hanxu-external-benchmark-research/SKILL.md) |
-| 公众号标题生成 | [hanxu-public-account-title.zip](packages/hanxu-public-account-title.zip) | `$hanxu-public-account-title` · [查看方法](skills/hanxu-public-account-title/SKILL.md) |
-| 公众号系列双图 | [hanxu-public-account-series-visual.zip](packages/hanxu-public-account-series-visual.zip) | `$hanxu-public-account-series-visual` · [查看方法](skills/hanxu-public-account-series-visual/SKILL.md) |
-| 口播剪辑 | [hanxu-talking-head-edit.zip](packages/hanxu-talking-head-edit.zip) | `$hanxu-talking-head-edit` · [查看方法](skills/hanxu-talking-head-edit/SKILL.md) |
+| [短视频写稿助手](skills/hanxu-script-agent/README.md) | 已经有选题和观点，想写成自然、能直接拍摄的口播稿。 | [下载 ZIP](packages/hanxu-script-agent.zip) |
+| [公众号写作助手](skills/hanxu-public-account-drafting/README.md) | 有观点和零散材料，想整理成一篇有逻辑的公众号文章。 | [下载 ZIP](packages/hanxu-public-account-drafting.zip) |
+| [小红书图文制作助手](skills/hanxu-xiaohongshu-visual/README.md) | 逐页文案已经确定，需要制作封面和整套小红书图片。 | [下载 ZIP](packages/hanxu-xiaohongshu-visual.zip) |
+| [短视频选题调研助手](skills/hanxu-external-benchmark-research/README.md) | 不知道下一条拍什么，想从指定账号和关键词中寻找选题启发。 | [下载 ZIP](packages/hanxu-external-benchmark-research.zip) |
+| [公众号标题助手](skills/hanxu-public-account-title/README.md) | 文章已经写好，想得到清楚、吸引人且符合正文的标题。 | [下载 ZIP](packages/hanxu-public-account-title.zip) |
+| [公众号封面制作助手](skills/hanxu-public-account-series-visual/README.md) | 文章标题已定，需要统一风格的公众号封面或正文头图。 | [下载 ZIP](packages/hanxu-public-account-series-visual.zip) |
+| [口播视频剪辑助手](skills/hanxu-talking-head-edit/README.md) | 已经录好单人口播，想剪掉重复和停顿，整理字幕并完成包装。 | [下载 ZIP](packages/hanxu-talking-head-edit.zip) |
 
-[下载七项合集](packages/hanxu-seven-user-skills-mini-v1.zip) · [文件校验值](packages/SHA256SUMS.txt)
+[一次下载七个助手](packages/hanxu-seven-user-skills-mini-v2.zip) · [文件校验值](packages/SHA256SUMS.txt)
 
-## 源码目录
+## 第一次使用怎么做
 
-七项能力分别位于 `skills/<技能名>/`，每项有自己的 `SKILL.md` 和所需配套文件。`packages/` 保存同版本单项 ZIP、合集与校验值。
+1. 你需要一台能够运行 Codex 的电脑和可用账号。
+2. 在上面的表格里选一个助手，下载 ZIP 并解压。
+3. 把解压后的完整文件夹交给 Codex，说：“请帮我安装这个 Skill，检查所需依赖并告诉我如何调用。”
+4. 安装完成后，照着该助手中文介绍中的例子，输入调用名并提供你自己的材料。
 
-## 安装
+也可以手动把每个完整助手文件夹放到 `~/.agents/skills/`，或项目里的 `.agents/skills/`。安装后未出现时重启 Codex。不要只复制 SKILL.md，需要保留参考文件、脚本和模板。[OpenAI 官方安装说明](https://learn.chatgpt.com/docs/build-skills)。
 
-任选一种方式：复制 `skills/` 下所需的单项目录，或下载并解压 `packages/` 下对应 ZIP。将包含 `SKILL.md` 的单项目录放入用户 `~/.agents/skills/`，或项目根目录 `.agents/skills/`。
-已有同名目录时先备份并比较。用 $技能名直接调用，或用对应任务描述触发。卸载时移除安装目录，保留用户材料和输出。
+例如使用短视频写稿助手：
 
-两项视觉制作需要 Node.js、Sharp 和中文字体；在对应目录运行 npm install。公众号双图另需 Python 3。
-研究检查脚本需要 Python 3。口播剪辑需要实际可用的 ChatCut、剪映及素材，安装 Skill 不包含剪辑引擎。
+```text
+$hanxu-script-agent
+请根据我提供的选题、观点和真实案例，写一份可拍摄的口播逐字稿。
+```
 
-使用者提供自己的观点、证据、素材、授权、品牌和输出目录；包不依赖作者的私人知识库或客户资料。每个包内 SOURCE.json 记录来源和版本。
+## 使用前需要准备什么
+
+写稿和标题助手需要你自己的观点、全文和真实材料；视觉制作需要 Node.js、Sharp 和中文字体，公众号封面另需 Python 3；口播剪辑需要实际可用的 ChatCut、剪映和原片。各助手页面写明具体条件。模型与工具费用按使用者自己的服务计费。
+
+这些是可下载安装的 Skill 文件包，需要在你的 AI 工具中运行。GitHub 页面用于介绍和下载，没有在线运行按钮。
+
+## 文件怎么组织
+
+`skills/` 下是七个独立助手，每项都有中文 README、执行入口 SKILL.md 和必要配套文件。`agents/openai.yaml` 提供中文显示名和提示语。英文目录名是安装与调用标识。`packages/` 保存同版本单项 ZIP、合集和校验值。
 
 ## 已验证范围
 
-七包结构、链接、文件校验及 ZIP 完整性已检查。
-公众号封面/头图、小红书文字图文在 Mini 的新用户目录实际渲染并检查；研究格式检查正例和反例按预期运行。
+包结构、文件链接、校验值及 ZIP 完整性已检查。此前公众号封面/头图、小红书文字图文在 Mini 的新用户目录实际渲染并检查；研究格式检查正例和反例按预期运行。
 
 验证使用 Mini 已有依赖环境，没有在全新机器安装验证。真实口播剪辑、小红书模型图全流程、独立客户效果和平台发布未验证。
 
-## 许可与费用
+## 来源与许可
 
-尚未设定开放源代码许可、商业授权或价格。Codex、平台及剪辑工具的使用费用按使用者实际服务计费。
+由韩叙现有方法与必要依赖适配导出，原方法文件仍是维护来源。此次更新中文展示信息，未改写原执行方法。每个包的 SOURCE.json 记录来源和版本。使用者提供自己的素材、授权、品牌和输出目录。
 
-安装参考：[Codex 官方说明](https://learn.chatgpt.com/docs/build-skills)。
+可下载并安装使用；当前尚未设定开放源代码许可证、再分发或转售条款。

@@ -3,8 +3,8 @@
   "original_type": "Skill",
   "source_relative": "working-files/system-optimization/public-account-workflow-v3/skills/公众号系列双图生成.md",
   "source_sha256": "b729ed397e961dc9c91a77a5d3c04f744f81fa9f1cafe5217be975077201a286",
-  "package_skill_sha256": "04c6b6c6c44d6281bdc149ccc18c3a8eb27fe76dec5565df57da5c8d7ebea322",
-  "version": "2026-10-10-mini-v1",
+  "package_skill_sha256": "28c465160194bc299790cf24fe66d72a24d4b8998d8fed17dffd7b2c3c4abaa7",
+  "version": "2026-10-10-mini-v2",
   "dependencies": "Node.js、Python3、Sharp、可用中文字体",
   "cost": "Codex使用额度；工具或平台另按实际订阅/费用，不预估价格",
   "license": "未设定商业许可/定价；没有自动赋予开源或转授权",
@@ -31,10 +31,18 @@
     "working-files/content-production/PA-2026-08-17-01-more-effort-less-human/series-visual-template-v0.1/render-series-visuals.mjs": "6bc32ff68071fba65b44a1b063253217b79d3088213ba348dbfe89cc0fed7653"
   },
   "package_files": {
+    "README.md": "e01f78560f610fa824b9540eda42702d7ba096e40c428b5634c9404a836c0c83",
+    "SKILL.md": "28c465160194bc299790cf24fe66d72a24d4b8998d8fed17dffd7b2c3c4abaa7",
+    "agents/openai.yaml": "2f96e495cdf09c0f545911f3e25ed37512fd52cfbf0f38c3fe7b14970f7933c5",
+    "assets/series-template/render-series-visuals.mjs": "6bc32ff68071fba65b44a1b063253217b79d3088213ba348dbfe89cc0fed7653",
     "package.json": "b56da6b5066c952893d9ad6fb70723ce74805193358ad513c6a0d482d67624f9",
-    "SKILL.md": "04c6b6c6c44d6281bdc149ccc18c3a8eb27fe76dec5565df57da5c8d7ebea322",
     "references/发布准备执行标准.md": "e5aac3cdf8668b79ba7dffb8d730156ea0705735507ce4fd0981e28b2e0ef855",
-    "scripts/render_public_account_series_visual.py": "5440f03f6902a1db3192bde49b53666b5ade66db6195ed10a306da2a545bf01a",
-    "assets/series-template/render-series-visuals.mjs": "6bc32ff68071fba65b44a1b063253217b79d3088213ba348dbfe89cc0fed7653"
-  }
+    "scripts/render_public_account_series_visual.py": "5440f03f6902a1db3192bde49b53666b5ade66db6195ed10a306da2a545bf01a"
+  },
+  "display_name": "韩叙 · 公众号封面制作助手",
+  "presentation_changes": [
+    "中文展示名、场景、输入与输出说明",
+    "中文目录介绍与调用示例",
+    "英文调用标识保留；原方法与标准不变"
+  ]
 }

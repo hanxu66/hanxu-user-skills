@@ -1,0 +1,4 @@
+interface:
+  display_name: "韩叙 · 公众号标题助手"
+  short_description: "读完你的完整文章，生成并比较公众号标题，检查标题承诺是否有正文依据。"
+  default_prompt: "使用 $hanxu-public-account-title，根据这篇完整文章生成标题方案，比较优缺点并推荐一个标题。"

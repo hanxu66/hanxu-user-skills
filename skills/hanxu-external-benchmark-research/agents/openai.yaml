@@ -1,0 +1,4 @@
+interface:
+  display_name: "韩叙 · 短视频选题调研助手"
+  short_description: "从对标账号与关键词的标题、介绍和标签寻找选题启发，保留来源依据。"
+  default_prompt: "使用 $hanxu-external-benchmark-research，根据我指定的账号和关键词，调研短视频题目并给出选题启发。"
