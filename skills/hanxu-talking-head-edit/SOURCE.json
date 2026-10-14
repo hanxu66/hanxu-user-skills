@@ -1,9 +1,9 @@
 {
   "name": "hanxu-talking-head-edit",
   "display_name": "韩叙 · 口播视频剪辑助手",
-  "version": "2026-10-14-mini-v5",
+  "version": "2026-10-14-mini-v6",
   "source_relative": "working-files/system-optimization/short-video-workflow-v3/skills/口播剪辑.md",
-  "source_sha256": "6495fa70f954169c29f07f6de1ed29b8afdc2f78108387ebf4535b64a1032f44",
+  "source_sha256": "4fa0dfe34fba7528aba2cb9fc886a81dd0f15f711560eea83d5ce95169bf53ef",
   "reference_sources": [
     "working-files/system-optimization/short-video-workflow-v3/standards/剪辑执行标准.md"
   ],
@@ -25,10 +25,10 @@
   ],
   "dependency_source_hashes": {},
   "validation": "原方法修改已由本次任务回读与检查；导出结构、语法、链接、ZIP和远端文件另有同步收据。不是实际业务效果验证。",
-  "package_skill_sha256": "955e3aff5491a989145deb3f5fdf37e248c060a31dd5f59a67989227f8951f2c",
+  "package_skill_sha256": "101a6200f12744fe11f1c125e9c01880415c4c0e12c8b04d475c23525fd6811e",
   "package_files": {
     "README.md": "34359955f0a00ba98d5b0bacf39f6d0d7b774a8b2e2e3d498a830a72b5d30732",
-    "SKILL.md": "955e3aff5491a989145deb3f5fdf37e248c060a31dd5f59a67989227f8951f2c",
+    "SKILL.md": "101a6200f12744fe11f1c125e9c01880415c4c0e12c8b04d475c23525fd6811e",
     "agents/openai.yaml": "42ba126808f381a62f5a53359b81c555e270a9ab347bfbb1688aa0a1829857d2",
     "references/剪辑执行标准.md": "438da9aed307acbff6e52f8282ed59921e9df02363511f69a4f00eb169e80efe"
   }
