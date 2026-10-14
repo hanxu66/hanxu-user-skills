@@ -1,18 +1,21 @@
 {
   "name": "hanxu-talking-head-edit",
-  "original_type": "Skill",
+  "display_name": "韩叙 · 口播视频剪辑助手",
+  "version": "2026-10-14-mini-v4",
   "source_relative": "working-files/system-optimization/short-video-workflow-v3/skills/口播剪辑.md",
-  "source_sha256": "5b50b92a3a342052960b16172672b24ae9c09304413f17a2fed9876373471427",
-  "package_skill_sha256": "047aec74b16812bf5e88130227d00e7ecbd984b0aae9c269ced84b1f915e1961",
-  "version": "2026-10-10-mini-v2",
-  "dependencies": "ChatCut Desktop及当前可用集成、剪映专业版、原片/转写；不含剪辑引擎",
-  "cost": "Codex使用额度；工具或平台另按实际订阅/费用，不预估价格",
-  "license": "未设定商业许可/定价；没有自动赋予开源或转授权",
-  "validation": "包结构检查通过，真实剪辑试跑未验证",
+  "source_sha256": "bc9512dd06c94b4433a7f3ddde69db688f128b2717e677d305089865241991eb",
   "reference_sources": [
     "working-files/system-optimization/short-video-workflow-v3/standards/剪辑执行标准.md"
   ],
   "script_sources": [],
+  "reference_source_hashes": {
+    "working-files/system-optimization/short-video-workflow-v3/standards/剪辑执行标准.md": "7bb134dde794a5a0c9fe5c02dbda302adf6864524126410de8bdc10246d4f631"
+  },
+  "script_source_hashes": {},
+  "original_type": "Skill",
+  "dependencies": "ChatCut Desktop及当前可用集成、剪映专业版、原片/转写；不含剪辑引擎",
+  "cost": "Codex使用额度；工具或平台另按实际订阅/费用，不预估价格",
+  "license": "未设定商业许可/定价；没有自动赋予开源或转授权",
   "export_transformations": [
     "身份与个人绝对路径参数化",
     "只携带原方法和必要标准",
@@ -20,20 +23,13 @@
     "保留当前个人自用原调用",
     "导出文件由原文件生成，不独立维护"
   ],
-  "reference_source_hashes": {
-    "working-files/system-optimization/short-video-workflow-v3/standards/剪辑执行标准.md": "0861f159b3f9a81d9ebfd3bb1d1a7c5fa4e3f90b786b4e33176b30b16009ae32"
-  },
-  "script_source_hashes": {},
+  "dependency_source_hashes": {},
+  "validation": "原方法修改已由本次任务回读与检查；导出结构、语法、链接、ZIP和远端文件另有同步收据。不是实际业务效果验证。",
+  "package_skill_sha256": "566957c2589cb5d7b7ddf7b83af71b7ceadc9758923a31421cf20bba803e5219",
   "package_files": {
     "README.md": "34359955f0a00ba98d5b0bacf39f6d0d7b774a8b2e2e3d498a830a72b5d30732",
-    "SKILL.md": "047aec74b16812bf5e88130227d00e7ecbd984b0aae9c269ced84b1f915e1961",
+    "SKILL.md": "566957c2589cb5d7b7ddf7b83af71b7ceadc9758923a31421cf20bba803e5219",
     "agents/openai.yaml": "42ba126808f381a62f5a53359b81c555e270a9ab347bfbb1688aa0a1829857d2",
-    "references/剪辑执行标准.md": "904c5cb9c6b6cf11c193345d49010592c1bc5acb4865b1b3ef0930032f60eb46"
-  },
-  "display_name": "韩叙 · 口播视频剪辑助手",
-  "presentation_changes": [
-    "中文展示名、场景、输入与输出说明",
-    "中文目录介绍与调用示例",
-    "英文调用标识保留；原方法与标准不变"
-  ]
+    "references/剪辑执行标准.md": "7aec1651122efa3edf92f1d94809c3c058899a5d3f0d1e220292bb3621f7100c"
+  }
 }
