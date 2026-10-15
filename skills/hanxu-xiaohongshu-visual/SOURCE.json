@@ -1,14 +1,9 @@
 {
   "name": "hanxu-xiaohongshu-visual",
-  "original_type": "Agent",
+  "display_name": "韩叙 · 小红书图文制作助手",
+  "version": "2026-10-15-mini-v9",
   "source_relative": "working-files/system-optimization/xiaohongshu-workflow-v3/agents/视觉制作Agent.md",
   "source_sha256": "54ff62218881f243e08446bab45ab20ede5d7ca2776a712ba12d19fdb53d2e11",
-  "package_skill_sha256": "708ceed1af0d5ee2de67056d482aa1b8a4b29e083aafd19a1d14aa5ab94a9a16",
-  "version": "2026-10-10-mini-v2",
-  "dependencies": "Node.js、Sharp、中文字体、使用者图片",
-  "cost": "Codex使用额度；工具或平台另按实际订阅/费用，不预估价格",
-  "license": "未设定商业许可/定价；没有自动赋予开源或转授权",
-  "validation": "包结构及XHS-G新用户目录实图/尺寸/来源段落检查通过；XHS-M全链未试跑",
   "reference_sources": [
     "working-files/system-optimization/xiaohongshu-workflow-v3/skills/封面与素材选择.md",
     "working-files/system-optimization/xiaohongshu-workflow-v3/skills/文字图文制作.md",
@@ -16,13 +11,6 @@
   ],
   "script_sources": [
     "tools/render_xhs_full_article.mjs"
-  ],
-  "export_transformations": [
-    "身份与个人绝对路径参数化",
-    "只携带原方法和必要标准",
-    "内部状态/私有库用用户本地记录",
-    "保留当前个人自用原调用",
-    "导出文件由原文件生成，不独立维护"
   ],
   "reference_source_hashes": {
     "working-files/system-optimization/xiaohongshu-workflow-v3/skills/封面与素材选择.md": "65448b396c4804fc5d6d0aa7bca46e130cb6d74a30e1382a8a016be7f2c28abf",
@@ -32,6 +20,22 @@
   "script_source_hashes": {
     "tools/render_xhs_full_article.mjs": "a9b44d10b2a623c393be5c9dcd3f7d4ea71c62045becaae7c6e4c45d7d18fd29"
   },
+  "original_type": "Agent",
+  "dependencies": "Node.js、Sharp、中文字体、使用者图片",
+  "cost": "Codex使用额度；工具或平台另按实际订阅/费用，不预估价格",
+  "license": "未设定商业许可/定价；没有自动赋予开源或转授权",
+  "export_transformations": [
+    "身份与个人绝对路径参数化",
+    "只携带原方法和必要标准",
+    "内部状态/私有库用用户本地记录",
+    "保留当前个人自用原调用",
+    "导出文件由原文件生成，不独立维护"
+  ],
+  "dependency_source_hashes": {
+    "working-files/product-development/shared-content-assistants/dependencies/hanxu-xiaohongshu-visual/package.json": "cb8a13eafa7415492ad1ba359324c810f52e21d858a95c28690b0f45c4cfe8cc"
+  },
+  "validation": "原方法修改已由本次任务回读与检查；导出结构、语法、链接、ZIP和远端文件另有同步收据。不是实际业务效果验证。",
+  "package_skill_sha256": "708ceed1af0d5ee2de67056d482aa1b8a4b29e083aafd19a1d14aa5ab94a9a16",
   "package_files": {
     "README.md": "ea41adbab560f655c0dc0acd0094690d764add5331b00ca238f72ff5cc597a03",
     "SKILL.md": "708ceed1af0d5ee2de67056d482aa1b8a4b29e083aafd19a1d14aa5ab94a9a16",
@@ -41,11 +45,5 @@
     "references/文字图文制作.md": "96582590454ac66802e577d5def7a51ae357ada2a5932043ddf5f6a4cfe547fb",
     "references/模型图制作.md": "8ba0dc460548ebb3a11a13350d9bce0dfbfb97028a698dd2a8b37fa60457d066",
     "scripts/render_xhs_full_article.mjs": "a9b44d10b2a623c393be5c9dcd3f7d4ea71c62045becaae7c6e4c45d7d18fd29"
-  },
-  "display_name": "韩叙 · 小红书图文制作助手",
-  "presentation_changes": [
-    "中文展示名、场景、输入与输出说明",
-    "中文目录介绍与调用示例",
-    "英文调用标识保留；原方法与标准不变"
-  ]
+  }
 }

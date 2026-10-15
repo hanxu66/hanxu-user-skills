@@ -1,19 +1,23 @@
 {
   "name": "hanxu-talking-head-edit",
   "display_name": "韩叙 · 口播视频剪辑助手",
-  "version": "2026-10-15-mini-v8",
+  "version": "2026-10-15-mini-v9",
   "source_relative": "working-files/system-optimization/short-video-workflow-v3/skills/口播剪辑.md",
-  "source_sha256": "5ce9fdac0d7e98b730251bea3b31c4fcecad049e23fd6a5c142f98b23be7ca95",
+  "source_sha256": "eb56235fc71d82a60ecd28ae093f6f875ca784a2e487b6d74fdf51bcae5b9835",
   "reference_sources": [
     "working-files/system-optimization/short-video-workflow-v3/standards/剪辑执行标准.md"
   ],
-  "script_sources": [],
+  "script_sources": [
+    "tools/inspect_video_editing_environment.py"
+  ],
   "reference_source_hashes": {
-    "working-files/system-optimization/short-video-workflow-v3/standards/剪辑执行标准.md": "43d89475b473d037280a6bf3cadd679077a18ba25ecdfb342bb21452f13bac4e"
+    "working-files/system-optimization/short-video-workflow-v3/standards/剪辑执行标准.md": "c3e56f76247e5767e787881043d08aed770f5d4874b474e2c701ff3bad9114a1"
   },
-  "script_source_hashes": {},
+  "script_source_hashes": {
+    "tools/inspect_video_editing_environment.py": "164f9462f0fb479867c9afa813a9fbec556a1c2f2caf28149ea7c1b530f2cd2b"
+  },
   "original_type": "Skill",
-  "dependencies": "ChatCut Desktop及当前可用集成、剪映专业版、原片/转写；不含剪辑引擎",
+  "dependencies": "ChatCut Desktop及当前可用集成、剪映专业版、原片/转写；只读资源检查使用Python3标准库，不含剪辑引擎",
   "cost": "Codex使用额度；工具或平台另按实际订阅/费用，不预估价格",
   "license": "未设定商业许可/定价；没有自动赋予开源或转授权",
   "export_transformations": [
@@ -25,11 +29,12 @@
   ],
   "dependency_source_hashes": {},
   "validation": "原方法修改已由本次任务回读与检查；导出结构、语法、链接、ZIP和远端文件另有同步收据。不是实际业务效果验证。",
-  "package_skill_sha256": "c9f28f491309da1e6f98515091f52a9788ce521975c0e12ed4e094c7f91668ad",
+  "package_skill_sha256": "62be4819ef26137a4bd919b9b983f5d390072b9d36468921fb6714ae04864efd",
   "package_files": {
     "README.md": "34359955f0a00ba98d5b0bacf39f6d0d7b774a8b2e2e3d498a830a72b5d30732",
-    "SKILL.md": "c9f28f491309da1e6f98515091f52a9788ce521975c0e12ed4e094c7f91668ad",
+    "SKILL.md": "62be4819ef26137a4bd919b9b983f5d390072b9d36468921fb6714ae04864efd",
     "agents/openai.yaml": "42ba126808f381a62f5a53359b81c555e270a9ab347bfbb1688aa0a1829857d2",
-    "references/剪辑执行标准.md": "49a89945effa6c927f60af6a0bc736128dad7163e56e919950a610bcae421207"
+    "references/剪辑执行标准.md": "c63eeeb2c71ba7aa5c3013861e3dbbb644b0ac4e46bebda966e549961180f853",
+    "scripts/inspect_video_editing_environment.py": "164f9462f0fb479867c9afa813a9fbec556a1c2f2caf28149ea7c1b530f2cd2b"
   }
 }

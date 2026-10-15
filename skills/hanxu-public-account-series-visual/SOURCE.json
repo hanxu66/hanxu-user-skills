@@ -1,27 +1,15 @@
 {
   "name": "hanxu-public-account-series-visual",
-  "original_type": "Skill",
+  "display_name": "韩叙 · 公众号封面制作助手",
+  "version": "2026-10-15-mini-v9",
   "source_relative": "working-files/system-optimization/public-account-workflow-v3/skills/公众号系列双图生成.md",
   "source_sha256": "b729ed397e961dc9c91a77a5d3c04f744f81fa9f1cafe5217be975077201a286",
-  "package_skill_sha256": "28c465160194bc299790cf24fe66d72a24d4b8998d8fed17dffd7b2c3c4abaa7",
-  "version": "2026-10-10-mini-v2",
-  "dependencies": "Node.js、Python3、Sharp、可用中文字体",
-  "cost": "Codex使用额度；工具或平台另按实际订阅/费用，不预估价格",
-  "license": "未设定商业许可/定价；没有自动赋予开源或转授权",
-  "validation": "包结构、原脚本新用户目录封面一/二及正文头图渲染、实际尺寸与图片回读通过；后台裁切未验证",
   "reference_sources": [
     "working-files/system-optimization/public-account-workflow-v3/standards/发布准备执行标准.md"
   ],
   "script_sources": [
     "tools/render_public_account_series_visual.py",
     "working-files/content-production/PA-2026-08-17-01-more-effort-less-human/series-visual-template-v0.1/render-series-visuals.mjs"
-  ],
-  "export_transformations": [
-    "身份与个人绝对路径参数化",
-    "只携带原方法和必要标准",
-    "内部状态/私有库用用户本地记录",
-    "保留当前个人自用原调用",
-    "导出文件由原文件生成，不独立维护"
   ],
   "reference_source_hashes": {
     "working-files/system-optimization/public-account-workflow-v3/standards/发布准备执行标准.md": "f0fe0463f940a9783365eac9453faac62b53ac38635483e8c534a7389992c7c3"
@@ -30,6 +18,22 @@
     "tools/render_public_account_series_visual.py": "5440f03f6902a1db3192bde49b53666b5ade66db6195ed10a306da2a545bf01a",
     "working-files/content-production/PA-2026-08-17-01-more-effort-less-human/series-visual-template-v0.1/render-series-visuals.mjs": "6bc32ff68071fba65b44a1b063253217b79d3088213ba348dbfe89cc0fed7653"
   },
+  "original_type": "Skill",
+  "dependencies": "Node.js、Python3、Sharp、可用中文字体",
+  "cost": "Codex使用额度；工具或平台另按实际订阅/费用，不预估价格",
+  "license": "未设定商业许可/定价；没有自动赋予开源或转授权",
+  "export_transformations": [
+    "身份与个人绝对路径参数化",
+    "只携带原方法和必要标准",
+    "内部状态/私有库用用户本地记录",
+    "保留当前个人自用原调用",
+    "导出文件由原文件生成，不独立维护"
+  ],
+  "dependency_source_hashes": {
+    "working-files/product-development/shared-content-assistants/dependencies/hanxu-public-account-series-visual/package.json": "b56da6b5066c952893d9ad6fb70723ce74805193358ad513c6a0d482d67624f9"
+  },
+  "validation": "原方法修改已由本次任务回读与检查；导出结构、语法、链接、ZIP和远端文件另有同步收据。不是实际业务效果验证。",
+  "package_skill_sha256": "28c465160194bc299790cf24fe66d72a24d4b8998d8fed17dffd7b2c3c4abaa7",
   "package_files": {
     "README.md": "e01f78560f610fa824b9540eda42702d7ba096e40c428b5634c9404a836c0c83",
     "SKILL.md": "28c465160194bc299790cf24fe66d72a24d4b8998d8fed17dffd7b2c3c4abaa7",
@@ -38,11 +42,5 @@
     "package.json": "b56da6b5066c952893d9ad6fb70723ce74805193358ad513c6a0d482d67624f9",
     "references/发布准备执行标准.md": "e5aac3cdf8668b79ba7dffb8d730156ea0705735507ce4fd0981e28b2e0ef855",
     "scripts/render_public_account_series_visual.py": "5440f03f6902a1db3192bde49b53666b5ade66db6195ed10a306da2a545bf01a"
-  },
-  "display_name": "韩叙 · 公众号封面制作助手",
-  "presentation_changes": [
-    "中文展示名、场景、输入与输出说明",
-    "中文目录介绍与调用示例",
-    "英文调用标识保留；原方法与标准不变"
-  ]
+  }
 }

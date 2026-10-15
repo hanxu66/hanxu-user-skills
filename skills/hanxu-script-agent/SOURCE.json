@@ -1,7 +1,7 @@
 {
   "name": "hanxu-script-agent",
   "display_name": "韩叙 · 短视频写稿助手",
-  "version": "2026-10-14-mini-v3",
+  "version": "2026-10-15-mini-v9",
   "source_relative": "working-files/system-optimization/short-video-workflow-v3/agents/脚本Agent.md",
   "source_sha256": "523a891ea5850b8f8e5aeceddbf18545b580c38174d7612ae1a9d7ac3f26ed2d",
   "reference_sources": [
