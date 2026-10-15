@@ -1,7 +1,7 @@
 {
   "name": "hanxu-talking-head-edit",
   "display_name": "韩叙 · 口播视频剪辑助手",
-  "version": "2026-10-15-mini-v11",
+  "version": "2026-10-15-mini-v12",
   "source_relative": "working-files/system-optimization/short-video-workflow-v3/skills/口播剪辑.md",
   "source_sha256": "0bce21115f24f7c32db9488119bd93899a65853d1b14dd524341cd05490f0efa",
   "reference_sources": [
@@ -11,7 +11,7 @@
     "tools/inspect_video_editing_environment.py"
   ],
   "reference_source_hashes": {
-    "working-files/system-optimization/short-video-workflow-v3/standards/剪辑执行标准.md": "b7cb59a49b3e64954608e55a4262e63d1958465ce7bb243270f6818479706969"
+    "working-files/system-optimization/short-video-workflow-v3/standards/剪辑执行标准.md": "6f0bb538c785e5178aa1fa26b53d7f272f7bda1343df07081e03ffb11b3f3eb7"
   },
   "script_source_hashes": {
     "tools/inspect_video_editing_environment.py": "164f9462f0fb479867c9afa813a9fbec556a1c2f2caf28149ea7c1b530f2cd2b"
@@ -34,7 +34,7 @@
     "README.md": "34359955f0a00ba98d5b0bacf39f6d0d7b774a8b2e2e3d498a830a72b5d30732",
     "SKILL.md": "bdefdbb75c281637c9893cb3eb2f79dbb3e161345d8bedc1cea1d2881d3952f5",
     "agents/openai.yaml": "42ba126808f381a62f5a53359b81c555e270a9ab347bfbb1688aa0a1829857d2",
-    "references/剪辑执行标准.md": "ee5f57e120b4e7311f5cf7fba0f9fff5b2aac187893ddb1b97976bf93ea275b6",
+    "references/剪辑执行标准.md": "3014dc5574faa008c8ecbf909b306e06fd34ceef08caa11d3c3baf5791e54a33",
     "scripts/inspect_video_editing_environment.py": "164f9462f0fb479867c9afa813a9fbec556a1c2f2caf28149ea7c1b530f2cd2b"
   }
 }
