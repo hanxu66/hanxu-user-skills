@@ -1,15 +1,15 @@
 {
   "name": "hanxu-talking-head-edit",
   "display_name": "韩叙 · 口播视频剪辑助手",
-  "version": "2026-10-15-mini-v7",
+  "version": "2026-10-15-mini-v8",
   "source_relative": "working-files/system-optimization/short-video-workflow-v3/skills/口播剪辑.md",
-  "source_sha256": "88bc721bf254107a2fa11e0204053cc4a0a9e9af91c45b31ee494991c4cdc075",
+  "source_sha256": "5ce9fdac0d7e98b730251bea3b31c4fcecad049e23fd6a5c142f98b23be7ca95",
   "reference_sources": [
     "working-files/system-optimization/short-video-workflow-v3/standards/剪辑执行标准.md"
   ],
   "script_sources": [],
   "reference_source_hashes": {
-    "working-files/system-optimization/short-video-workflow-v3/standards/剪辑执行标准.md": "e6105027db39e0c1e94dacf6331c8127de072a77c13eb95b8917720a3d5c2ece"
+    "working-files/system-optimization/short-video-workflow-v3/standards/剪辑执行标准.md": "43d89475b473d037280a6bf3cadd679077a18ba25ecdfb342bb21452f13bac4e"
   },
   "script_source_hashes": {},
   "original_type": "Skill",
@@ -25,11 +25,11 @@
   ],
   "dependency_source_hashes": {},
   "validation": "原方法修改已由本次任务回读与检查；导出结构、语法、链接、ZIP和远端文件另有同步收据。不是实际业务效果验证。",
-  "package_skill_sha256": "d97adc17df78b941be6e85a216552729b774357b38e4203d213bbaf6dd27c965",
+  "package_skill_sha256": "c9f28f491309da1e6f98515091f52a9788ce521975c0e12ed4e094c7f91668ad",
   "package_files": {
     "README.md": "34359955f0a00ba98d5b0bacf39f6d0d7b774a8b2e2e3d498a830a72b5d30732",
-    "SKILL.md": "d97adc17df78b941be6e85a216552729b774357b38e4203d213bbaf6dd27c965",
+    "SKILL.md": "c9f28f491309da1e6f98515091f52a9788ce521975c0e12ed4e094c7f91668ad",
     "agents/openai.yaml": "42ba126808f381a62f5a53359b81c555e270a9ab347bfbb1688aa0a1829857d2",
-    "references/剪辑执行标准.md": "fee0f6c0d65a51e030646574ebce11409ed2662dcaac41728297ec0e411668d8"
+    "references/剪辑执行标准.md": "49a89945effa6c927f60af6a0bc736128dad7163e56e919950a610bcae421207"
   }
 }
