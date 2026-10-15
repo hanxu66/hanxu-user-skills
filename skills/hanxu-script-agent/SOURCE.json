@@ -1,7 +1,7 @@
 {
   "name": "hanxu-script-agent",
   "display_name": "韩叙 · 短视频写稿助手",
-  "version": "2026-10-15-mini-v9",
+  "version": "2026-10-15-mini-v13",
   "source_relative": "working-files/system-optimization/short-video-workflow-v3/agents/脚本Agent.md",
   "source_sha256": "523a891ea5850b8f8e5aeceddbf18545b580c38174d7612ae1a9d7ac3f26ed2d",
   "reference_sources": [
@@ -15,9 +15,9 @@
   "reference_source_hashes": {
     "working-files/system-optimization/short-video-workflow-v3/skills/观点立意.md": "0ee2822a9078610deb462e02c71430e74c1a475ae71556400741e49fea35611e",
     "working-files/system-optimization/short-video-workflow-v3/skills/内容结构.md": "d68a08f7dbf70d4b588617c7ecf60ffcb812f15b01ecc661a779ca89d6ae9e07",
-    "working-files/system-optimization/short-video-workflow-v3/skills/逐字稿.md": "fe4a7bb89b957b3ac74f0e0c319396f78eb1f25e6747a5d8bfa43286765a6fc0",
+    "working-files/system-optimization/short-video-workflow-v3/skills/逐字稿.md": "b051acb01f55d3ac1e766c0477b5c5d305b568834cbcc496c5a1826c72f18487",
     "working-files/system-optimization/short-video-workflow-v3/skills/表达学习与应用.md": "26a3b8287b0c81b4980dc938eca877825a2bc832432843d4db85c47741177bac",
-    "working-files/system-optimization/short-video-workflow-v3/standards/脚本执行标准.md": "e0b97c9734544e713a136f1876b67875aca1dd6b123d668bcbd6bca2dec46ec5"
+    "working-files/system-optimization/short-video-workflow-v3/standards/脚本执行标准.md": "612228f051b9c28fde1deffa359957d59647e6b945a294cf89e4b3f46cb083b9"
   },
   "script_source_hashes": {},
   "original_type": "Agent",
@@ -39,9 +39,9 @@
     "SKILL.md": "de57f34324526c6d1e7e226a9faaf67b42b67ee40a3bab7268c070f5f66f4d19",
     "agents/openai.yaml": "6d0746e1106606b109b985b47d3fa6f7e561e6375265fa63fde50c53c013b848",
     "references/内容结构.md": "b5588a9468054c38afa0c859b5a93608b8f4e47f88ea7ea468aaeae9515fe40b",
-    "references/脚本执行标准.md": "75b46722b35159efb9e8aa8768b99cd8d848dc1a213a283a8b95611a75486aaa",
+    "references/脚本执行标准.md": "07f4de6effee7b2e80a944e8d6731059c2d0bcbca6bc145ec18c423eae446c9f",
     "references/表达学习与应用.md": "f95506c902d13f105fc3b927ac5aeb4381257eaab750757f3e78af130f03f8c9",
     "references/观点立意.md": "4b2d95f2a15d500c5a69fc4ed6c96bfa90d000c965529bc975aa26c69f47d063",
-    "references/逐字稿.md": "a3d89e0d61f3907ff6b72056984a923487761942f0798f24d631ba248d39800c"
+    "references/逐字稿.md": "f1ec361eebd062c8dd7a7641a54941822c9424408eb8ab4615dc9c43535856cd"
   }
 }
