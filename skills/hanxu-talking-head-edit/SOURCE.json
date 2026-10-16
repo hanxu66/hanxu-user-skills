@@ -1,9 +1,9 @@
 {
   "name": "hanxu-talking-head-edit",
   "display_name": "韩叙 · 口播视频剪辑助手",
-  "version": "2026-10-15-mini-v13",
+  "version": "2026-10-16-mini-v14",
   "source_relative": "working-files/system-optimization/short-video-workflow-v3/skills/口播剪辑.md",
-  "source_sha256": "2830d623dbc3f8a4b6d7ccde2613489b5acc2a15779ddd691a6b066301488ed4",
+  "source_sha256": "91e4820d0017ee4112e3a8964b2a49e22810ca0c29bfecefffc87612ac06878b",
   "reference_sources": [
     "working-files/system-optimization/short-video-workflow-v3/standards/剪辑执行标准.md"
   ],
@@ -11,7 +11,7 @@
     "tools/inspect_video_editing_environment.py"
   ],
   "reference_source_hashes": {
-    "working-files/system-optimization/short-video-workflow-v3/standards/剪辑执行标准.md": "d0558d676cb83904047b30a4bfb0a666392a6acad5677b69666f5213093e8f76"
+    "working-files/system-optimization/short-video-workflow-v3/standards/剪辑执行标准.md": "431ecd203f51152027f3613b0e3b5db1f32f5ed3c5c3cdc1a563beab5cd46865"
   },
   "script_source_hashes": {
     "tools/inspect_video_editing_environment.py": "164f9462f0fb479867c9afa813a9fbec556a1c2f2caf28149ea7c1b530f2cd2b"
@@ -29,12 +29,12 @@
   ],
   "dependency_source_hashes": {},
   "validation": "原方法修改已由本次任务回读与检查；导出结构、语法、链接、ZIP和远端文件另有同步收据。不是实际业务效果验证。",
-  "package_skill_sha256": "c97256bcde1d3b9ea352aa328efdf7f61784c5882bb5bbf43b8ccb2f19a30ad6",
+  "package_skill_sha256": "202fd3f5da579c95aa15c62aed21cd2a9b9b302cb6d9898126febfa4114fdea3",
   "package_files": {
     "README.md": "34359955f0a00ba98d5b0bacf39f6d0d7b774a8b2e2e3d498a830a72b5d30732",
-    "SKILL.md": "c97256bcde1d3b9ea352aa328efdf7f61784c5882bb5bbf43b8ccb2f19a30ad6",
+    "SKILL.md": "202fd3f5da579c95aa15c62aed21cd2a9b9b302cb6d9898126febfa4114fdea3",
     "agents/openai.yaml": "42ba126808f381a62f5a53359b81c555e270a9ab347bfbb1688aa0a1829857d2",
-    "references/剪辑执行标准.md": "c556436f857236e09a66483b70fb081edd2ab6d2346c0e4ffdf8fb1f6bdaf2f3",
+    "references/剪辑执行标准.md": "866cafa0c0f2dfc66b224b66ffe707cf44d2ca5e3547476de8a0403e625274c4",
     "scripts/inspect_video_editing_environment.py": "164f9462f0fb479867c9afa813a9fbec556a1c2f2caf28149ea7c1b530f2cd2b"
   }
 }

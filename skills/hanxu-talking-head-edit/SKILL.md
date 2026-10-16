@@ -231,4 +231,4 @@ description: 把已录好的单人口播整理成节奏清楚、字幕准确的�
 - 通过后交付当前修订最终MP4和主封面；使用者未确认前只标`待审看`。
 - 提交`可发布`时写入`mp4_ref`、`cover_ref`、`quality_receipt_ref`、`full_playback_ref`、`source_compare_ref`和`project_integrity_ref`，六项指向同一修订。
 - ChatCut MCP或剪映必需能力不可用时，按Agent停在当前步，不用未授权外部工具修补成片。
-- 使用者停止或不采用时保留原片，将失败工程、候选成片、封面和检查缓存交媒体归档清理。
+- 使用者停止或不采用时保留原片，将失败工程、候选成片、封面和检查缓存交失效媒体清理。
