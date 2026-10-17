@@ -1,7 +1,7 @@
 {
   "name": "hanxu-talking-head-edit",
   "display_name": "韩叙 · 口播视频剪辑助手",
-  "version": "2026-10-17-mini-v20",
+  "version": "2026-10-17-mini-v21",
   "source_relative": "working-files/system-optimization/short-video-workflow-v3/skills/口播剪辑.md",
   "source_sha256": "648cfb87c890aa3d62031ec9ca5d110c7e38a9aa457e14be24665b491b43f3a1",
   "reference_sources": [
@@ -13,9 +13,9 @@
     "tools/inspect_video_editing_environment.py"
   ],
   "reference_source_hashes": {
-    "working-files/system-optimization/short-video-workflow-v3/standards/剪辑执行标准.md": "b3b2770aaf4a75ff9956631520d668b93193e62ed0c0d24a9da72a1791d1df97",
+    "working-files/system-optimization/short-video-workflow-v3/standards/剪辑执行标准.md": "210d131d874f5d40d0f7121fa71bad1a92da4dfe344582ed1dfd1f5da6de5b1b",
     "working-files/system-optimization/short-video-workflow-v3/skills/references/动画类型与分镜方法.md": "7a67046d9024def6ece5d1c729e983d80b0aeaa49b92f724d0e6f30d8616ed45",
-    "working-files/system-optimization/short-video-workflow-v3/skills/产品介绍视频.md": "4ffbbba70e62573a3e0f9c00fec4c29d52f292ab92fcd350cef71b1d9787b5c3"
+    "working-files/system-optimization/short-video-workflow-v3/skills/产品介绍视频.md": "3c60152c687153475f5b8631102e1eb86c7e3dc72a236d95ab1ea99581a73bc2"
   },
   "script_source_hashes": {
     "tools/inspect_video_editing_environment.py": "164f9462f0fb479867c9afa813a9fbec556a1c2f2caf28149ea7c1b530f2cd2b"
@@ -38,8 +38,8 @@
     "README.md": "34359955f0a00ba98d5b0bacf39f6d0d7b774a8b2e2e3d498a830a72b5d30732",
     "SKILL.md": "0427b92a5fdb6ce3ec2ef7c94151db03c50e10b98cdc7776cf7b1eadc49c29ec",
     "agents/openai.yaml": "42ba126808f381a62f5a53359b81c555e270a9ab347bfbb1688aa0a1829857d2",
-    "references/产品介绍视频.md": "ce76706410e021cd749b2e0a7e6ae1afd5417432dabf7b3370811dfa552bdd8e",
-    "references/剪辑执行标准.md": "00bce08260b073b327e91e95f93aa08ad63c322e700634d5a9a220d8641a6608",
+    "references/产品介绍视频.md": "328677ad13cbdd947aa3b92db4772dc14dfd611c41fe9cc0bc248770a4c32b03",
+    "references/剪辑执行标准.md": "d00a153084ba772d5e320e05310367f08ef5f60fbafc55490a6f03176df4b581",
     "references/动画类型与分镜方法.md": "7a67046d9024def6ece5d1c729e983d80b0aeaa49b92f724d0e6f30d8616ed45",
     "scripts/inspect_video_editing_environment.py": "164f9462f0fb479867c9afa813a9fbec556a1c2f2caf28149ea7c1b530f2cd2b"
   }
