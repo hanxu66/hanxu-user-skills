@@ -1,7 +1,7 @@
 {
   "name": "hanxu-public-account-drafting",
   "display_name": "韩叙 · 公众号写作助手",
-  "version": "2026-10-17-mini-v16",
+  "version": "2026-10-17-mini-v19",
   "source_relative": "working-files/system-optimization/public-account-workflow-v3/agents/成稿Agent.md",
   "source_sha256": "2bf364dedb18ca74a64227969b43db4d57e0f3e94d79f96d026db80e55b7834f",
   "reference_sources": [
@@ -14,8 +14,8 @@
   "reference_source_hashes": {
     "working-files/system-optimization/public-account-workflow-v3/skills/证据整理.md": "b0a1534a6be4bff0d4de295a11ffcae0ebdb521f122a1b54c3ab46e30456dbc3",
     "working-files/system-optimization/public-account-workflow-v3/skills/论证结构.md": "2bc1118f9dfe1c914ee2604bced25a07fb70a6796c72b5bda44c56ab29e75807",
-    "working-files/system-optimization/public-account-workflow-v3/skills/正文写作.md": "c11e7ee53e73c29bf72c4b964cbd7ed07b043c4747f9cd206a6fd0bafdd50dc9",
-    "working-files/system-optimization/public-account-workflow-v3/standards/成稿执行标准.md": "9a6e3d2d2f200917c95b77b8680d39b2dd4a56dff1d4e773d5ec6b0cea0e5baf"
+    "working-files/system-optimization/public-account-workflow-v3/skills/正文写作.md": "c36a796c40b3f84da68b1d7b38655c7f3165f6977d191676b47403e3291f4bf7",
+    "working-files/system-optimization/public-account-workflow-v3/standards/成稿执行标准.md": "28f8699ab0a51576f2c07f84ddf8ebc9a4eb5af10470bcc42a921e9bf0df1d91"
   },
   "script_source_hashes": {},
   "original_type": "Agent",
@@ -36,8 +36,8 @@
     "README.md": "293dce6b066e1479ee3de5a53600112b4aa6bd1e0dbc7ab927ec33fa02389708",
     "SKILL.md": "ef92188408a16caaa8e08c2ade0795f6cbd0d84ff288297e63aeb2575b2a71c9",
     "agents/openai.yaml": "24f27207642a39215d568e17ba1ec758a944608a47d01fa4c4169c919ca19050",
-    "references/成稿执行标准.md": "072ca2681b00051d7e84fe262beaa109c7af5ea872e1e7aaebc04f3a8a39cf52",
-    "references/正文写作.md": "2e842174a7130d3a0c8c160566e0d7fe0bb24e94ec54c5f4dec50af866fa45b4",
+    "references/成稿执行标准.md": "7902a603f27b88303ee2df0cc2ef844e92874a32b8574477c73e244f64dbcaf8",
+    "references/正文写作.md": "680bce1765a46ea070f70107ee0f87d12d118e22baccd290594648eb4d9646ee",
     "references/论证结构.md": "fa7daed308ce74595538164a46b95470e1c552923161da45efc432a2c98e8e7c",
     "references/证据整理.md": "b4b777bfc139d5f88e19bbf40c4629880a0a0b270c0d1d4f8dd0eb70d8169643"
   }
