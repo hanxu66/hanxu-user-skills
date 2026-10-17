@@ -1,7 +1,7 @@
 {
   "name": "hanxu-external-benchmark-research",
   "display_name": "韩叙 · 短视频选题调研助手",
-  "version": "2026-10-16-mini-v15",
+  "version": "2026-10-17-mini-v16",
   "source_relative": "working-files/system-optimization/short-video-workflow-v3/skills/外部对标研究.md",
   "source_sha256": "cf0d5fa1ca1e9b58f2910335527ef548d749d87b493d183c37c17289f57e6a49",
   "reference_sources": [
