@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SKILL = ROOT / 'working-files/system-optimization/short-video-workflow-v3/skills/外部对标研究.md'
 if not SKILL.exists():
     SKILL = ROOT / 'SKILL.md'
-FIELD = re.compile(r'^\*\*(\d+)\. ([^\n]+)\*\*\s*$', re.M)
+FIELD = re.compile(r'^(?:\*\*)?(\d+)\. ([^\n*]+?)(?:\*\*)?\s*$', re.M)
 CARD = re.compile(r'^### (?:对标题面|对标拆解)｜([^｜\n]+)｜([^\n]+)$', re.M)
 
 def check_conclusion(text: str, items: list[dict]) -> list[str]:
@@ -33,7 +33,7 @@ def check_conclusion(text: str, items: list[dict]) -> list[str]:
         boundary = re.search(r'^#{1,3}\s', tail, re.M)
         block = tail[:boundary.start()] if boundary else tail
         for label in ['为什么值得写', '准备写什么', '参考']:
-            if not re.search(r'\*\*' + label + r'：\*\*\s*\S+', block):
+            if not re.search(r'(?:\*\*)?' + label + r'：(\*\*)?\s*\S+', block):
                 errors.append(item['title'] + '：缺少' + label)
         for ref in item.get('source_refs', []):
             if ref not in block:
@@ -118,10 +118,10 @@ def check_library_rows(text: str, expected_ids: list[str], source: Path = DEFAUL
                 in_library = False
                 continue
             cells = [c.strip() for c in re.split(r'(?<!\\)\|', line)[1:-1]]
-            if len(cells) == 6 and cells[0] == '题目':
+            if len(cells) in {2, 6} and cells[0] == '题目':
                 in_library = True
                 continue
-            if in_library and len(cells) == 6 and not all(re.fullmatch(r':?-+:?', c) for c in cells):
+            if in_library and len(cells) in {2, 6} and not all(re.fullmatch(r':?-+:?', c) for c in cells):
                 actual[plain(cells[0])] += 1
         errors = [f'内部清单缺少主库映射：{oid}' for oid in expected_ids if oid not in titles]
         errors += [f'回复正文缺少选题库题目：{title}' for title, n in (expected - actual).items() for _ in range(n)]
@@ -148,7 +148,7 @@ def main() -> int:
         fields=required_fields(SKILL.read_text(encoding='utf-8'))
         errors=(check_conclusion(raw.decode('utf-8'), json.loads(args.conclusion_items.read_text()))
                 if args.conclusion_items else check(raw.decode('utf-8'),args.expect,fields))
-        if args.library_source and not args.conclusion_items:
+        if args.library_source:
             if SKILL == ROOT / 'SKILL.md':
                 library_ids = re.findall(r'^\|\s*`(SVLIB-[^`|]+)`\s*\|', args.library_source.read_text(encoding='utf-8'), re.M)
                 if not library_ids:

@@ -1,9 +1,9 @@
 {
   "name": "hanxu-external-benchmark-research",
   "display_name": "韩叙 · 短视频选题调研助手",
-  "version": "2026-10-18-mini-v25",
+  "version": "2026-10-18-mini-v26",
   "source_relative": "working-files/system-optimization/short-video-workflow-v3/skills/外部对标研究.md",
-  "source_sha256": "89bba8d9240bbba26364833579a86fb8a4a6de24be1ee91e7f70ac927c30b27f",
+  "source_sha256": "fe216830d1270352f4bd932d7b184225e899f0316c8de42b8a4a0b1514f4d66c",
   "reference_sources": [
     "working-files/system-optimization/short-video-workflow-v3/standards/选题执行标准.md"
   ],
@@ -11,10 +11,10 @@
     "tools/check_short_video_research_delivery.py"
   ],
   "reference_source_hashes": {
-    "working-files/system-optimization/short-video-workflow-v3/standards/选题执行标准.md": "fe7ef0c393d8d5f090d99ee643cc6860a7a8d293bca9b1989af974107a9b5d10"
+    "working-files/system-optimization/short-video-workflow-v3/standards/选题执行标准.md": "f59b2fee57f7b1eafab0e81db6287976c54a335dec75f7424aa63729456027f9"
   },
   "script_source_hashes": {
-    "tools/check_short_video_research_delivery.py": "63b83cf8b58bc921b63624328a1017a4b6c57c0d312896e6af8b30212ada3af4"
+    "tools/check_short_video_research_delivery.py": "a4109437f5851b8bae0040f6db24719044093af596b0cdcf0ccaaa0994c2f9b4"
   },
   "original_type": "Skill",
   "dependencies": "Python3；平台搜索使用用户现有合法浏览/工具",
@@ -29,12 +29,12 @@
   ],
   "dependency_source_hashes": {},
   "validation": "原方法修改已由本次任务回读与检查；导出结构、语法、链接、ZIP和远端文件另有同步收据。不是实际业务效果验证。",
-  "package_skill_sha256": "a6a54e0b80664e04eec2947b3008444e0f2035d37efea0bcf8542218cee19922",
+  "package_skill_sha256": "859dcadb6ddcd1ed28ec2cfc28030f7785a8fd8b794b51842731478463952c1e",
   "package_files": {
     "README.md": "2bdaad7e3a06c9116455922620c0cae7fbb1d19bef2003c13b126cbf10921f8a",
-    "SKILL.md": "a6a54e0b80664e04eec2947b3008444e0f2035d37efea0bcf8542218cee19922",
+    "SKILL.md": "859dcadb6ddcd1ed28ec2cfc28030f7785a8fd8b794b51842731478463952c1e",
     "agents/openai.yaml": "4f63844868ff2a3431b1b73bf314204b9f9b36421bbf8f363c85969654bebe40",
-    "references/选题执行标准.md": "69141005d15e4b3c7e265264dfe96ae88024ed83b9c23b5f05c063b43b290f09",
-    "scripts/check_short_video_research_delivery.py": "63b83cf8b58bc921b63624328a1017a4b6c57c0d312896e6af8b30212ada3af4"
+    "references/选题执行标准.md": "45421948c7e720ae84e8f752ad618aff3f030247cfa9a065720e05069034e34d",
+    "scripts/check_short_video_research_delivery.py": "a4109437f5851b8bae0040f6db24719044093af596b0cdcf0ccaaa0994c2f9b4"
   }
 }
