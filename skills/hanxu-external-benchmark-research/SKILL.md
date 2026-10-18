@@ -78,11 +78,26 @@ description: 从对标账号与关键词的标题、介绍和标签寻找选题�
 
 卡保存`platform、id、source_route、discovery_route、query、title、metadata_text、tags、author、published_at、observed_at、visible_like_signals、analysis_scope、metadata_evidence_ref、metadata_evidence_sha256、metadata_excerpt、metadata_reviewed、metadata_checked_at、topic_question、interest_judgment、decision、application、missing、disposition、library_ids`。未知项带原因，不填假值；`analysis_scope=metadata_only`，`viewpoint_status=待观点立意`。关键词来源保留`source_route=seed_search`；指定账号保留`source_route=benchmark_video`与`discovery_route=specified_account`，路线不代表全文已读。
 
-完整报告沿`本次研究结果总览 → 选题决策看板 → 只借部件／不采用 → 现在最值得做的判断`的可见组织，部件仅限真实题面、发布介绍或标签表达，不借未知正文。之后呈现完整选题库与本轮变化，不把技术日志、数量或链接作为交付。
+面向使用者的选题调研结论只按[选题调研结论的对话呈现](#选题调研结论的对话呈现)组织；逐条研究与完整库记录在后台保留。
+
+## 选题调研结论的对话呈现
+
+先用一两句话给本轮结论：推荐哪些题，或目前没有符合标准的题；存在影响结论的覆盖缺口时同句说明范围。随后按推荐顺序逐题呈现，不把研究过程逐条抄进回复：
+
+- **题目**：用清楚、可直接讨论的题面作小标题，不显示内部对象ID。
+- **为什么值得写**：简要讲清读者的具体问题和本题价值，避免把广泛性、增量等内部检查项逐个列成标签。
+- **准备写什么**：用一两句话说明切入点和读者收获；尚未验证的设想明确标注。
+- **参考**：作者＋可点击原作标题；仅在会改变判断时补充关键数据或来源限制，不堆标签、观察时间和原始卡片全文。
+
+推荐之外，有价值且本轮新增或改变判断的储备合并成简短列表，每项只写题目、保留价值和暂不能推荐的关键原因／再次考虑条件；没有就省略。结尾仅保留影响本轮结论的缺口或确实待本人决定的事。0候选不凑题，只说明主要原因和有价值的保留项。
+
+结论直接写在当前对话中，不新建附件、报告链接、独立预览或交互卡片让本人另开阅读。默认不展示全部研究卡、逐词覆盖表、整个历史选题库、内部ID、文件路径、JSON字段、测试日志、哈希、耗时或重复摘要；这些在原运行记录与唯一主库保留供追溯。本人明确要求完整逐条清单或深研时，才在同一对话展开所需部分。简洁呈现不省略实际研究、准入和真实缺口，不把储备混成正式推荐。
+
+短视频只据标题、发布介绍、标签判断题面价值；作者口述观点和结构未知。研究范围相同的限制集中说明一次，单题仅补特殊缺口。
 
 ## 逐条拆解与发送前检查
 
-题面分析直接呈现五项，不再强制交付作者观点、论证或结构拆解。完整性检查从本次真实来源清单核对每张卡、范围、库行和下一步；格式PASS不证明真实性、候选质量或送达。
+下方五项是后台逐条研究记录和明确要求详细展开时的格式，不作为默认可见回复的逐卡模板。简洁回复用下述工具的concise模式核对拟呈现清单；完整研究记录另验，格式PASS不证明来源真实性、候选质量或送达。
 
 <!-- delivery-card-template:start -->
 ### 对标题面｜{对象ID}｜{标题或介绍原文}
@@ -100,7 +115,7 @@ description: 从对标账号与关键词的标题、介绍和标签寻找选题�
 当前储备/推荐状态、缺口及接续；作者正文观点、论证、案例、结构未验证。
 <!-- delivery-card-template:end -->
 
-同轮返回范围变化时沿同一记录追加实际增量，不整篇重复发送。用`check_short_video_research_delivery.py --stdin --expect <实际ID>`和完整找题的`--library-source`核对题面卡与全库呈现。
+同轮返回范围变化时沿同一记录追加实际增量，只呈现影响判断的变化。本项目默认以`short_video_research_ops.py render --presentation concise`生成简洁结论；明确要求完整卡片／全库时才用`--presentation detailed`。独立模式从本次真实记录组织同样的简洁回复，用自带`check_short_video_research_delivery.py --stdin --conclusion-items <拟展示清单JSON>`核对；清单每项为`title、source_refs`，仅0候选时可为空，内部清单不作为附件交付。发送凭据绑定本次拟展示的题目与来源，后台全量研究和主库完整性另验，不强制把每张卡与存量库搬到回复。
 
 ## 返回、停止与清理
 

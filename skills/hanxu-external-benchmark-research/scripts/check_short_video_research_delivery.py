@@ -4,6 +4,7 @@ from __future__ import annotations
 import argparse
 from collections import Counter
 import hashlib
+import json
 import re
 import sys
 from pathlib import Path
@@ -15,6 +16,29 @@ if not SKILL.exists():
     SKILL = ROOT / 'SKILL.md'
 FIELD = re.compile(r'^\*\*(\d+)\. ([^\n]+)\*\*\s*$', re.M)
 CARD = re.compile(r'^### (?:对标题面|对标拆解)｜([^｜\n]+)｜([^\n]+)$', re.M)
+
+def check_conclusion(text: str, items: list[dict]) -> list[str]:
+    """Check only the frozen visible recommendations, not all background cards."""
+    visible = visible_text(text)
+    errors = []
+    if not items:
+        return [] if '没有符合标准的正式候选' in visible else ['缺少0候选结论']
+    headings = list(re.finditer(r'^### \d+\. (.+)$', visible, re.M))
+    titles = [h.group(1).strip() for h in headings]
+    expected = [item['title'] for item in items]
+    if titles != expected:
+        errors.append('可见推荐题目与本次拟展示清单不符')
+    for h, item in zip(headings, items):
+        tail = visible[h.end():]
+        boundary = re.search(r'^#{1,3}\s', tail, re.M)
+        block = tail[:boundary.start()] if boundary else tail
+        for label in ['为什么值得写', '准备写什么', '参考']:
+            if not re.search(r'\*\*' + label + r'：\*\*\s*\S+', block):
+                errors.append(item['title'] + '：缺少' + label)
+        for ref in item.get('source_refs', []):
+            if ref not in block:
+                errors.append(item['title'] + '：缺少实际原作来源')
+    return errors
 
 def required_fields(skill_text: str) -> list[tuple[str, str]]:
     start = '<!-- delivery-card-template:start -->'
@@ -74,6 +98,8 @@ def check_library_rows(text: str, expected_ids: list[str], source: Path = DEFAUL
     # Historical deliveries retain their original ID-based receipt. New visible
     # tables omit IDs, so compare their titles against the internal source map.
     if not found:
+        if source is None:
+            return [f'回复正文缺少选题库行：{oid}' for oid in expected_ids]
         def plain(value):
             value = re.sub(r'\[([^\]]+)\]\([^)]+\)', r'\1', value)
             return re.sub(r'\s+', ' ', value.replace('`', '')).strip()
@@ -111,14 +137,18 @@ def main() -> int:
     source = parser.add_mutually_exclusive_group(required=True)
     source.add_argument('--file', type=Path, help='兼容旧运行记录中的草稿文件')
     source.add_argument('--stdin', action='store_true', help='从标准输入检查准备发送的完整回复')
-    parser.add_argument('--expect', nargs='+', required=True, help='来自实际候选／研究清单的对象ID')
+    parser.add_argument('--expect', nargs='+', help='详细卡片模式的实际对象ID')
     parser.add_argument('--library-source', type=Path, help='完整找题时提供唯一选题主库，检查回复正文是否列出每一条')
+    parser.add_argument('--conclusion-items', type=Path, help='简洁结论的拟展示清单JSON；不检查历史全库的可见覆盖')
     args = parser.parse_args()
+    if not args.conclusion_items and not args.expect:
+        parser.error('详细卡片模式需要--expect；简洁结论提供--conclusion-items')
     try:
         raw=(sys.stdin.buffer.read() if args.stdin else args.file.read_bytes())
         fields=required_fields(SKILL.read_text(encoding='utf-8'))
-        errors=check(raw.decode('utf-8'),args.expect,fields)
-        if args.library_source:
+        errors=(check_conclusion(raw.decode('utf-8'), json.loads(args.conclusion_items.read_text()))
+                if args.conclusion_items else check(raw.decode('utf-8'),args.expect,fields))
+        if args.library_source and not args.conclusion_items:
             if SKILL == ROOT / 'SKILL.md':
                 library_ids = re.findall(r'^\|\s*`(SVLIB-[^`|]+)`\s*\|', args.library_source.read_text(encoding='utf-8'), re.M)
                 if not library_ids:
