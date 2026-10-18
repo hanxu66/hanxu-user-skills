@@ -1,9 +1,9 @@
 {
   "name": "hanxu-external-benchmark-research",
   "display_name": "韩叙 · 短视频选题调研助手",
-  "version": "2026-10-18-mini-v27",
+  "version": "2026-10-18-mini-v28",
   "source_relative": "working-files/system-optimization/short-video-workflow-v3/skills/外部对标研究.md",
-  "source_sha256": "11a11aab4cb3668e6c3d709056ec0e9f44b55f37180ea9ebc9d93b5afd5dd818",
+  "source_sha256": "2332144498b4d32b973cd1d163479689fc1e9945ca208c9e80e613a0fca1026f",
   "reference_sources": [
     "working-files/system-optimization/short-video-workflow-v3/standards/选题执行标准.md"
   ],
@@ -11,7 +11,7 @@
     "tools/check_short_video_research_delivery.py"
   ],
   "reference_source_hashes": {
-    "working-files/system-optimization/short-video-workflow-v3/standards/选题执行标准.md": "f59b2fee57f7b1eafab0e81db6287976c54a335dec75f7424aa63729456027f9"
+    "working-files/system-optimization/short-video-workflow-v3/standards/选题执行标准.md": "263ece2338d387b0916a4de2a3c2ca048d8a693ccbfb38779256309c7b7f595d"
   },
   "script_source_hashes": {
     "tools/check_short_video_research_delivery.py": "a4109437f5851b8bae0040f6db24719044093af596b0cdcf0ccaaa0994c2f9b4"
@@ -29,12 +29,12 @@
   ],
   "dependency_source_hashes": {},
   "validation": "原方法修改已由本次任务回读与检查；导出结构、语法、链接、ZIP和远端文件另有同步收据。不是实际业务效果验证。",
-  "package_skill_sha256": "2ecf8debb1ed6415877559d68384b2484b5bade0e18f26ba7652267340e5241f",
+  "package_skill_sha256": "f45ce49f3feb605433cc20e00ee3f001300a47f2803d17a92e4e671b1c5c28f4",
   "package_files": {
     "README.md": "2bdaad7e3a06c9116455922620c0cae7fbb1d19bef2003c13b126cbf10921f8a",
-    "SKILL.md": "2ecf8debb1ed6415877559d68384b2484b5bade0e18f26ba7652267340e5241f",
+    "SKILL.md": "f45ce49f3feb605433cc20e00ee3f001300a47f2803d17a92e4e671b1c5c28f4",
     "agents/openai.yaml": "4f63844868ff2a3431b1b73bf314204b9f9b36421bbf8f363c85969654bebe40",
-    "references/选题执行标准.md": "45421948c7e720ae84e8f752ad618aff3f030247cfa9a065720e05069034e34d",
+    "references/选题执行标准.md": "270d29473fd0bc7eb5071958cf2bbf7793d1861506141cc7fb33ff48f921a280",
     "scripts/check_short_video_research_delivery.py": "a4109437f5851b8bae0040f6db24719044093af596b0cdcf0ccaaa0994c2f9b4"
   }
 }
