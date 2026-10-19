@@ -23,21 +23,77 @@ def check_conclusion(text: str, items: list[dict]) -> list[str]:
     errors = []
     if not items:
         return [] if '没有符合标准的正式候选' in visible else ['缺少0候选结论']
-    headings = list(re.finditer(r'^### \d+\. (.+)$', visible, re.M))
+    headings = list(re.finditer(r'^(?:### )?\d+\. (.+)$', visible, re.M))
     titles = [h.group(1).strip() for h in headings]
     expected = [item['title'] for item in items]
     if titles != expected:
         errors.append('可见推荐题目与本次拟展示清单不符')
     for h, item in zip(headings, items):
         tail = visible[h.end():]
-        boundary = re.search(r'^#{1,3}\s', tail, re.M)
+        boundary = re.search(r'^(?:#{1,3}\s|(?:### )?\d+\. |其他可选题|本轮其余新增)', tail, re.M)
         block = tail[:boundary.start()] if boundary else tail
-        for label in ['为什么值得写', '准备写什么', '参考']:
-            if not re.search(r'(?:\*\*)?' + label + r'：(\*\*)?\s*\S+', block):
-                errors.append(item['title'] + '：缺少' + label)
+        # Current approved prose need not carry the legacy three labels.
+        paragraphs = [p.strip() for p in block.split('\n\n') if p.strip()]
+        if len(paragraphs) < 3:
+            errors.append(item['title'] + '：缺少推荐理由、拟写方向或来源段落')
         for ref in item.get('source_refs', []):
             if ref not in block:
                 errors.append(item['title'] + '：缺少实际原作来源')
+    return errors
+
+
+def check_layered(text: str, contract: dict) -> list[str]:
+    """Check actual inline coverage against a frozen master and artifact hash.
+
+    This verifies presentation only, never semantic quality or user adoption.
+    A standalone attachment, missing fold, changed artifact or duplicate row
+    cannot satisfy coverage. The fragment is read as text and never executed.
+    """
+    errors = check_conclusion(text, contract['display_items'])
+    source = Path(contract['library_source_ref'])
+    if hashlib.sha256(source.read_bytes()).hexdigest() != contract['library_source_sha256']:
+        return errors + ['选题库凭据版本已变化']
+    titles = {}
+    for line in source.read_text().splitlines():
+        if not re.match(r'^\|\s*`SVLIB-', line): continue
+        cells = [c.strip() for c in re.split(r'(?<!\\)\|', line)[1:-1]]
+        if len(cells) != 9: return errors + ['主库字段异常']
+        titles[cells[0].strip('`')] = cells[3]
+    expected = contract['library_ids']
+    if len(expected) != len(set(expected)) or set(expected) != set(titles):
+        errors.append('冻结主库清单不完整或重复')
+    visible = visible_text(text)
+    actual = []
+    # Focus titles appear as numbered prose; remaining visible rows as tables.
+    for item in contract['display_items']:
+        actual.append(item['title'])
+    for line in visible.splitlines():
+        if not line.startswith('|'): continue
+        cells = [c.strip() for c in re.split(r'(?<!\\)\|', line)[1:-1]]
+        if len(cells) in {2, 3, 4, 6} and cells[0] in titles.values(): actual.append(cells[0])
+    for fragment in contract.get('inline_fragments', []):
+        path = Path(fragment['path'])
+        marker = 'visualize' + json.dumps({'path': str(path)}, ensure_ascii=False, separators=(',', ':')) + ''
+        if marker not in visible:
+            errors.append('回复缺少绑定的对话内折叠呈现'); continue
+        if not path.is_file() or hashlib.sha256(path.read_bytes()).hexdigest() != fragment['sha256']:
+            errors.append('折叠内容缺失或版本已变化'); continue
+        html = path.read_text()
+        if re.search(r'<details\b[^>]*\bopen(?:\s|=|>)', html): errors.append('折叠未默认关闭')
+        match = re.search(r'<script type="application/json"[^>]*>(.*?)</script>', html, re.S)
+        if not match: errors.append('折叠无可核对的实际行'); continue
+        data = json.loads(match.group(1))
+        rows = [row for group in data.values() for row in group]
+        if [row['id'] for row in rows] != fragment['library_ids']:
+            errors.append('折叠行与冻结清单不符')
+        for row in rows:
+            if titles.get(row['id']) != row['title']: errors.append('折叠题目与主库不符：' + row['id'])
+            actual.append(row['title'])
+    wanted = Counter(titles.values())
+    got = Counter(actual)
+    errors += ['缺少主库题目：' + t for t in (wanted - got).elements()]
+    errors += ['重复或非主库题目：' + t for t in (got - wanted).elements()]
+    if len(contract['display_items']) > 3: errors.append('重点推荐超过3题')
     return errors
 
 def required_fields(skill_text: str) -> list[tuple[str, str]]:
