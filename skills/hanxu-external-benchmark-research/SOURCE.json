@@ -1,9 +1,9 @@
 {
   "name": "hanxu-external-benchmark-research",
   "display_name": "韩叙 · 短视频选题调研助手",
-  "version": "2026-10-20-mini-v33",
+  "version": "2026-10-20-mini-v34",
   "source_relative": "working-files/system-optimization/short-video-workflow-v3/skills/外部对标研究.md",
-  "source_sha256": "392e0df693f9303fe7854a82b52ee6fb1c0dc260bb963fff5a8684eb02e4a21f",
+  "source_sha256": "e0afb8b5bc03b27e39b443d44833dcd5231697aad1797aa42c8834fe8e770b35",
   "reference_sources": [
     "working-files/system-optimization/short-video-workflow-v3/standards/选题执行标准.md"
   ],
@@ -29,10 +29,10 @@
   ],
   "dependency_source_hashes": {},
   "validation": "原方法修改已由本次任务回读与检查；导出结构、语法、链接、ZIP和远端文件另有同步收据。不是实际业务效果验证。",
-  "package_skill_sha256": "0711675b5275d486550eb1425a8ccbb9643bc4234d13c1fd2f019eb106506611",
+  "package_skill_sha256": "599506cc7b61c3ab5687eb14e3132875a200d3b87fbbc457d43f7b940231b73f",
   "package_files": {
     "README.md": "2bdaad7e3a06c9116455922620c0cae7fbb1d19bef2003c13b126cbf10921f8a",
-    "SKILL.md": "0711675b5275d486550eb1425a8ccbb9643bc4234d13c1fd2f019eb106506611",
+    "SKILL.md": "599506cc7b61c3ab5687eb14e3132875a200d3b87fbbc457d43f7b940231b73f",
     "agents/openai.yaml": "4f63844868ff2a3431b1b73bf314204b9f9b36421bbf8f363c85969654bebe40",
     "references/选题执行标准.md": "deee061b029a1785ef09d3239ee77957d7148084268a7df0c397261214d9b7d4",
     "scripts/check_short_video_research_delivery.py": "e14a3f3f3ab7005c4b82c127b45108c6643a02eb01f3d611e349329020ce084e"
