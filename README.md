@@ -2,7 +2,7 @@
 
 把你的选题、观点、文章和视频素材，交给电脑上的 AI，按韩叙的方法完成具体内容任务。
 
-**先选你要做的事，再下载对应助手。** 每个助手都可以单独安装，不需要安装整套经营系统。版本：2026-10-20-mini-v36。
+**先选你要做的事，再下载对应助手。** 每个助手都可以单独安装，不需要安装整套经营系统。版本：2026-10-20-mini-v37。
 
 | 助手名称 | 什么时候用 | 安装包 |
 |---|---|---|
@@ -14,7 +14,7 @@
 | [公众号封面制作助手](skills/hanxu-public-account-series-visual/README.md) | 文章标题已定，需要统一风格的公众号封面或正文头图。 | [下载 ZIP](packages/hanxu-public-account-series-visual.zip) |
 | [口播视频剪辑助手](skills/hanxu-talking-head-edit/README.md) | 已经录好单人口播，想剪掉重复和停顿，整理字幕并完成包装。 | [下载 ZIP](packages/hanxu-talking-head-edit.zip) |
 
-[一次下载七个助手](packages/hanxu-seven-user-skills-mini-v36.zip) · [文件校验值](packages/SHA256SUMS.txt)
+[一次下载七个助手](packages/hanxu-seven-user-skills-mini-v37.zip) · [文件校验值](packages/SHA256SUMS.txt)
 
 ## 第一次使用怎么做
 

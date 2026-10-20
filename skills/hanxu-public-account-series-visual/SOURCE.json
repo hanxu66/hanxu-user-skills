@@ -1,7 +1,7 @@
 {
   "name": "hanxu-public-account-series-visual",
   "display_name": "韩叙 · 公众号封面制作助手",
-  "version": "2026-10-20-mini-v36",
+  "version": "2026-10-20-mini-v37",
   "source_relative": "working-files/system-optimization/public-account-workflow-v3/skills/公众号系列双图生成.md",
   "source_sha256": "b729ed397e961dc9c91a77a5d3c04f744f81fa9f1cafe5217be975077201a286",
   "reference_sources": [
@@ -12,7 +12,7 @@
     "working-files/content-production/PA-2026-08-17-01-more-effort-less-human/series-visual-template-v0.1/render-series-visuals.mjs"
   ],
   "reference_source_hashes": {
-    "working-files/system-optimization/public-account-workflow-v3/standards/发布准备执行标准.md": "f0fe0463f940a9783365eac9453faac62b53ac38635483e8c534a7389992c7c3"
+    "working-files/system-optimization/public-account-workflow-v3/standards/发布准备执行标准.md": "15dcb429ae06420e59e4df96c87ac920da36bdd12379d1181c3568a3685ce922"
   },
   "script_source_hashes": {
     "tools/render_public_account_series_visual.py": "5440f03f6902a1db3192bde49b53666b5ade66db6195ed10a306da2a545bf01a",
@@ -40,7 +40,7 @@
     "agents/openai.yaml": "2f96e495cdf09c0f545911f3e25ed37512fd52cfbf0f38c3fe7b14970f7933c5",
     "assets/series-template/render-series-visuals.mjs": "6bc32ff68071fba65b44a1b063253217b79d3088213ba348dbfe89cc0fed7653",
     "package.json": "b56da6b5066c952893d9ad6fb70723ce74805193358ad513c6a0d482d67624f9",
-    "references/发布准备执行标准.md": "e5aac3cdf8668b79ba7dffb8d730156ea0705735507ce4fd0981e28b2e0ef855",
+    "references/发布准备执行标准.md": "fa57801eec9454aa57e25ec11c21de1b35e35768d46fd5286eabf148c6f7f10c",
     "scripts/render_public_account_series_visual.py": "5440f03f6902a1db3192bde49b53666b5ade66db6195ed10a306da2a545bf01a"
   }
 }

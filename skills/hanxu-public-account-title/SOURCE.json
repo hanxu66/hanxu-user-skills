@@ -1,17 +1,17 @@
 {
   "name": "hanxu-public-account-title",
   "display_name": "韩叙 · 公众号标题助手",
-  "version": "2026-10-20-mini-v36",
+  "version": "2026-10-20-mini-v37",
   "source_relative": "working-files/system-optimization/public-account-workflow-v3/skills/标题生成.md",
-  "source_sha256": "3ade7c06c614ee442fc7107d0a938b2eec02fafafd395811ded945639e8d45c2",
+  "source_sha256": "64a5b53ef6859019061e195178f8b0883674edc4608f88bb7aff064bd1fb8859",
   "reference_sources": [
     "working-files/system-optimization/public-account-workflow-v3/standards/发布准备执行标准.md",
     "working-files/system-optimization/public-account-workflow-v3/skills/标题研究.md"
   ],
   "script_sources": [],
   "reference_source_hashes": {
-    "working-files/system-optimization/public-account-workflow-v3/standards/发布准备执行标准.md": "f0fe0463f940a9783365eac9453faac62b53ac38635483e8c534a7389992c7c3",
-    "working-files/system-optimization/public-account-workflow-v3/skills/标题研究.md": "3c9d992dc1c7a7d02233bd865d59cad75799b50c768daf2ae2b4c421eb7872f0"
+    "working-files/system-optimization/public-account-workflow-v3/standards/发布准备执行标准.md": "15dcb429ae06420e59e4df96c87ac920da36bdd12379d1181c3568a3685ce922",
+    "working-files/system-optimization/public-account-workflow-v3/skills/标题研究.md": "05c2cc441d5e1668b097d75ae14851b95426b245b6a18b0286509dc9abd2fe31"
   },
   "script_source_hashes": {},
   "original_type": "Skill",
@@ -27,12 +27,12 @@
   ],
   "dependency_source_hashes": {},
   "validation": "原方法修改已由本次任务回读与检查；导出结构、语法、链接、ZIP和远端文件另有同步收据。不是实际业务效果验证。",
-  "package_skill_sha256": "b53f70c6bf422a4467af1cb97cb3b04f0e76ddaf627fe76bb25177c6eb161208",
+  "package_skill_sha256": "e4f1a4b7fc7b9fb5f2d9c918ace7535bc82e3673ee7b0f5ad7b7ee15ee24af8e",
   "package_files": {
     "README.md": "4744f5ff0f20f5035bb50f182db04e13236d30915de096eeec41d3fe7963637c",
-    "SKILL.md": "b53f70c6bf422a4467af1cb97cb3b04f0e76ddaf627fe76bb25177c6eb161208",
+    "SKILL.md": "e4f1a4b7fc7b9fb5f2d9c918ace7535bc82e3673ee7b0f5ad7b7ee15ee24af8e",
     "agents/openai.yaml": "2f400c175c898ad93b28f14ac8cca9ea66793377f57ec3889c18a5e387c6c543",
-    "references/发布准备执行标准.md": "6141880c54e137de1d45283b029be2a95ddae70820f961fff8617debbeba693a",
-    "references/标题研究.md": "87c4ff216d2ecb18fedcdccbebe57e69b1d28b33cfd2ffffe0dec7c1737ac1a1"
+    "references/发布准备执行标准.md": "2f91159ff98d7d53460ad01903dd75c27d3e78d6a448dc7985c3e842e436fedc",
+    "references/标题研究.md": "b809f363954a909a289dbbc2b54e5c59f3b362690aa7f5c51ab37ebbff2340a9"
   }
 }
