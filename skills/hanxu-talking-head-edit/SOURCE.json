@@ -1,27 +1,29 @@
 {
   "name": "hanxu-talking-head-edit",
   "display_name": "韩叙 · 口播视频剪辑助手",
-  "version": "2026-10-20-mini-v36",
+  "version": "2026-10-21-mini-v38",
   "source_relative": "working-files/system-optimization/short-video-workflow-v3/skills/口播剪辑.md",
-  "source_sha256": "648cfb87c890aa3d62031ec9ca5d110c7e38a9aa457e14be24665b491b43f3a1",
+  "source_sha256": "837561c013a54cede56cebdc83c8c366ef30263a67de774384f13daf40dbc3be",
   "reference_sources": [
     "working-files/system-optimization/short-video-workflow-v3/standards/剪辑执行标准.md",
     "working-files/system-optimization/short-video-workflow-v3/skills/references/动画类型与分镜方法.md",
     "working-files/system-optimization/short-video-workflow-v3/skills/产品介绍视频.md"
   ],
   "script_sources": [
-    "tools/inspect_video_editing_environment.py"
+    "tools/inspect_video_editing_environment.py",
+    "tools/check_subtitle_width.py"
   ],
   "reference_source_hashes": {
-    "working-files/system-optimization/short-video-workflow-v3/standards/剪辑执行标准.md": "e07bd0e633082ae4828f94fd30fa09971188b3d3e39c54e53375986b27db2f99",
+    "working-files/system-optimization/short-video-workflow-v3/standards/剪辑执行标准.md": "118921122e75fc4cfcc4897e17741b7df964102bc2725bfaf0e0ef3dec90f0e9",
     "working-files/system-optimization/short-video-workflow-v3/skills/references/动画类型与分镜方法.md": "7a67046d9024def6ece5d1c729e983d80b0aeaa49b92f724d0e6f30d8616ed45",
     "working-files/system-optimization/short-video-workflow-v3/skills/产品介绍视频.md": "acb540a5bf984a44af2289e2d86545f2cafa3c3a8c57d10448dcfc9f39ea885a"
   },
   "script_source_hashes": {
-    "tools/inspect_video_editing_environment.py": "164f9462f0fb479867c9afa813a9fbec556a1c2f2caf28149ea7c1b530f2cd2b"
+    "tools/inspect_video_editing_environment.py": "164f9462f0fb479867c9afa813a9fbec556a1c2f2caf28149ea7c1b530f2cd2b",
+    "tools/check_subtitle_width.py": "a1fc888d0d4089405eb9a090a0a1d1728b76a2f8a7f82b7943457b72c79c2459"
   },
   "original_type": "Skill",
-  "dependencies": "ChatCut Desktop及当前可用集成、剪映专业版、原片/转写；只读资源检查使用Python3标准库，不含剪辑引擎",
+  "dependencies": "ChatCut Desktop及当前可用集成、剪映专业版、原片/转写；只读资源检查使用Python3标准库，字宽预检使用Python3及Pillow；字体与校准证据由用户提供，不含字体或剪辑引擎",
   "cost": "Codex使用额度；工具或平台另按实际订阅/费用，不预估价格",
   "license": "未设定商业许可/定价；没有自动赋予开源或转授权",
   "export_transformations": [
@@ -33,14 +35,15 @@
   ],
   "dependency_source_hashes": {},
   "validation": "原方法修改已由本次任务回读与检查；导出结构、语法、链接、ZIP和远端文件另有同步收据。不是实际业务效果验证。",
-  "package_skill_sha256": "0427b92a5fdb6ce3ec2ef7c94151db03c50e10b98cdc7776cf7b1eadc49c29ec",
+  "package_skill_sha256": "040ee929a872a53c18a6998f622db5c9c9d3551f1334e18d3e52ba22cf443fae",
   "package_files": {
     "README.md": "34359955f0a00ba98d5b0bacf39f6d0d7b774a8b2e2e3d498a830a72b5d30732",
-    "SKILL.md": "0427b92a5fdb6ce3ec2ef7c94151db03c50e10b98cdc7776cf7b1eadc49c29ec",
+    "SKILL.md": "040ee929a872a53c18a6998f622db5c9c9d3551f1334e18d3e52ba22cf443fae",
     "agents/openai.yaml": "42ba126808f381a62f5a53359b81c555e270a9ab347bfbb1688aa0a1829857d2",
     "references/产品介绍视频.md": "79438ab6b953b0ae4f70ffcc5b135be6f12fc442d0cb2293973f1c8307813a0b",
-    "references/剪辑执行标准.md": "e6e0db716e53235c7666fd88e635bc6dc19e41df8818f291abe886885367b11b",
+    "references/剪辑执行标准.md": "aeff67a4e99e4ff00ee22290d5494acc50b8fe795c69409aeb18ff3924ed59d3",
     "references/动画类型与分镜方法.md": "7a67046d9024def6ece5d1c729e983d80b0aeaa49b92f724d0e6f30d8616ed45",
+    "scripts/check_subtitle_width.py": "a1fc888d0d4089405eb9a090a0a1d1728b76a2f8a7f82b7943457b72c79c2459",
     "scripts/inspect_video_editing_environment.py": "164f9462f0fb479867c9afa813a9fbec556a1c2f2caf28149ea7c1b530f2cd2b"
   }
 }
