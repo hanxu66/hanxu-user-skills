@@ -1,7 +1,7 @@
 {
   "name": "hanxu-xiaohongshu-visual",
   "display_name": "韩叙 · 小红书图文制作助手",
-  "version": "2026-10-21-mini-v38",
+  "version": "2026-10-22-mini-v40",
   "source_relative": "working-files/system-optimization/xiaohongshu-workflow-v3/agents/视觉制作Agent.md",
   "source_sha256": "54ff62218881f243e08446bab45ab20ede5d7ca2776a712ba12d19fdb53d2e11",
   "reference_sources": [

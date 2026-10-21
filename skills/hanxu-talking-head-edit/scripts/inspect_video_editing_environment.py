@@ -79,21 +79,34 @@ def main():
                         help="Existing system/cache/export directory; repeat for volumes")
     parser.add_argument("--min-free-gb", type=nonnegative, default=5,
                         help="GiB floor, default 5; configurable capacity budget, not app guarantee")
-    parser.add_argument("--reserve-gb", type=nonnegative, default=0,
+    estimates = parser.add_mutually_exclusive_group()
+    estimates.add_argument("--reserve-gb", type=nonnegative, default=0,
                         help="Additional estimated remaining output/cache GiB per volume")
+    estimates.add_argument("--budget-plan", type=Path,
+                          help="Explicit per-volume native/remux/retry/temp remaining-work JSON")
     args = parser.parse_args()
     try:
-        volumes = capacity(args.path, args.min_free_gb, args.reserve_gb)
-    except (OSError, ValueError) as exc:
+        budget_report = None
+        if args.budget_plan:
+            from manage_video_editing_run import budget
+            plan = args.budget_plan.resolve()
+            budget_report = budget(json.loads(plan.read_text()), plan.parent,
+                                   extra_paths=args.path, minimum_gib=args.min_free_gb)
+            volumes = budget_report['volumes']
+        else:
+            volumes = capacity(args.path, args.min_free_gb, args.reserve_gb)
+    except (OSError, ValueError, KeyError, TypeError) as exc:
         print(json.dumps({"capacityStatus": "unknown", "error": str(exc)}))
         return 1
     sufficient = all(item["sufficient"] for item in volumes)
     report = {"observedAt": datetime.now(timezone.utc).isoformat(),
               "capacityStatus": "sufficient" if sufficient else "insufficient",
-              "minFreeGiB": args.min_free_gb, "reserveGiB": args.reserve_gb,
-              "remainingWorkEstimateProvided": args.reserve_gb > 0,
+              "minFreeGiB": args.min_free_gb, "reserveGiB": None if budget_report else args.reserve_gb,
+              "remainingWorkEstimateProvided": bool(budget_report) or args.reserve_gb > 0,
               "volumes": volumes, "processes": app_observation(),
               "applicationHealth": "not_tested"}
+    if budget_report:
+        report['remainingWorkBudget'] = budget_report
     if platform.system() == "Darwin":
         report["swap"] = observation(["sysctl", "vm.swapusage"])
     print(json.dumps(report, ensure_ascii=False, indent=2))
