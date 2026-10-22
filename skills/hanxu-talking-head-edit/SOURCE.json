@@ -1,7 +1,7 @@
 {
   "name": "hanxu-talking-head-edit",
   "display_name": "韩叙 · 口播视频剪辑助手",
-  "version": "2026-10-22-mini-v41",
+  "version": "2026-10-22-mini-v42",
   "source_relative": "working-files/system-optimization/short-video-workflow-v3/skills/口播剪辑.md",
   "source_sha256": "fa4a9c2953ce5e6a0aa8fa02dfedf730a81e0383605ef7a3671801a9fbf3e26e",
   "reference_sources": [
@@ -31,7 +31,7 @@
     "tools/check_subtitle_render.py": "d8c538cf4c32ebf431565de45ee01645f87556037f106809c2ff3f23c46f70be",
     "tools/manage_video_editing_run.py": "cdefd6c7319476afb76ea8cfb286d9bb8a841c064150d2fb1bece335784f4226",
     "tools/check_video_export.py": "72ece89f6466de6ada28015b6abc29a3f5dfedb801df56c2a26a04ac0a0255c2",
-    "tools/check_video_timeline.py": "d3b64777828a671633c32dbfeeaefbdbdd929fd308310606e146292ecd4aa8de",
+    "tools/check_video_timeline.py": "3089f4472729b5039dbfecee81ee36ff8bd7ff61e2e7dc5bb185fa29085efcae",
     "tools/manage_native_video_handoff.py": "e2d5d6625aa92ab0e84a475055d462954c8ff9057e1c29ef6e48892c78e867c0"
   },
   "original_type": "Skill",
@@ -59,7 +59,7 @@
     "scripts/check_subtitle_render.py": "d8c538cf4c32ebf431565de45ee01645f87556037f106809c2ff3f23c46f70be",
     "scripts/check_subtitle_width.py": "a1fc888d0d4089405eb9a090a0a1d1728b76a2f8a7f82b7943457b72c79c2459",
     "scripts/check_video_export.py": "72ece89f6466de6ada28015b6abc29a3f5dfedb801df56c2a26a04ac0a0255c2",
-    "scripts/check_video_timeline.py": "d3b64777828a671633c32dbfeeaefbdbdd929fd308310606e146292ecd4aa8de",
+    "scripts/check_video_timeline.py": "3089f4472729b5039dbfecee81ee36ff8bd7ff61e2e7dc5bb185fa29085efcae",
     "scripts/inspect_video_editing_environment.py": "5ed88d5781f4c13605e9f760835af4a344b4c34c9c114d9837290b671b29c909",
     "scripts/manage_native_video_handoff.py": "e2d5d6625aa92ab0e84a475055d462954c8ff9057e1c29ef6e48892c78e867c0",
     "scripts/manage_video_editing_run.py": "cdefd6c7319476afb76ea8cfb286d9bb8a841c064150d2fb1bece335784f4226"

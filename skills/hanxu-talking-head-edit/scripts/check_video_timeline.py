@@ -66,7 +66,9 @@ def check(snapshot,readbacks,plan,sources,rate):
             if abs(number(rb['playbackRate'],True)-rate)>1e-8:item_errors.append('playback_rate')
             if rb['startFrame']!=first or rb['durationFrames']!=count:item_errors.append('item_timeline_disagrees')
             if abs(number(rb['sourceIn'])-a)>1:item_errors.append('item_source_start_disagrees')
-            if not asset.replace('-','').startswith(str(rb['assetId']).replace('-','')):item_errors.append('item_asset_disagrees')
+            full_asset=asset.replace('-','');read_asset=str(rb['assetId']).replace('-','')
+            if len(read_asset)<min(10,len(full_asset)) or not full_asset.startswith(read_asset):
+                item_errors.append('item_asset_disagrees')
         if abs((b-a)-count/fps*rate*1e6)>2:item_errors.append('source_span_vs_duration_rate')
         locked=expected.get(ident)
         if locked:
