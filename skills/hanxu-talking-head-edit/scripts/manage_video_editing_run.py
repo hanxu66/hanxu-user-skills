@@ -8,7 +8,10 @@ import argparse
 import hashlib
 import json
 import math
+import os
 import shutil
+import subprocess
+import sys
 import time
 from datetime import datetime, timezone
 from pathlib import Path
@@ -71,13 +74,27 @@ def budget(plan, base=Path('.'), extra_paths=(), minimum_gib=5):
 def init(record, revision, requirements):
     if set(requirements)!=CHECKS:raise ValueError('Requirements must explicitly cover all nine packaging checks')
     if record.get('revision',revision)!=revision:raise ValueError('Record revision differs')
-    if 'editingExecution' in record:raise ValueError('Checklist exists; invalidate affected keys instead of resetting')
+    existing=record.get('editingExecution')
+    if existing and (existing.get('requirements') is not None or existing['revision']!=revision):
+        raise ValueError('Checklist exists; invalidate affected keys instead of resetting')
     for key,row in requirements.items():
         if not isinstance(row.get('required'),bool):raise ValueError('required must be boolean')
         if row['required'] and row.get('target') is None:raise ValueError('Required target missing')
         if not row['required'] and not row.get('reason'):raise ValueError('Not-applicable reason missing')
-    record['editingExecution']={'revision':revision,'createdAt':now(),'requirements':requirements,
-                                'checks':{},'intervals':[],'openTimer':None,'history':[]}
+    if not existing:record['editingExecution']=execution(revision)
+    record['editingExecution']['requirements']=requirements
+
+
+def execution(revision):
+    return {'revision':revision,'createdAt':now(),'requirements':None,
+            'checks':{},'intervals':[],'openTimer':None,'history':[]}
+
+
+def begin(record,revision,phase,category):
+    if record.get('revision',revision)!=revision:raise ValueError('Record revision differs')
+    if 'editingExecution' not in record:record['editingExecution']=execution(revision)
+    if record['editingExecution']['revision']!=revision:raise ValueError('Execution revision differs')
+    timer_start(record,phase,category)
 
 
 def verify(record,key,actual,evidence,scope):
@@ -96,6 +113,8 @@ def verify(record,key,actual,evidence,scope):
 
 def checklist(record):
     e=record['editingExecution'];pending=[]
+    if e.get('requirements') is None:
+        return {'status':'packaging_incomplete','pending':sorted(CHECKS),'reason':'Targets not configured yet; timing may already run'}
     for key,req in e['requirements'].items():
         if not req['required']:continue
         check=e['checks'].get(key,{})
@@ -109,20 +128,50 @@ def checklist(record):
             'limits':'Record completeness only; native UI and visual truth, current capacity, exported file and playback still need their own checks'}
 
 
+def boot_id():
+    """Best-effort reboot boundary; never persist a process-local clock as elapsed time."""
+    try:
+        if sys.platform=='linux':return Path('/proc/sys/kernel/random/boot_id').read_text().strip()
+        if sys.platform=='darwin':
+            return subprocess.check_output(['/usr/sbin/sysctl','-n','kern.bootsessionuuid'],
+                                           stderr=subprocess.DEVNULL,timeout=2).decode().strip() or None
+    except (OSError,subprocess.SubprocessError):pass
+    return None
+
+
 def timer_start(record,phase,category):
     e=record['editingExecution']
     if e['openTimer']:raise ValueError('Stop the current interval before starting another; no overlapping totals')
     if category not in CATEGORIES or not phase.strip():raise ValueError('Invalid phase/category')
-    e['openTimer']={'phase':phase,'category':category,'startedAt':now(),'monotonicStart':time.monotonic()}
+    e['openTimer']={'phase':phase,'category':category,'startedAt':now(),
+                    'clockSource':'utc-wall','pid':os.getpid(),'bootId':boot_id(),
+                    'monotonicStart':time.monotonic()}
 
 
 def timer_stop(record):
     e=record['editingExecution'];opened=e['openTimer']
     if not opened:raise ValueError('No open timer; historical time cannot be reconstructed')
-    end=now();seconds=time.monotonic()-opened['monotonicStart']
-    wall=(datetime.fromisoformat(end)-datetime.fromisoformat(opened['startedAt'])).total_seconds()
-    if seconds<0 or abs(seconds-wall)>5:raise ValueError('Clock/reboot mismatch; interval remains unverified')
-    e['intervals'].append({**{k:v for k,v in opened.items() if k!='monotonicStart'},'endedAt':end,'seconds':seconds})
+    if opened.get('clockSource')!='utc-wall':
+        raise ValueError('Legacy timer is unverified; timer-abandon preserves it without reconstructing history')
+    end=now();seconds=(datetime.fromisoformat(end)-datetime.fromisoformat(opened['startedAt'])).total_seconds()
+    current_boot=boot_id()
+    if seconds<0 or (opened.get('bootId') and current_boot and opened['bootId']!=current_boot):
+        raise ValueError('Clock/reboot mismatch; interval remains unverified')
+    # Some executors give each child process its own monotonic origin. Compare
+    # monotonic only inside the SAME process, never across persisted CLI calls.
+    if opened.get('pid')==os.getpid() and abs(time.monotonic()-opened['monotonicStart']-seconds)>5:
+        raise ValueError('Clock mismatch within process; interval remains unverified')
+    e['intervals'].append({**{k:v for k,v in opened.items() if k!='monotonicStart'},
+                          'endedAt':end,'seconds':seconds,
+                          'clockVerification':'boot-id-matched' if current_boot and opened.get('bootId') else 'boot-id-unavailable'})
+    e['openTimer']=None
+
+
+def timer_abandon(record,reason):
+    e=record['editingExecution']
+    if not e['openTimer'] or not reason.strip():raise ValueError('Open interval and explicit reason required')
+    e.setdefault('unverifiedIntervals',[]).append({**e['openTimer'],'endedAt':now(),
+                                                  'reason':reason,'duration':None})
     e['openTimer']=None
 
 
@@ -133,33 +182,40 @@ def summary(record):
         phases[row['phase']]=phases.get(row['phase'],0)+row['seconds']
     return {'coverageSince':e['createdAt'],'measuredSecondsByCategory':totals,'measuredSecondsByPhase':phases,
             'openInterval':e['openTimer'],'unrecordedHistoricalTime':'unknown, not zero',
-            'scope':'exclusive wall intervals; machine subprocess durations reported separately, not added to AI active time'}
+            'unverifiedIntervals':e.get('unverifiedIntervals',[]),
+            'scope':'exclusive UTC wall intervals; boot boundaries checked when available; cross-process forward wall-clock changes cannot always be detected; machine durations separate, no historical backfill'}
 
 
 def main():
     p=argparse.ArgumentParser(description=__doc__);sub=p.add_subparsers(dest='command',required=True)
     b=sub.add_parser('budget');b.add_argument('--plan',required=True);b.add_argument('--output',required=True);b.add_argument('--min-free-gib',type=float,default=5)
-    for name in ['init','verify','invalidate','checklist','timer-start','timer-stop','summary']:
+    for name in ['begin','init','verify','invalidate','checklist','timer-start','timer-switch','timer-stop','timer-abandon','summary']:
         q=sub.add_parser(name);q.add_argument('--record',required=True)
         if name=='init':q.add_argument('--revision',required=True);q.add_argument('--requirements',required=True)
+        if name=='begin':q.add_argument('--revision',required=True)
         if name=='verify':
             q.add_argument('--key',choices=sorted(CHECKS),required=True);q.add_argument('--actual',required=True);q.add_argument('--evidence',action='append',required=True);q.add_argument('--scope',required=True)
         if name=='invalidate':q.add_argument('--key',choices=sorted(CHECKS),required=True);q.add_argument('--reason',required=True)
-        if name=='timer-start':q.add_argument('--phase',required=True);q.add_argument('--category',choices=sorted(CATEGORIES),required=True)
+        if name in {'begin','timer-start','timer-switch'}:q.add_argument('--phase',required=True);q.add_argument('--category',choices=sorted(CATEGORIES),required=True)
+        if name=='timer-abandon':q.add_argument('--reason',required=True)
     a=p.parse_args()
     try:
         if a.command=='budget':
             f=Path(a.plan).resolve();result=budget(json.loads(f.read_text()),f.parent,minimum_gib=a.min_free_gib);Path(a.output).write_text(json.dumps(result,ensure_ascii=False,indent=2));print(json.dumps(result,ensure_ascii=False));return 0 if result['status']=='sufficient' else 2
         path=Path(a.record);record=json.loads(path.read_text()) if path.exists() else {}
-        if a.command=='init':init(record,a.revision,json.loads(Path(a.requirements).read_text()))
+        if a.command=='begin':begin(record,a.revision,a.phase,a.category)
+        elif a.command=='init':init(record,a.revision,json.loads(Path(a.requirements).read_text()))
         elif a.command=='verify':verify(record,a.key,json.loads(Path(a.actual).read_text()),a.evidence,a.scope)
         elif a.command=='invalidate':
             e=record['editingExecution'];e['checks'].pop(a.key,None);e['history'].append({'at':now(),'invalidated':a.key,'reason':a.reason})
         elif a.command=='timer-start':timer_start(record,a.phase,a.category)
+        elif a.command=='timer-switch':
+            timer_stop(record);timer_start(record,a.phase,a.category)
         elif a.command=='timer-stop':timer_stop(record)
+        elif a.command=='timer-abandon':timer_abandon(record,a.reason)
         if a.command not in {'checklist','summary'}:
             tmp=path.with_name(path.name+'.tmp');tmp.write_text(json.dumps(record,ensure_ascii=False,indent=2));tmp.replace(path)
-        result=summary(record) if a.command in {'summary','timer-start','timer-stop'} else checklist(record)
+        result=summary(record) if a.command in {'summary','begin','timer-start','timer-switch','timer-stop','timer-abandon'} else checklist(record)
         print(json.dumps(result,ensure_ascii=False))
         return 1 if ((a.command=='checklist' and result.get('pending')) or
                      (a.command=='verify' and not record['editingExecution']['checks'][a.key]['matchesTarget'])) else 0
