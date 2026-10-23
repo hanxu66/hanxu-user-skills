@@ -1,9 +1,9 @@
 {
   "name": "hanxu-talking-head-edit",
   "display_name": "韩叙 · 口播视频剪辑助手",
-  "version": "2026-10-22-mini-v42",
+  "version": "2026-10-24-mini-v43",
   "source_relative": "working-files/system-optimization/short-video-workflow-v3/skills/口播剪辑.md",
-  "source_sha256": "fa4a9c2953ce5e6a0aa8fa02dfedf730a81e0383605ef7a3671801a9fbf3e26e",
+  "source_sha256": "188b60df228fe051244e707eb9fec2ed255c38bb7cc10d8d81621ea5cd83c78c",
   "reference_sources": [
     "working-files/system-optimization/short-video-workflow-v3/standards/剪辑执行标准.md",
     "working-files/system-optimization/short-video-workflow-v3/skills/references/动画类型与分镜方法.md",
@@ -17,13 +17,14 @@
     "tools/manage_video_editing_run.py",
     "tools/check_video_export.py",
     "tools/check_video_timeline.py",
+    "tools/check_video_revision.py",
     "tools/manage_native_video_handoff.py"
   ],
   "reference_source_hashes": {
-    "working-files/system-optimization/short-video-workflow-v3/standards/剪辑执行标准.md": "cfff3aeda5ab9767655cb174fd8d3dcc9f93f2535f25609d8e8445fc1e481334",
+    "working-files/system-optimization/short-video-workflow-v3/standards/剪辑执行标准.md": "add732b7621c6cbb39614251f3d979d16f4b3da460c1489a2bef06ce2e35f9a2",
     "working-files/system-optimization/short-video-workflow-v3/skills/references/动画类型与分镜方法.md": "7a67046d9024def6ece5d1c729e983d80b0aeaa49b92f724d0e6f30d8616ed45",
     "working-files/system-optimization/short-video-workflow-v3/skills/产品介绍视频.md": "acb540a5bf984a44af2289e2d86545f2cafa3c3a8c57d10448dcfc9f39ea885a",
-    "working-files/system-optimization/short-video-workflow-v3/skills/references/字幕批量质检与执行记录.md": "4d398430b122eac04f6295a27c4d3056a7be9220b8946b76d43339e6cbf123c8"
+    "working-files/system-optimization/short-video-workflow-v3/skills/references/字幕批量质检与执行记录.md": "76a86da4a49fb6d78d46b06a9d585831e5051b440b84133e9250990316e32b7f"
   },
   "script_source_hashes": {
     "tools/inspect_video_editing_environment.py": "5ed88d5781f4c13605e9f760835af4a344b4c34c9c114d9837290b671b29c909",
@@ -32,6 +33,7 @@
     "tools/manage_video_editing_run.py": "cdefd6c7319476afb76ea8cfb286d9bb8a841c064150d2fb1bece335784f4226",
     "tools/check_video_export.py": "72ece89f6466de6ada28015b6abc29a3f5dfedb801df56c2a26a04ac0a0255c2",
     "tools/check_video_timeline.py": "3089f4472729b5039dbfecee81ee36ff8bd7ff61e2e7dc5bb185fa29085efcae",
+    "tools/check_video_revision.py": "1463b44441a1415e5a1933aac3b572261968b16b7dec82fefa21bdbb2dad7666",
     "tools/manage_native_video_handoff.py": "e2d5d6625aa92ab0e84a475055d462954c8ff9057e1c29ef6e48892c78e867c0"
   },
   "original_type": "Skill",
@@ -47,18 +49,19 @@
   ],
   "dependency_source_hashes": {},
   "validation": "原方法修改已由本次任务回读与检查；导出结构、语法、链接、ZIP和远端文件另有同步收据。不是实际业务效果验证。",
-  "package_skill_sha256": "50e6008533a3b02910ecda5b9ba8e4098878ede30069584346ce093ed371e429",
+  "package_skill_sha256": "6de754f87f7c70db1726ca7b61fba497124a33d7fe4ad8c61671cd593755b57a",
   "package_files": {
     "README.md": "34359955f0a00ba98d5b0bacf39f6d0d7b774a8b2e2e3d498a830a72b5d30732",
-    "SKILL.md": "50e6008533a3b02910ecda5b9ba8e4098878ede30069584346ce093ed371e429",
+    "SKILL.md": "6de754f87f7c70db1726ca7b61fba497124a33d7fe4ad8c61671cd593755b57a",
     "agents/openai.yaml": "42ba126808f381a62f5a53359b81c555e270a9ab347bfbb1688aa0a1829857d2",
     "references/产品介绍视频.md": "79438ab6b953b0ae4f70ffcc5b135be6f12fc442d0cb2293973f1c8307813a0b",
-    "references/剪辑执行标准.md": "6501f969d010a5e806209fb20742ce975fc0be824427001983ea09952558f45b",
+    "references/剪辑执行标准.md": "9536d88eaa5ce11bed4151aa6ab5c1f8e96fbc3606633a3cad58fc29c63b31fd",
     "references/动画类型与分镜方法.md": "7a67046d9024def6ece5d1c729e983d80b0aeaa49b92f724d0e6f30d8616ed45",
-    "references/字幕批量质检与执行记录.md": "d3576cf4d48ebfd2a0aec3604d9d8f475825e4ad97dc3d9deada0b0d94db9ac3",
+    "references/字幕批量质检与执行记录.md": "db7bdf6171b481a2b27d15872de206f31888f8ec8402426f7005e6985498d4b1",
     "scripts/check_subtitle_render.py": "d8c538cf4c32ebf431565de45ee01645f87556037f106809c2ff3f23c46f70be",
     "scripts/check_subtitle_width.py": "a1fc888d0d4089405eb9a090a0a1d1728b76a2f8a7f82b7943457b72c79c2459",
     "scripts/check_video_export.py": "72ece89f6466de6ada28015b6abc29a3f5dfedb801df56c2a26a04ac0a0255c2",
+    "scripts/check_video_revision.py": "1463b44441a1415e5a1933aac3b572261968b16b7dec82fefa21bdbb2dad7666",
     "scripts/check_video_timeline.py": "3089f4472729b5039dbfecee81ee36ff8bd7ff61e2e7dc5bb185fa29085efcae",
     "scripts/inspect_video_editing_environment.py": "5ed88d5781f4c13605e9f760835af4a344b4c34c9c114d9837290b671b29c909",
     "scripts/manage_native_video_handoff.py": "e2d5d6625aa92ab0e84a475055d462954c8ff9057e1c29ef6e48892c78e867c0",

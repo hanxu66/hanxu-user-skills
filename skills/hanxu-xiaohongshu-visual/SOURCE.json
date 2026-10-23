@@ -1,7 +1,7 @@
 {
   "name": "hanxu-xiaohongshu-visual",
   "display_name": "韩叙 · 小红书图文制作助手",
-  "version": "2026-10-22-mini-v41",
+  "version": "2026-10-24-mini-v43",
   "source_relative": "working-files/system-optimization/xiaohongshu-workflow-v3/agents/视觉制作Agent.md",
   "source_sha256": "54ff62218881f243e08446bab45ab20ede5d7ca2776a712ba12d19fdb53d2e11",
   "reference_sources": [
@@ -13,8 +13,8 @@
     "tools/render_xhs_full_article.mjs"
   ],
   "reference_source_hashes": {
-    "working-files/system-optimization/xiaohongshu-workflow-v3/skills/封面与素材选择.md": "65448b396c4804fc5d6d0aa7bca46e130cb6d74a30e1382a8a016be7f2c28abf",
-    "working-files/system-optimization/xiaohongshu-workflow-v3/skills/文字图文制作.md": "728ddcea98280d43478595efb0dd4b79a8baabf9d52fdb31989f0bb680c94bef",
+    "working-files/system-optimization/xiaohongshu-workflow-v3/skills/封面与素材选择.md": "356b55239af47660878503b5e41cd006f7776e477061397f22bdf8b295273fd9",
+    "working-files/system-optimization/xiaohongshu-workflow-v3/skills/文字图文制作.md": "6d3df1a7bc3b2d8234707405cff152a6b7c0e366528f8efb0e503e831c31a348",
     "working-files/system-optimization/xiaohongshu-workflow-v3/skills/模型图制作.md": "bb5e93a8121be946e34ffc151c0716345b9cbd1b9a9c3151e29289689a18a62c"
   },
   "script_source_hashes": {
@@ -41,8 +41,8 @@
     "SKILL.md": "708ceed1af0d5ee2de67056d482aa1b8a4b29e083aafd19a1d14aa5ab94a9a16",
     "agents/openai.yaml": "f17a7ab311da8eb2402ee0eca700800624378a787c319a32303a52c101343906",
     "package.json": "cb8a13eafa7415492ad1ba359324c810f52e21d858a95c28690b0f45c4cfe8cc",
-    "references/封面与素材选择.md": "72bc45ae9534e4f09ea9d4994beb22cab6012d8c3ce60c8c07961bbe7b428741",
-    "references/文字图文制作.md": "96582590454ac66802e577d5def7a51ae357ada2a5932043ddf5f6a4cfe547fb",
+    "references/封面与素材选择.md": "38be741948cd71e9a38113a632c17ca2282b2c4784661080257dbdb9db0d031c",
+    "references/文字图文制作.md": "d4368bd455a8b96cc5e8a1a9a0eae4d59c6a9e65f9b998785d6a183c445aef8d",
     "references/模型图制作.md": "8ba0dc460548ebb3a11a13350d9bce0dfbfb97028a698dd2a8b37fa60457d066",
     "scripts/render_xhs_full_article.mjs": "a9b44d10b2a623c393be5c9dcd3f7d4ea71c62045becaae7c6e4c45d7d18fd29"
   }
