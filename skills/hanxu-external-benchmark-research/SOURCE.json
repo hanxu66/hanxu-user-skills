@@ -1,7 +1,7 @@
 {
   "name": "hanxu-external-benchmark-research",
   "display_name": "韩叙 · 短视频选题调研助手",
-  "version": "2026-10-24-mini-v43",
+  "version": "2026-10-29-mini-v45",
   "source_relative": "working-files/system-optimization/short-video-workflow-v3/skills/外部对标研究.md",
   "source_sha256": "e0afb8b5bc03b27e39b443d44833dcd5231697aad1797aa42c8834fe8e770b35",
   "reference_sources": [
@@ -11,7 +11,7 @@
     "tools/check_short_video_research_delivery.py"
   ],
   "reference_source_hashes": {
-    "working-files/system-optimization/short-video-workflow-v3/standards/选题执行标准.md": "02a67d756b74bbf78ae03fdd4c9c661f6b75e9d1c8c9d27dd61fa60f412cf884"
+    "working-files/system-optimization/short-video-workflow-v3/standards/选题执行标准.md": "9d5055856ec58a2503946101917562f5ec32332fbddbab83116fdb9b6c6a4658"
   },
   "script_source_hashes": {
     "tools/check_short_video_research_delivery.py": "e14a3f3f3ab7005c4b82c127b45108c6643a02eb01f3d611e349329020ce084e"
@@ -34,7 +34,7 @@
     "README.md": "2bdaad7e3a06c9116455922620c0cae7fbb1d19bef2003c13b126cbf10921f8a",
     "SKILL.md": "599506cc7b61c3ab5687eb14e3132875a200d3b87fbbc457d43f7b940231b73f",
     "agents/openai.yaml": "4f63844868ff2a3431b1b73bf314204b9f9b36421bbf8f363c85969654bebe40",
-    "references/选题执行标准.md": "deee061b029a1785ef09d3239ee77957d7148084268a7df0c397261214d9b7d4",
+    "references/选题执行标准.md": "43bedc2ab6efb80a16a28a2899a60f4e646ec309ef52ea67cf17646b6a2790b2",
     "scripts/check_short_video_research_delivery.py": "e14a3f3f3ab7005c4b82c127b45108c6643a02eb01f3d611e349329020ce084e"
   }
 }
