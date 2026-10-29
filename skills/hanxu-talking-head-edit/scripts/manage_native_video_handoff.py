@@ -10,6 +10,7 @@ import json
 import re
 from datetime import datetime, timezone
 from pathlib import Path
+from inspect_video_editing_environment import require_dependency_report
 
 
 def now():return datetime.now(timezone.utc).isoformat()
@@ -27,6 +28,9 @@ def bind(record,config):
     if 'nativeHandoff' in record:raise ValueError('Binding already exists; reuse it or start a genuine new revision record')
     project=Path(config['projectPath']).resolve(strict=True)
     if not project.is_dir():raise ValueError('Actual saved native project directory required')
+    dependency_report=config['dependencyReport']
+    require_dependency_report(dependency_report,record.get('objectId'),record['revision'],
+                              'native_handoff',project)
     report=json.loads(Path(config['timelineReport']).read_text())
     if report['status']!='timeline_checks_complete':raise ValueError('Passing timeline geometry report required')
     if report.get('toolSha256')!=digest(Path(__file__).with_name('check_video_timeline.py')):
@@ -36,7 +40,8 @@ def bind(record,config):
     stamps=re.findall(r'(?m)^\d+\s*\n(\d\d:\d\d:\d\d,\d{3}) --> (\d\d:\d\d:\d\d,\d{3})',body)
     count=len(stamps)
     if count!=integer(config['expectedCaptionCount']) or count==0:raise ValueError('Expected SRT card count differs')
-    inputs=[proof(config['timelineReport']),proof(srt),proof(Path(__file__).with_name('check_video_timeline.py'))]
+    inputs=[proof(config['timelineReport']),proof(srt),proof(Path(__file__).with_name('check_video_timeline.py')),
+            proof(dependency_report)]
     def milliseconds(stamp):
         h,m,s,ms=map(int,re.split('[:,]',stamp));return ((h*60+m)*60+s)*1000+ms
     previous=0
@@ -58,6 +63,7 @@ def bind(record,config):
         inputs.append(proof(row['path']))
     record['nativeHandoff']={'revision':record['revision'],'projectPath':str(project),
         'expectedFrames':config['expectedFrames'],'expectedCaptionCount':count,
+        'dependencyReport':str(Path(dependency_report).resolve(strict=True)),
         'boundAt':now(),'inputs':inputs,'sequence':0,'requests':[],'observations':[]}
 
 
@@ -74,6 +80,18 @@ def observe(record,value,evidence):
     h['observations'].append({'sequence':h['sequence'],'at':now(),'value':value,'evidence':proof(evidence)})
 
 
+def update_dependencies(record,report):
+    """Refresh only dependency evidence on the same saved project, including legacy runs."""
+    h=record['nativeHandoff']
+    if record['revision']!=h['revision']:raise ValueError('Cannot refresh dependencies across revisions')
+    require_dependency_report(report,record.get('objectId'),record['revision'],
+                              'native_handoff',h['projectPath'])
+    ref=proof(report);previous=h.get('dependencyReport')
+    h.setdefault('dependencyHistory',[]).append({'at':now(),'previousReport':previous,'current':ref})
+    h['inputs']=[p for p in h['inputs'] if p['path']!=previous]+[ref]
+    h['dependencyReport']=ref['path']
+
+
 def next_action(record):
     h=record['nativeHandoff']
     result={'projectPath':h['projectPath'],'revision':h['revision'],
@@ -81,6 +99,11 @@ def next_action(record):
     def answer(action,reason):return {**result,'action':action,'reason':reason}
     if record['revision']!=h['revision']:return answer('blocked_revision_mismatch','Do not inherit across changed revisions')
     if not Path(h['projectPath']).is_dir():return answer('blocked_missing_project','Bound saved project directory is missing')
+    try:
+        require_dependency_report(h['dependencyReport'],record.get('objectId'),record['revision'],
+                                  'native_handoff',h['projectPath'])
+    except (OSError,ValueError,KeyError,TypeError):
+        return answer('blocked_dependencies','Run current object dependency preflight; preserve the saved project')
     try:
         if any(digest(x['path'])!=x['sha256'] for x in h['inputs']):
             return answer('blocked_stale_binding','Timeline/SRT changed; do not repeat an old operation')
@@ -128,15 +151,17 @@ def request(record,action):
 
 def main():
     p=argparse.ArgumentParser(description=__doc__);sub=p.add_subparsers(dest='command',required=True)
-    for name in ('bind','observe','next','request'):
+    for name in ('bind','dependencies','observe','next','request'):
         q=sub.add_parser(name);q.add_argument('--record',required=True)
         if name=='bind':q.add_argument('--config',required=True)
+        if name=='dependencies':q.add_argument('--report',required=True)
         if name=='observe':q.add_argument('--observation',required=True);q.add_argument('--evidence',required=True)
         if name=='request':q.add_argument('--action',choices=('import-resource','add-captions','reopen'),required=True)
     a=p.parse_args()
     try:
         path=Path(a.record);record=json.loads(path.read_text())
         if a.command=='bind':bind(record,json.loads(Path(a.config).read_text()))
+        elif a.command=='dependencies':update_dependencies(record,a.report)
         elif a.command=='observe':observe(record,json.loads(Path(a.observation).read_text()),a.evidence)
         elif a.command=='request':request(record,a.action)
         if a.command!='next':

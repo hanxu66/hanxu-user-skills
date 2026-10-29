@@ -97,15 +97,85 @@ def begin(record,revision,phase,category):
     timer_start(record,phase,category)
 
 
+def cover_source(record,plan,base=Path('.')):
+    """Bind existing cover provenance; hashes do not prove visual treatment truth."""
+    errors=[];bound=dict(plan)
+    requirements=record['editingExecution'].get('requirements')
+    if not requirements:raise ValueError('Configure current packaging requirements first')
+    if (not record.get('objectId') or plan.get('objectId')!=record['objectId'] or
+            plan.get('revision')!=record['revision'] or
+            record['editingExecution']['revision']!=record['revision']):
+        errors.append('object_or_revision_mismatch')
+    kind=plan.get('sourceKind')
+    if kind not in {'treated_frame','raw_frame','animation','approved_separate'}:
+        errors.append('unknown_source_kind')
+    if kind!='approved_separate' and plan.get('sourceRevision')!=record['revision']:
+        errors.append('source_revision_mismatch')
+    # Clip counts describe coverage in the main edit, not the treatment settings
+    # a single cover frame should receive. All other target settings stay intact.
+    treatments={}
+    for key in ('beauty','body','grade'):
+        req=requirements[key]
+        if req['required']:
+            value=req['target']
+            treatments[key]=({k:v for k,v in value.items() if k not in {'mainClips','personClips'}}
+                             if isinstance(value,dict) else value)
+    if kind=='approved_separate':
+        if not isinstance(plan.get('exceptionReason'),str) or not plan['exceptionReason'].strip():
+            errors.append('explicit_source_exception_reason_required')
+    elif treatments:
+        if kind!='treated_frame':errors.append('untreated_source_for_treated_video')
+        if plan.get('treatments')!=treatments:errors.append('treatment_targets_mismatch')
+    elif plan.get('treatments',{})!={}:errors.append('unexpected_treatment_outside_scope')
+    if plan.get('visualConfirmed') is not True:errors.append('actual_visual_review_required')
+    refs=['source','cover','visualEvidence']
+    if treatments and kind!='approved_separate':refs.append('treatmentEvidence')
+    if kind=='approved_separate':refs.append('authorization')
+    for key in refs:
+        ref=plan.get(key)
+        if not isinstance(ref,dict) or not isinstance(ref.get('path'),str) or not ref['path'].strip():
+            errors.append(key+'_evidence_missing');continue
+        p=Path(ref['path']).expanduser();p=p if p.is_absolute() else base/p
+        try:
+            p=p.resolve(strict=True)
+            if not p.is_file() or hashlib.sha256(p.read_bytes()).hexdigest()!=ref.get('sha256'):
+                errors.append(key+'_evidence_changed')
+            bound[key]={'path':str(p),'sha256':ref.get('sha256')}
+        except (OSError,RuntimeError):errors.append(key+'_evidence_missing')
+    if (isinstance(bound.get('source'),dict) and isinstance(bound.get('cover'),dict)
+            and bound['source'].get('path')==bound['cover'].get('path')):
+        errors.append('cover_cannot_be_its_own_source')
+    return {'status':'cover_source_failed' if errors else 'cover_source_bound',
+            'errors':errors,'plan':bound,'requiredTreatments':treatments,
+            'requirementsSha256':hashlib.sha256(json.dumps({'cover':requirements['cover'],
+                'treatments':treatments},sort_keys=True).encode()).hexdigest(),
+            'checkedAt':now(),
+            'limits':'Provenance, declared treatment targets and current evidence only; actual image review still required; no automatic beauty/grade inference'}
+
+
+def current_cover_source(record):
+    existing=record['editingExecution'].get('coverSource')
+    if not existing or existing.get('status')!='cover_source_bound':return False
+    try:
+        current=cover_source(record,existing['plan'])
+        return (current['status']=='cover_source_bound' and
+                current['requirementsSha256']==existing['requirementsSha256'])
+    except (KeyError,TypeError,ValueError,OSError):return False
+
+
 def verify(record,key,actual,evidence,scope):
     e=record['editingExecution'];target=e['requirements'][key]
     if not target['required']:raise ValueError('Cannot verify a not-applicable check')
+    if key=='cover' and not current_cover_source(record):
+        raise ValueError('Current cover-source check required before cover verification')
     if not scope.strip() or not evidence:raise ValueError('Native coverage description and evidence required')
     files=[]
     for path in evidence:
         p=Path(path).resolve(strict=True)
         if not p.is_file():raise ValueError('Evidence must be an existing file')
         files.append({'path':str(p),'sha256':hashlib.sha256(p.read_bytes()).hexdigest()})
+    if key=='cover' and e['coverSource']['plan']['cover'] not in files:
+        raise ValueError('Cover verification must include the exact bound final cover file')
     match=actual==target['target']
     e['checks'][key]={'actual':actual,'matchesTarget':match,'scope':scope,'evidence':files,'verifiedAt':now()}
     return match
@@ -120,6 +190,7 @@ def checklist(record):
         check=e['checks'].get(key,{})
         evidence=check.get('evidence',[])
         valid=check.get('matchesTarget') and check.get('actual')==req['target'] and evidence
+        if key=='cover' and not current_cover_source(record):valid=False
         for file in evidence:
             p=Path(file['path'])
             if not p.is_file() or hashlib.sha256(p.read_bytes()).hexdigest()!=file['sha256']:valid=False
@@ -189,10 +260,11 @@ def summary(record):
 def main():
     p=argparse.ArgumentParser(description=__doc__);sub=p.add_subparsers(dest='command',required=True)
     b=sub.add_parser('budget');b.add_argument('--plan',required=True);b.add_argument('--output',required=True);b.add_argument('--min-free-gib',type=float,default=5)
-    for name in ['begin','init','verify','invalidate','checklist','timer-start','timer-switch','timer-stop','timer-abandon','summary']:
+    for name in ['begin','init','verify','cover-source','invalidate','checklist','timer-start','timer-switch','timer-stop','timer-abandon','summary']:
         q=sub.add_parser(name);q.add_argument('--record',required=True)
         if name=='init':q.add_argument('--revision',required=True);q.add_argument('--requirements',required=True)
         if name=='begin':q.add_argument('--revision',required=True)
+        if name=='cover-source':q.add_argument('--plan',required=True)
         if name=='verify':
             q.add_argument('--key',choices=sorted(CHECKS),required=True);q.add_argument('--actual',required=True);q.add_argument('--evidence',action='append',required=True);q.add_argument('--scope',required=True)
         if name=='invalidate':q.add_argument('--key',choices=sorted(CHECKS),required=True);q.add_argument('--reason',required=True)
@@ -205,6 +277,10 @@ def main():
         path=Path(a.record);record=json.loads(path.read_text()) if path.exists() else {}
         if a.command=='begin':begin(record,a.revision,a.phase,a.category)
         elif a.command=='init':init(record,a.revision,json.loads(Path(a.requirements).read_text()))
+        elif a.command=='cover-source':
+            f=Path(a.plan).resolve(strict=True)
+            e=record['editingExecution'];e.pop('coverSource',None);e['checks'].pop('cover',None)
+            e['coverSource']=cover_source(record,json.loads(f.read_text()),f.parent)
         elif a.command=='verify':verify(record,a.key,json.loads(Path(a.actual).read_text()),a.evidence,a.scope)
         elif a.command=='invalidate':
             e=record['editingExecution'];e['checks'].pop(a.key,None);e['history'].append({'at':now(),'invalidated':a.key,'reason':a.reason})
@@ -215,9 +291,11 @@ def main():
         elif a.command=='timer-abandon':timer_abandon(record,a.reason)
         if a.command not in {'checklist','summary'}:
             tmp=path.with_name(path.name+'.tmp');tmp.write_text(json.dumps(record,ensure_ascii=False,indent=2));tmp.replace(path)
-        result=summary(record) if a.command in {'summary','begin','timer-start','timer-switch','timer-stop','timer-abandon'} else checklist(record)
+        result=(record['editingExecution']['coverSource'] if a.command=='cover-source' else
+                summary(record) if a.command in {'summary','begin','timer-start','timer-switch','timer-stop','timer-abandon'} else checklist(record))
         print(json.dumps(result,ensure_ascii=False))
-        return 1 if ((a.command=='checklist' and result.get('pending')) or
+        return 1 if ((a.command=='cover-source' and result['errors']) or
+                     (a.command=='checklist' and result.get('pending')) or
                      (a.command=='verify' and not record['editingExecution']['checks'][a.key]['matchesTarget'])) else 0
     except (ValueError,OSError,KeyError,TypeError) as error:
         print(json.dumps({'status':'invalid','error':str(error)}));return 2

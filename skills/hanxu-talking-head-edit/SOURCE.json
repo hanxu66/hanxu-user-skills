@@ -1,9 +1,9 @@
 {
   "name": "hanxu-talking-head-edit",
   "display_name": "韩叙 · 口播视频剪辑助手",
-  "version": "2026-10-27-mini-v44",
+  "version": "2026-10-29-mini-v46",
   "source_relative": "working-files/system-optimization/short-video-workflow-v3/skills/口播剪辑.md",
-  "source_sha256": "f91f62f4cc2b71f99225196da331cfcf410eb49559c260899b8533bf10cf3140",
+  "source_sha256": "1aaa8b949a054067d0acaa0962ca2cc9f33da5f5c7f2b85b682cf4a15a3f69c2",
   "reference_sources": [
     "working-files/system-optimization/short-video-workflow-v3/standards/剪辑执行标准.md",
     "working-files/system-optimization/short-video-workflow-v3/skills/references/动画类型与分镜方法.md",
@@ -21,20 +21,20 @@
     "tools/manage_native_video_handoff.py"
   ],
   "reference_source_hashes": {
-    "working-files/system-optimization/short-video-workflow-v3/standards/剪辑执行标准.md": "30cb04fd8c1f2bd3648e057f1325e7583a72d628a555f9b8ecd0f4a05785b151",
+    "working-files/system-optimization/short-video-workflow-v3/standards/剪辑执行标准.md": "b44268abf9c8467cb9b362f03bd68528738004f2c5b263e7938c0ec3b5932965",
     "working-files/system-optimization/short-video-workflow-v3/skills/references/动画类型与分镜方法.md": "7a67046d9024def6ece5d1c729e983d80b0aeaa49b92f724d0e6f30d8616ed45",
     "working-files/system-optimization/short-video-workflow-v3/skills/产品介绍视频.md": "acb540a5bf984a44af2289e2d86545f2cafa3c3a8c57d10448dcfc9f39ea885a",
-    "working-files/system-optimization/short-video-workflow-v3/skills/references/字幕批量质检与执行记录.md": "76a86da4a49fb6d78d46b06a9d585831e5051b440b84133e9250990316e32b7f"
+    "working-files/system-optimization/short-video-workflow-v3/skills/references/字幕批量质检与执行记录.md": "772544dbe77fb3c6541def0a7ab5460f7ffce79911a0484693bbef9aab294046"
   },
   "script_source_hashes": {
-    "tools/inspect_video_editing_environment.py": "5ed88d5781f4c13605e9f760835af4a344b4c34c9c114d9837290b671b29c909",
+    "tools/inspect_video_editing_environment.py": "0fcca0173fc131cdd4603f051e7774c1cbc0e93b388e4d79068ba95d7811cd7b",
     "tools/check_subtitle_width.py": "a1fc888d0d4089405eb9a090a0a1d1728b76a2f8a7f82b7943457b72c79c2459",
     "tools/check_subtitle_render.py": "d8c538cf4c32ebf431565de45ee01645f87556037f106809c2ff3f23c46f70be",
-    "tools/manage_video_editing_run.py": "cdefd6c7319476afb76ea8cfb286d9bb8a841c064150d2fb1bece335784f4226",
+    "tools/manage_video_editing_run.py": "d782f0ecd19b43dd89dd160ea8b36a84c12994ad6bbfdd83a26ac08390a2af89",
     "tools/check_video_export.py": "72ece89f6466de6ada28015b6abc29a3f5dfedb801df56c2a26a04ac0a0255c2",
     "tools/check_video_timeline.py": "3089f4472729b5039dbfecee81ee36ff8bd7ff61e2e7dc5bb185fa29085efcae",
     "tools/check_video_revision.py": "1463b44441a1415e5a1933aac3b572261968b16b7dec82fefa21bdbb2dad7666",
-    "tools/manage_native_video_handoff.py": "e2d5d6625aa92ab0e84a475055d462954c8ff9057e1c29ef6e48892c78e867c0"
+    "tools/manage_native_video_handoff.py": "9222e275898d64f188a05468818d779ff21b94119e58f7aad1b92aff0d9f70c2"
   },
   "original_type": "Skill",
   "dependencies": "ChatCut Desktop及当前可用集成、剪映专业版、用户原片/转写；资源预算、证据清单、跨进程计时、时间线几何校验与原生导入记录使用Python3标准库，字宽及静态字幕像素检查使用Python3和Pillow，抽帧/文件检测/仅容器修正还需本机已有FFmpeg及FFprobe；字体、配置和原生校准证据由用户提供，安装包不含媒体、字体或剪辑引擎",
@@ -49,22 +49,22 @@
   ],
   "dependency_source_hashes": {},
   "validation": "原方法修改已由本次任务回读与检查；导出结构、语法、链接、ZIP和远端文件另有同步收据。不是实际业务效果验证。",
-  "package_skill_sha256": "e39e2b73f24471b94382500bc8105954c41d823e7aeb17ff06e141afbed818a2",
+  "package_skill_sha256": "946efddca64124172c2b48eb3da517da958b120df50ebf40ff2af99d694bfd43",
   "package_files": {
     "README.md": "34359955f0a00ba98d5b0bacf39f6d0d7b774a8b2e2e3d498a830a72b5d30732",
-    "SKILL.md": "e39e2b73f24471b94382500bc8105954c41d823e7aeb17ff06e141afbed818a2",
+    "SKILL.md": "946efddca64124172c2b48eb3da517da958b120df50ebf40ff2af99d694bfd43",
     "agents/openai.yaml": "42ba126808f381a62f5a53359b81c555e270a9ab347bfbb1688aa0a1829857d2",
     "references/产品介绍视频.md": "79438ab6b953b0ae4f70ffcc5b135be6f12fc442d0cb2293973f1c8307813a0b",
-    "references/剪辑执行标准.md": "768e8c4d061d0e876686b848a0fd0a070fe2ce90daa59edabe3deca60aeca154",
+    "references/剪辑执行标准.md": "e50450f91b95dc3638fdbc7b9795107a63e74f6d4f54366470ebbba4c23ce377",
     "references/动画类型与分镜方法.md": "7a67046d9024def6ece5d1c729e983d80b0aeaa49b92f724d0e6f30d8616ed45",
-    "references/字幕批量质检与执行记录.md": "db7bdf6171b481a2b27d15872de206f31888f8ec8402426f7005e6985498d4b1",
+    "references/字幕批量质检与执行记录.md": "dc87b23ca263a50c43669a670d25b7e698f8e343f1e9918423dc500fcb728336",
     "scripts/check_subtitle_render.py": "d8c538cf4c32ebf431565de45ee01645f87556037f106809c2ff3f23c46f70be",
     "scripts/check_subtitle_width.py": "a1fc888d0d4089405eb9a090a0a1d1728b76a2f8a7f82b7943457b72c79c2459",
     "scripts/check_video_export.py": "72ece89f6466de6ada28015b6abc29a3f5dfedb801df56c2a26a04ac0a0255c2",
     "scripts/check_video_revision.py": "1463b44441a1415e5a1933aac3b572261968b16b7dec82fefa21bdbb2dad7666",
     "scripts/check_video_timeline.py": "3089f4472729b5039dbfecee81ee36ff8bd7ff61e2e7dc5bb185fa29085efcae",
-    "scripts/inspect_video_editing_environment.py": "5ed88d5781f4c13605e9f760835af4a344b4c34c9c114d9837290b671b29c909",
-    "scripts/manage_native_video_handoff.py": "e2d5d6625aa92ab0e84a475055d462954c8ff9057e1c29ef6e48892c78e867c0",
-    "scripts/manage_video_editing_run.py": "cdefd6c7319476afb76ea8cfb286d9bb8a841c064150d2fb1bece335784f4226"
+    "scripts/inspect_video_editing_environment.py": "0fcca0173fc131cdd4603f051e7774c1cbc0e93b388e4d79068ba95d7811cd7b",
+    "scripts/manage_native_video_handoff.py": "9222e275898d64f188a05468818d779ff21b94119e58f7aad1b92aff0d9f70c2",
+    "scripts/manage_video_editing_run.py": "d782f0ecd19b43dd89dd160ea8b36a84c12994ad6bbfdd83a26ac08390a2af89"
   }
 }
