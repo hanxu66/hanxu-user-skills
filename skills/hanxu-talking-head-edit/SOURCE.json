@@ -1,7 +1,7 @@
 {
   "name": "hanxu-talking-head-edit",
   "display_name": "韩叙 · 口播视频剪辑助手",
-  "version": "2026-10-30-mini-v56",
+  "version": "2026-10-30-mini-v57",
   "source_relative": "working-files/system-optimization/short-video-workflow-v3/skills/口播剪辑.md",
   "source_sha256": "6e720533f8efcd831a2c1e27631c64115153b16d4c70e3cdfb236e6be0a8975d",
   "reference_sources": [
@@ -28,7 +28,7 @@
     "working-files/system-optimization/short-video-workflow-v3/skills/产品介绍视频.md": "acb540a5bf984a44af2289e2d86545f2cafa3c3a8c57d10448dcfc9f39ea885a",
     "working-files/system-optimization/short-video-workflow-v3/skills/references/字幕批量质检与执行记录.md": "772544dbe77fb3c6541def0a7ab5460f7ffce79911a0484693bbef9aab294046",
     "working-files/system-optimization/short-video-workflow-v3/agents/剪辑Agent.md": "3506ec499237fd5acda1908c0478326d84d6cb438af2ebbc819028da3ccd0494",
-    "working-files/system-optimization/short-video-workflow-v3/skills/动画视频制作.md": "7aa9fccfb3aa695d675b3f726b5b2ca91a1afc6ed6d4b2e9925079ec2f476742"
+    "working-files/system-optimization/short-video-workflow-v3/skills/动画视频制作.md": "d720fdfc4006879d3d023a266464784f9bf281e49d5aae4069c062090719e195"
   },
   "script_source_hashes": {
     "tools/inspect_video_editing_environment.py": "0fcca0173fc131cdd4603f051e7774c1cbc0e93b388e4d79068ba95d7811cd7b",
@@ -72,7 +72,7 @@
     "references/剪辑Agent.md": "20481e4501d6afeca63e360417186b57b061a2daca1ddfc3e570799efa9fb934",
     "references/剪辑执行标准.md": "0c872ac7eb932ee697cbcca306315e9fc87495c0ca62a86f8e71fde4cba8a500",
     "references/动画类型与分镜方法.md": "cae8bed2db8b791291aba1db6392bff503940db99ea453db18d9965bf810af36",
-    "references/动画视频制作.md": "d9ce519a7887a4da57b437a8415cdf5a59f478725a2f1479e49048b97080bc44",
+    "references/动画视频制作.md": "1d919356838dfaeb96b998896846ebec0b0610dd0b19de518e4b1d4abcebb500",
     "references/字幕批量质检与执行记录.md": "dc87b23ca263a50c43669a670d25b7e698f8e343f1e9918423dc500fcb728336",
     "scripts/check_subtitle_render.py": "d8c538cf4c32ebf431565de45ee01645f87556037f106809c2ff3f23c46f70be",
     "scripts/check_subtitle_width.py": "a1fc888d0d4089405eb9a090a0a1d1728b76a2f8a7f82b7943457b72c79c2459",
