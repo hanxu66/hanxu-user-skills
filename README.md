@@ -2,11 +2,11 @@
 
 把你的选题、观点、文章和视频素材，交给电脑上的 AI，按韩叙的方法完成具体内容任务。
 
-**先选你要做的事，再下载对应助手。** 每个助手都可以单独安装，不需要安装整套经营系统。版本：2026-10-29-mini-v47。
+**先选你要做的事，再下载对应助手。** 每个助手都可以单独安装，不需要安装整套经营系统。版本：2026-10-30-mini-v48。
 
 | 助手名称 | 什么时候用 | 安装包 |
 |---|---|---|
-| [短视频写稿助手](skills/hanxu-script-agent/README.md) | 已经有选题和观点，想写成自然、能直接拍摄的口播稿。 | [下载 ZIP](packages/hanxu-script-agent.zip) |
+| [短视频口播文风助手（试用版）](skills/hanxu-script-agent/README.md) | 理清论点、论证和结构；有语料就学习，没有就通过对话和改稿校准口吻。 | [下载 ZIP](packages/hanxu-script-agent.zip) |
 | [公众号写作助手](skills/hanxu-public-account-drafting/README.md) | 有观点和零散材料，想整理成一篇有逻辑的公众号文章。 | [下载 ZIP](packages/hanxu-public-account-drafting.zip) |
 | [小红书图文制作助手](skills/hanxu-xiaohongshu-visual/README.md) | 逐页文案已经确定，需要制作封面和整套小红书图片。 | [下载 ZIP](packages/hanxu-xiaohongshu-visual.zip) |
 | [短视频选题调研助手](skills/hanxu-external-benchmark-research/README.md) | 不知道下一条拍什么，想从指定账号和关键词中寻找选题启发。 | [下载 ZIP](packages/hanxu-external-benchmark-research.zip) |
@@ -14,7 +14,7 @@
 | [公众号封面制作助手](skills/hanxu-public-account-series-visual/README.md) | 文章标题已定，需要统一风格的公众号封面或正文头图。 | [下载 ZIP](packages/hanxu-public-account-series-visual.zip) |
 | [口播视频剪辑助手](skills/hanxu-talking-head-edit/README.md) | 已经录好单人口播，想剪掉重复和停顿，整理字幕并完成包装。 | [下载 ZIP](packages/hanxu-talking-head-edit.zip) |
 
-[一次下载七个助手](packages/hanxu-seven-user-skills-mini-v47.zip) · [文件校验值](packages/SHA256SUMS.txt)
+[一次下载七个助手](packages/hanxu-seven-user-skills-mini-v48.zip) · [文件校验值](packages/SHA256SUMS.txt)
 
 ## 第一次使用怎么做
 
@@ -29,7 +29,7 @@
 
 ```text
 $hanxu-script-agent
-请根据我提供的选题、观点和真实案例，写一份可拍摄的口播逐字稿。
+请根据我的题目和材料，理清论点、论证和结构，写成完整口播稿。有本人语料就学习，没有则通过对话和改稿逐步校准口吻。
 ```
 
 ## 使用前需要准备什么
@@ -46,10 +46,12 @@ $hanxu-script-agent
 
 包结构、文件链接、校验值及 ZIP 完整性已检查。此前公众号封面/头图、小红书文字图文在 Mini 的新用户目录实际渲染并检查；研究格式检查正例和反例按预期运行。
 
+短视频口播文风试用版已做有语料、无历史语料两组隔离模拟任务，覆盖完整写稿、口吻返修及同作者新题接续。模拟输入不计为真实目标用户采用或效果验证。
+
 验证使用 Mini 已有依赖环境，没有在全新机器安装验证。真实口播剪辑、小红书模型图全流程、独立客户效果和平台发布未验证。
 
 ## 来源与许可
 
-由韩叙现有方法与必要依赖适配导出，原方法文件仍是维护来源。此次更新中文展示信息，未改写原执行方法。每个包的 SOURCE.json 记录来源和版本。使用者提供自己的素材、授权、品牌和输出目录。
+由韩叙现有方法与必要依赖适配导出，原方法文件仍是维护来源。短视频口播文风试用版整合论点、论证、结构与个人表达校准；每个包的 SOURCE.json 记录来源和版本。使用者提供自己的素材、授权、品牌和输出目录。
 
 可下载并安装使用；当前尚未设定开放源代码许可证、再分发或转售条款。

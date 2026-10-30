@@ -1,4 +1,4 @@
 interface:
-  display_name: "韩叙 · 短视频写稿助手"
-  short_description: "已有选题，帮你理清观点和结构，写成可以直接拍摄的口播逐字稿。"
-  default_prompt: "使用 $hanxu-script-agent，根据我提供的选题、观点和真实案例，写一份可拍摄的口播逐字稿。"
+  display_name: "韩叙 · 短视频口播文风助手"
+  short_description: "整合论点、论证、结构与口吻，有语料就学习，没有就通过对话和改稿校准。"
+  default_prompt: "使用 $hanxu-script-agent，根据我的题目与材料理清论点、论证和结构，写完整口播稿；有本人语料就学习，没有则通过对话和改稿逐步校准。"

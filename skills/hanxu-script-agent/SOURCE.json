@@ -1,27 +1,29 @@
 {
   "name": "hanxu-script-agent",
-  "display_name": "韩叙 · 短视频写稿助手",
-  "version": "2026-10-29-mini-v47",
+  "display_name": "韩叙 · 短视频口播文风助手",
+  "version": "2026-10-30-mini-v48",
   "source_relative": "working-files/system-optimization/short-video-workflow-v3/agents/脚本Agent.md",
-  "source_sha256": "edf830d13fbd1418d3ba3e237ee2bcdb74ebd708cf27aa99fdc1cc9e666509a5",
+  "source_sha256": "7ac4b7fe17f53dbceb1b9bebc0e10debf095025d6b9e4df20c55b60dd720df5b",
   "reference_sources": [
     "working-files/system-optimization/short-video-workflow-v3/skills/观点立意.md",
     "working-files/system-optimization/short-video-workflow-v3/skills/内容结构.md",
     "working-files/system-optimization/short-video-workflow-v3/skills/逐字稿.md",
     "working-files/system-optimization/short-video-workflow-v3/skills/表达学习与应用.md",
     "working-files/system-optimization/short-video-workflow-v3/standards/脚本执行标准.md",
-    "working-files/system-optimization/short-video-workflow-v3/skills/references/正文复核记录与校验.md"
+    "working-files/system-optimization/short-video-workflow-v3/skills/references/正文复核记录与校验.md",
+    "working-files/system-optimization/short-video-workflow-v3/skills/references/个人口播校准.md"
   ],
   "script_sources": [
     "tools/check_short_video_script_review.py"
   ],
   "reference_source_hashes": {
-    "working-files/system-optimization/short-video-workflow-v3/skills/观点立意.md": "6db90228cf60789c11b91cd7f5903a328641fb37e050cb4013121638291078b3",
-    "working-files/system-optimization/short-video-workflow-v3/skills/内容结构.md": "dcd438a3d11c344e48acb9c6217cc393db440d02e3d658a5c2f8f28f37aa8f76",
-    "working-files/system-optimization/short-video-workflow-v3/skills/逐字稿.md": "aa7be6e30b825b30b407d91505e7f8ba7380ccf10bded763c5c306508248ddc7",
-    "working-files/system-optimization/short-video-workflow-v3/skills/表达学习与应用.md": "26a3b8287b0c81b4980dc938eca877825a2bc832432843d4db85c47741177bac",
-    "working-files/system-optimization/short-video-workflow-v3/standards/脚本执行标准.md": "49c7b7ca7453e86bbddc2d5569e9895562d62d90b1f878622b449a2bc26f6a50",
-    "working-files/system-optimization/short-video-workflow-v3/skills/references/正文复核记录与校验.md": "8e62dc022801da43f4aabbc21870bee7878135e998d6cc2669c09d22dddc4cd9"
+    "working-files/system-optimization/short-video-workflow-v3/skills/观点立意.md": "649157472e8f865410b39215d91195bfe37ffcb0bc8fe9b3580413935a19dd4e",
+    "working-files/system-optimization/short-video-workflow-v3/skills/内容结构.md": "971f186fcd4ba9db1b887de594eb5981f7c11c19afb028143dd8af4538bca039",
+    "working-files/system-optimization/short-video-workflow-v3/skills/逐字稿.md": "de2bbedcca0f79362d2162add65f3545eaf13e40f9d682361efd6ae860ab8766",
+    "working-files/system-optimization/short-video-workflow-v3/skills/表达学习与应用.md": "b3ab5b1f3a97c62d97de7c32d9b05514521e3eb6f8be75e8c2c3fcdad7fb1c3e",
+    "working-files/system-optimization/short-video-workflow-v3/standards/脚本执行标准.md": "1659f7d23a5a95bcb377c66b1d7cad986ac2683eff4a015506f3e21172a481aa",
+    "working-files/system-optimization/short-video-workflow-v3/skills/references/正文复核记录与校验.md": "8e62dc022801da43f4aabbc21870bee7878135e998d6cc2669c09d22dddc4cd9",
+    "working-files/system-optimization/short-video-workflow-v3/skills/references/个人口播校准.md": "bf7485a614d1336befb8923c0f955e635f3614e58088ec60cdd8d976da1e0a7a"
   },
   "script_source_hashes": {
     "tools/check_short_video_script_review.py": "07795606610d170a092975b2a75d5bfa9171ca0ca4092050fc8aa531308385ae"
@@ -39,17 +41,18 @@
   ],
   "dependency_source_hashes": {},
   "validation": "原方法修改已由本次任务回读与检查；导出结构、语法、链接、ZIP和远端文件另有同步收据。不是实际业务效果验证。",
-  "package_skill_sha256": "3ecb4c8a39a22100bebfafaeb0cb83d9cf98ca3960ef6e8688caf8baef3cc72d",
+  "package_skill_sha256": "278909267bbe98566a9bc1ed43ecd420b6b028d78200154bfd9015bb9eced3ca",
   "package_files": {
-    "README.md": "effa8f4050f5c405b12edfe0157568b7c2daf166dc5ed602960f6ab2d899d009",
-    "SKILL.md": "3ecb4c8a39a22100bebfafaeb0cb83d9cf98ca3960ef6e8688caf8baef3cc72d",
-    "agents/openai.yaml": "6d0746e1106606b109b985b47d3fa6f7e561e6375265fa63fde50c53c013b848",
-    "references/内容结构.md": "a2d9438f1fe3e262f93579592ee19c1b1d6357b4d226998a848586ae3b03afe6",
+    "README.md": "5f73ce26b2138094fd25be1108cf64dca6f1ea888a33e9d5d0e15bc025c4f337",
+    "SKILL.md": "278909267bbe98566a9bc1ed43ecd420b6b028d78200154bfd9015bb9eced3ca",
+    "agents/openai.yaml": "d9a5bfba3abc9853ce94c8341c1edbc67335c7850dcfc2f6a431bd07d46afb82",
+    "references/个人口播校准.md": "0ff3f88b144de070fff0954dc17cdc80dfc178c4b2dcfdd92e6e8d214a161061",
+    "references/内容结构.md": "bdb7de9b22d49009fa01816b1b324afcb4a4fc1d22b67f4af5904aa2a174d535",
     "references/正文复核记录与校验.md": "502097a10f71ce60ffdc8d855a157cfe817a2ee19e9545d5a5f3d109239c2c14",
-    "references/脚本执行标准.md": "27a1aabfdfb3828c7794bae731ff1a9994b9b9a2cd93eb690157454b3babbcbe",
-    "references/表达学习与应用.md": "f95506c902d13f105fc3b927ac5aeb4381257eaab750757f3e78af130f03f8c9",
-    "references/观点立意.md": "54ee0de23f86aea4c494e3ef5e3c37f68f110f09b3b381401f2ef7d3fbfead08",
-    "references/逐字稿.md": "124d34bb4f92fcdd59b6699a05ed4f59786a640619783311e7185069b50cb9ce",
+    "references/脚本执行标准.md": "e330fa8522f439b77cf57e9ef91887676aba96402e9ffcb36b288ae4216373f2",
+    "references/表达学习与应用.md": "9ad6d6b986fc6ac3bc426a90cd8506c00f4d25e4c8fe240b676e0d3fe23d3103",
+    "references/观点立意.md": "c9d1260427383da33c23a8e6e62806cfe27c2c1d996a6b4b94751b97616f8de4",
+    "references/逐字稿.md": "49edccc86dbd79f1fc22e042a7db5e91562712d1c7d214c774cbbb7f6dedcdc1",
     "scripts/check_short_video_script_review.py": "07795606610d170a092975b2a75d5bfa9171ca0ca4092050fc8aa531308385ae"
   }
 }

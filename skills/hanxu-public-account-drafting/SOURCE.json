@@ -1,7 +1,7 @@
 {
   "name": "hanxu-public-account-drafting",
   "display_name": "韩叙 · 公众号写作助手",
-  "version": "2026-10-29-mini-v47",
+  "version": "2026-10-30-mini-v48",
   "source_relative": "working-files/system-optimization/public-account-workflow-v3/agents/成稿Agent.md",
   "source_sha256": "2bf364dedb18ca74a64227969b43db4d57e0f3e94d79f96d026db80e55b7834f",
   "reference_sources": [
