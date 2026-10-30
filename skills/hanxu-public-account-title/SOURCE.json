@@ -1,7 +1,7 @@
 {
   "name": "hanxu-public-account-title",
   "display_name": "韩叙 · 公众号标题助手",
-  "version": "2026-10-30-mini-v50",
+  "version": "2026-10-30-mini-v51",
   "source_relative": "working-files/system-optimization/public-account-workflow-v3/skills/标题生成.md",
   "source_sha256": "64a5b53ef6859019061e195178f8b0883674edc4608f88bb7aff064bd1fb8859",
   "reference_sources": [
@@ -25,6 +25,7 @@
     "保留当前个人自用原调用",
     "导出文件由原文件生成，不独立维护"
   ],
+  "public_sections": {},
   "dependency_source_hashes": {},
   "documentation_source_hashes": {},
   "validation": "原方法修改已由本次任务回读与检查；导出结构、语法、链接、ZIP和远端文件另有同步收据。不是实际业务效果验证。",

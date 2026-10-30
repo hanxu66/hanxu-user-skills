@@ -1,7 +1,7 @@
 {
   "name": "hanxu-public-account-drafting",
   "display_name": "韩叙 · 公众号写作助手",
-  "version": "2026-10-30-mini-v50",
+  "version": "2026-10-30-mini-v51",
   "source_relative": "working-files/system-optimization/public-account-workflow-v3/agents/成稿Agent.md",
   "source_sha256": "2bf364dedb18ca74a64227969b43db4d57e0f3e94d79f96d026db80e55b7834f",
   "reference_sources": [
@@ -29,6 +29,7 @@
     "保留当前个人自用原调用",
     "导出文件由原文件生成，不独立维护"
   ],
+  "public_sections": {},
   "dependency_source_hashes": {},
   "documentation_source_hashes": {},
   "validation": "原方法修改已由本次任务回读与检查；导出结构、语法、链接、ZIP和远端文件另有同步收据。不是实际业务效果验证。",

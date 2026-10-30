@@ -8,7 +8,7 @@ Windows和macOS共用本包。**WorkBuddy**直接上传ZIP；**Codex**安装解�
 
 ### WorkBuddy
 
-下载下面的独立ZIP，在「专家·技能·连接器 → 技能 → 添加技能 → 上传技能」中选择它，再到「已安装」确认启用。新建任务时选好存放作者资料的工作目录。该入口依据[WorkBuddy官方技能说明](https://www.codebuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Skills-Market)，尚未在真实WorkBuddy客户端导入实测。
+下载下面的独立ZIP，在「专家·技能·连接器 → 技能 → 添加技能 → 上传技能」弹窗中，点底部「选择 ZIP 文件」上传原包，再到「已安装」确认启用。5.9.3的中央大上传区选择的是文件夹，不能拿它选择ZIP所在目录。新建任务时选好存放作者资料的工作目录。官方入口见[WorkBuddy技能说明](https://www.codebuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Skills-Market)，实际验证范围见[平台指南](platforms.md#当前验证状态)。
 
 ### Codex
 
@@ -77,8 +77,10 @@ $hanxu-script-agent
 
 ## 更新与版本
 
-产品试用版为 **v0.1.1**，保留v0.1写稿方法并增加Windows/WorkBuddy适配；每次安装包的构建版本见 [SOURCE.json](../SOURCE.json)，仓库首页显示分享合集版本。
+产品试用版为 **v0.1.1**，整合写稿与表达校准并增加Windows/WorkBuddy入口；本轮按真实WorkBuddy试验修正ZIP安装说明、独立用户导出和事实来源核对；每次安装包的构建版本见 [SOURCE.json](../SOURCE.json)，仓库首页显示分享合集版本。
 
 更新前保留你对安装文件的本地修改及作者资料，下载后比较同名文件夹再更新。旧安装标识仍是 `$hanxu-script-agent`，展示名为“短视频口播文风助手”。
+
+WorkBuddy 5.9.3不覆盖同名上传。先保留本地修改和工作目录里的作者资料，再从「已安装」的技能详情「… → 卸载」移除旧技能，按ZIP入口导入新版，并新开聊天；见[实测平台说明](platforms.md)。
 
 安装或调用遇到问题，见 [常见问题](faq.md)；想反馈试用情况，见 [试用与反馈](trial-and-feedback.md)。

@@ -25,7 +25,7 @@
 
 ## 安装后直接这样开始
 
-Windows和macOS使用同一包。**WorkBuddy**：下载ZIP，在「技能 → 添加技能 → 上传技能」导入并启用。**Codex**：解压并保留完整的 `hanxu-script-agent` 文件夹，交给它检查和安装。安装位置、依赖、更新方法见 [快速上手](docs/quickstart.md) 和 [平台适配指南](docs/platforms.md)。
+Windows和macOS使用同一包。**WorkBuddy**：下载ZIP，在「技能 → 添加技能 → 上传技能」弹窗底部点「选择 ZIP 文件」，导入并启用。**Codex**：解压并保留完整的 `hanxu-script-agent` 文件夹，交给它检查和安装。安装位置、依赖、更新方法见 [快速上手](docs/quickstart.md) 和 [平台适配指南](docs/platforms.md)。
 
 目录标识沿用 `hanxu-script-agent`，展示名为“短视频口播文风助手”。下面的`$hanxu-script-agent`用于Codex对话；WorkBuddy改成“请使用已安装的短视频口播文风助手（hanxu-script-agent）”，后面的任务相同。
 
@@ -72,7 +72,7 @@ $hanxu-script-agent
 
 已做有语料、无历史语料两组隔离模拟任务，覆盖完整写稿、口吻返修和同作者新题接续；也检查安装包、引用和版本一致性。模拟任务与本页虚构演示均不代表真实目标用户采用，尚无个人口吻、真人听者理解或平台效果结论。
 
-本版补齐Windows与WorkBuddy入口、路径和编码适配；中文/空格目录、CRLF、BOM及旧控制台回归在macOS运行通过。Windows实机和WorkBuddy客户端的安装、完整任务尚未实测，详见[验证矩阵](docs/platforms.md#当前验证状态)。
+2026-10-30已在macOS上的WorkBuddy 5.9.3中实测安装导入、有/无语料写稿、局部改稿及新聊天回读作者记录。使用虚构作者材料，稿件仍须本人审阅；Windows实机尚未测试。中文/空格目录、CRLF、BOM及旧控制台回归在macOS运行通过，详见[验证矩阵](docs/platforms.md#当前验证状态)。
 
 个人适配需要你自己的反馈。使用自己的材料和已获准使用的来源，不编造本人经历或成果；拍摄、剪辑和平台发布是后续任务。
 

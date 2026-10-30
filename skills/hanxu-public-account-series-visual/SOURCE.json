@@ -1,7 +1,7 @@
 {
   "name": "hanxu-public-account-series-visual",
   "display_name": "韩叙 · 公众号封面制作助手",
-  "version": "2026-10-30-mini-v50",
+  "version": "2026-10-30-mini-v51",
   "source_relative": "working-files/system-optimization/public-account-workflow-v3/skills/公众号系列双图生成.md",
   "source_sha256": "b729ed397e961dc9c91a77a5d3c04f744f81fa9f1cafe5217be975077201a286",
   "reference_sources": [
@@ -29,6 +29,7 @@
     "保留当前个人自用原调用",
     "导出文件由原文件生成，不独立维护"
   ],
+  "public_sections": {},
   "dependency_source_hashes": {
     "working-files/product-development/shared-content-assistants/dependencies/hanxu-public-account-series-visual/package.json": "b56da6b5066c952893d9ad6fb70723ce74805193358ad513c6a0d482d67624f9"
   },
