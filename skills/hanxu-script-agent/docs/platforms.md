@@ -2,7 +2,7 @@
 
 [返回介绍](../README.md) · [快速上手](quickstart.md) · [检查范围](trial-and-feedback.md)
 
-本助手 v0.1.4 使用同一份技能包，提供 Codex 和 WorkBuddy 两条使用入口。写稿、语料学习和改稿不要求 Python、WSL、Bash 或管理员权限；Python 3 只用于可选的正文证据校验。需要宿主能够加载 Skill 并读取配套参考文件。这里的适配范围只指本助手。
+本助手 v0.1.5 使用同一份技能包，提供 Codex 和 WorkBuddy 两条使用入口。写稿、语料学习和改稿不要求 Python、WSL、Bash 或管理员权限；Python 3 只用于可选的正文证据校验。需要宿主能够加载 Skill 并读取配套参考文件。这里的适配范围只指本助手。
 
 ## 在 WorkBuddy 中使用
 
