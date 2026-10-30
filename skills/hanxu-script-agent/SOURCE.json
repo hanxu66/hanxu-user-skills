@@ -1,7 +1,7 @@
 {
   "name": "hanxu-script-agent",
   "display_name": "韩叙 · 短视频口播文风助手",
-  "version": "2026-10-30-mini-v48",
+  "version": "2026-10-30-mini-v49",
   "source_relative": "working-files/system-optimization/short-video-workflow-v3/agents/脚本Agent.md",
   "source_sha256": "7ac4b7fe17f53dbceb1b9bebc0e10debf095025d6b9e4df20c55b60dd720df5b",
   "reference_sources": [
@@ -40,12 +40,24 @@
     "导出文件由原文件生成，不独立维护"
   ],
   "dependency_source_hashes": {},
+  "documentation_source_hashes": {
+    "working-files/product-development/shared-content-assistants/templates/skills/hanxu-script-agent/docs/quickstart.md": "4534ff3ba075a59546173f4214d959389cd6466a88a89aa3563a0566ba947b2a",
+    "working-files/product-development/shared-content-assistants/templates/skills/hanxu-script-agent/docs/samples-and-calibration.md": "7909b205945163dc7d72ae806fe1d493683f7875a7610fa4ed47d58de87b626a",
+    "working-files/product-development/shared-content-assistants/templates/skills/hanxu-script-agent/docs/examples.md": "c99eb3fd482922e58fb7bcdb51e4b956353b1a5c57cad2801300d4070349b174",
+    "working-files/product-development/shared-content-assistants/templates/skills/hanxu-script-agent/docs/faq.md": "d9958ae74e6145b93cfd8f07340df9c51328278ee0c9748b766842b231a3d9ef",
+    "working-files/product-development/shared-content-assistants/templates/skills/hanxu-script-agent/docs/trial-and-feedback.md": "1fab67854e2d8473029b5b3f390aa70de426f0b933f11db0ac91a2ba2bd669b7"
+  },
   "validation": "原方法修改已由本次任务回读与检查；导出结构、语法、链接、ZIP和远端文件另有同步收据。不是实际业务效果验证。",
-  "package_skill_sha256": "278909267bbe98566a9bc1ed43ecd420b6b028d78200154bfd9015bb9eced3ca",
+  "package_skill_sha256": "5115d89d94c2ffcf99604517a5f5b3f4feb82861c4d6b05a5058890f355964d6",
   "package_files": {
-    "README.md": "5f73ce26b2138094fd25be1108cf64dca6f1ea888a33e9d5d0e15bc025c4f337",
-    "SKILL.md": "278909267bbe98566a9bc1ed43ecd420b6b028d78200154bfd9015bb9eced3ca",
+    "README.md": "bb695d6430068c0e957e1bc49aeb9604abaa331e9a9f9ae37f0f689fb3718349",
+    "SKILL.md": "5115d89d94c2ffcf99604517a5f5b3f4feb82861c4d6b05a5058890f355964d6",
     "agents/openai.yaml": "d9a5bfba3abc9853ce94c8341c1edbc67335c7850dcfc2f6a431bd07d46afb82",
+    "docs/examples.md": "c99eb3fd482922e58fb7bcdb51e4b956353b1a5c57cad2801300d4070349b174",
+    "docs/faq.md": "d9958ae74e6145b93cfd8f07340df9c51328278ee0c9748b766842b231a3d9ef",
+    "docs/quickstart.md": "4534ff3ba075a59546173f4214d959389cd6466a88a89aa3563a0566ba947b2a",
+    "docs/samples-and-calibration.md": "7909b205945163dc7d72ae806fe1d493683f7875a7610fa4ed47d58de87b626a",
+    "docs/trial-and-feedback.md": "1fab67854e2d8473029b5b3f390aa70de426f0b933f11db0ac91a2ba2bd669b7",
     "references/个人口播校准.md": "0ff3f88b144de070fff0954dc17cdc80dfc178c4b2dcfdd92e6e8d214a161061",
     "references/内容结构.md": "bdb7de9b22d49009fa01816b1b324afcb4a4fc1d22b67f4af5904aa2a174d535",
     "references/正文复核记录与校验.md": "502097a10f71ce60ffdc8d855a157cfe817a2ee19e9545d5a5f3d109239c2c14",

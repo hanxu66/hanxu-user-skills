@@ -12,7 +12,9 @@ description: 整合论点、论证、结构与个人表达，写成完整口播�
 - **得到什么**：核心论点、论证依据、内容结构、完整口播稿，以及可继续修改的个人表达记录。
 - **使用条件**：需要可用的 Codex，以及你自己的观点和材料。
 
-先看[中文使用介绍](README.md)。执行从下方“独立用户试用入口”开始；只读取各Skill的独立用户章节及所需引用，内部工作流章节不作为用户前置条件。安装标识沿用 `$hanxu-script-agent`。
+用户资料：[中文介绍](README.md) · [快速上手](docs/quickstart.md) · [语料与校准](docs/samples-and-calibration.md) · [完整演示](docs/examples.md) · [常见问题](docs/faq.md) · [试用反馈](docs/trial-and-feedback.md)。这些文档供用户按需查阅，不要求每次执行全部读取。
+
+执行从下方“独立用户试用入口”开始；只读取各Skill的独立用户章节及所需引用，内部工作流章节不作为用户前置条件。安装标识沿用 `$hanxu-script-agent`。
 
 ## 使用者配置与独立使用
 

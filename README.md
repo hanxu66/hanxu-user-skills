@@ -2,7 +2,7 @@
 
 把你的选题、观点、文章和视频素材，交给电脑上的 AI，按韩叙的方法完成具体内容任务。
 
-**先选你要做的事，再下载对应助手。** 每个助手都可以单独安装，不需要安装整套经营系统。版本：2026-10-30-mini-v48。
+**先选你要做的事，再下载对应助手。** 每个助手都可以单独安装，不需要安装整套经营系统。版本：2026-10-30-mini-v49。
 
 | 助手名称 | 什么时候用 | 安装包 |
 |---|---|---|
@@ -14,7 +14,15 @@
 | [公众号封面制作助手](skills/hanxu-public-account-series-visual/README.md) | 文章标题已定，需要统一风格的公众号封面或正文头图。 | [下载 ZIP](packages/hanxu-public-account-series-visual.zip) |
 | [口播视频剪辑助手](skills/hanxu-talking-head-edit/README.md) | 已经录好单人口播，想剪掉重复和停顿，整理字幕并完成包装。 | [下载 ZIP](packages/hanxu-talking-head-edit.zip) |
 
-[一次下载七个助手](packages/hanxu-seven-user-skills-mini-v48.zip) · [文件校验值](packages/SHA256SUMS.txt)
+[一次下载七个助手](packages/hanxu-seven-user-skills-mini-v49.zip) · [文件校验值](packages/SHA256SUMS.txt)
+
+## 短视频口播文风：用户试用版 v0.1
+
+把你想讲的事整理成完整口播稿，一起处理论点、论证、结构和个人表达。有自己的口播、直播转写或亲手改稿就学习；没有历史语料，直接从当前对话与修改逐步校准。作者表达记录保存在本地，新题可以继续回读。
+
+[看用户介绍](skills/hanxu-script-agent/README.md) · [下载独立包](packages/hanxu-script-agent.zip) · [快速上手](skills/hanxu-script-agent/docs/quickstart.md) · [完整虚构演示](skills/hanxu-script-agent/docs/examples.md) · [常见问题](skills/hanxu-script-agent/docs/faq.md)
+
+沿用安装标识 `$hanxu-script-agent`。无需安装其他六个助手；目前完成的是模拟任务与包检查，个人适配仍待真实作者反馈。
 
 ## 第一次使用怎么做
 
@@ -25,7 +33,7 @@
 
 也可以手动把每个完整助手文件夹放到 `~/.agents/skills/`，或项目里的 `.agents/skills/`。安装后未出现时重启 Codex。不要只复制 SKILL.md，需要保留参考文件、脚本和模板。[OpenAI 官方安装说明](https://learn.chatgpt.com/docs/build-skills)。
 
-例如使用短视频写稿助手：
+例如使用短视频口播文风助手：
 
 ```text
 $hanxu-script-agent

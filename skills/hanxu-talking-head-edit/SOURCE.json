@@ -1,7 +1,7 @@
 {
   "name": "hanxu-talking-head-edit",
   "display_name": "韩叙 · 口播视频剪辑助手",
-  "version": "2026-10-30-mini-v48",
+  "version": "2026-10-30-mini-v49",
   "source_relative": "working-files/system-optimization/short-video-workflow-v3/skills/口播剪辑.md",
   "source_sha256": "1aaa8b949a054067d0acaa0962ca2cc9f33da5f5c7f2b85b682cf4a15a3f69c2",
   "reference_sources": [
@@ -48,6 +48,7 @@
     "导出文件由原文件生成，不独立维护"
   ],
   "dependency_source_hashes": {},
+  "documentation_source_hashes": {},
   "validation": "原方法修改已由本次任务回读与检查；导出结构、语法、链接、ZIP和远端文件另有同步收据。不是实际业务效果验证。",
   "package_skill_sha256": "946efddca64124172c2b48eb3da517da958b120df50ebf40ff2af99d694bfd43",
   "package_files": {
