@@ -1,9 +1,9 @@
 {
   "name": "hanxu-script-agent",
   "display_name": "韩叙 · 短视频口播文风助手",
-  "version": "2026-10-30-mini-v61",
+  "version": "2026-10-31-mini-v62",
   "source_relative": "working-files/system-optimization/short-video-workflow-v3/agents/脚本Agent.md",
-  "source_sha256": "43e4822f13e30900ddca90bf7b4fa1e51975f32ee4a2504208a46259d4c79e8b",
+  "source_sha256": "2abf2cac603bbab9b960b2bb1f5e28155b90e3c71155de6bcc3bb22ea5a49183",
   "reference_sources": [
     "working-files/system-optimization/short-video-workflow-v3/skills/观点立意.md",
     "working-files/system-optimization/short-video-workflow-v3/skills/内容结构.md",
@@ -17,13 +17,13 @@
     "tools/check_short_video_script_review.py"
   ],
   "reference_source_hashes": {
-    "working-files/system-optimization/short-video-workflow-v3/skills/观点立意.md": "e8847d2ce5f907b2900fbc48a8e69b639645f03094c22a3e8162517443057ac3",
-    "working-files/system-optimization/short-video-workflow-v3/skills/内容结构.md": "971f186fcd4ba9db1b887de594eb5981f7c11c19afb028143dd8af4538bca039",
-    "working-files/system-optimization/short-video-workflow-v3/skills/逐字稿.md": "9bd70876fd2aa471500a871718cdbaad79eaad68babfe5a73ba765d8300c9ba9",
+    "working-files/system-optimization/short-video-workflow-v3/skills/观点立意.md": "f6e4ac04d0fb0d098b20e500093065341d6ad8d833a875025216865cf0be1e42",
+    "working-files/system-optimization/short-video-workflow-v3/skills/内容结构.md": "240db01be0a7451b849fb9dec12ba7d4836782625e3b465b45919a4a8203924f",
+    "working-files/system-optimization/short-video-workflow-v3/skills/逐字稿.md": "9dcb1dc8b39dda2e000eea7bef32283c3cadf305916a35014b2b335c632c199c",
     "working-files/system-optimization/short-video-workflow-v3/skills/表达学习与应用.md": "b3ab5b1f3a97c62d97de7c32d9b05514521e3eb6f8be75e8c2c3fcdad7fb1c3e",
-    "working-files/system-optimization/short-video-workflow-v3/standards/脚本执行标准.md": "bdee3cb03d34a34971f650e4a08800e9a5535b0c20f29e97d60133c1bf71b57e",
+    "working-files/system-optimization/short-video-workflow-v3/standards/脚本执行标准.md": "2998b9750b84223ff765e25f1e052a5b4ed259162f40c44b324c12b464d8681d",
     "working-files/system-optimization/short-video-workflow-v3/skills/references/正文复核记录与校验.md": "e0217600ca4d441c9f6515c996e4daa6d99b2c2ce0b386be1923d630f291fcce",
-    "working-files/system-optimization/short-video-workflow-v3/skills/references/个人口播校准.md": "bb5051a46c915837820adaaf6e17dbd780c4009e886e97f18f526e8780bc788b"
+    "working-files/system-optimization/short-video-workflow-v3/skills/references/个人口播校准.md": "79a93632a7ddcdc58b367b76598af9735e0df83b6a286f1deb96269529de3184"
   },
   "script_source_hashes": {
     "tools/check_short_video_script_review.py": "f94e9792a55997c1deb8e4556f9474e9d4a3af01689d6c222977d20f00392fad"
@@ -41,7 +41,7 @@
   ],
   "public_sections": {
     "working-files/system-optimization/short-video-workflow-v3/agents/脚本Agent.md": [
-      "## 独立用户试用入口｜短视频口播文风 v0.1.5"
+      "## 独立用户试用入口｜短视频口播文风 v0.1.6"
     ],
     "working-files/system-optimization/short-video-workflow-v3/skills/观点立意.md": [
       "## 独立用户的论点与论证"
@@ -70,30 +70,35 @@
     "working-files/product-development/shared-content-assistants/templates/skills/hanxu-script-agent/docs/samples-and-calibration.md": "f29cbe64e27ea12b00e8072d70139cf5d36d8f3d4c0b570c71ab16ba4484b75c",
     "working-files/product-development/shared-content-assistants/templates/skills/hanxu-script-agent/docs/examples.md": "7959351f3c27594554bfe367ca559717549823aa868dc99ad18e28c1ca6596a5",
     "working-files/product-development/shared-content-assistants/templates/skills/hanxu-script-agent/docs/faq.md": "d616609c40b6adf5c5a45148bb6819066005f929d0de5416900c615b20df73a1",
-    "working-files/product-development/shared-content-assistants/templates/skills/hanxu-script-agent/docs/trial-and-feedback.md": "c331c8ff8fb1a375eacf1da9139a0d89a333178060d945679b84a6b87552c034",
-    "working-files/product-development/shared-content-assistants/templates/skills/hanxu-script-agent/docs/platforms.md": "4ddba6e5ca310f87fe70151ba06f6e45dce2b39cdfe657c8b53ec1499175832f",
-    "working-files/product-development/shared-content-assistants/templates/skills/hanxu-script-agent/docs/install-update.md": "79682d0d30185e1898a001a6c686d94bbe40740e9ee2310725201fc36e430449"
+    "working-files/product-development/shared-content-assistants/templates/skills/hanxu-script-agent/docs/trial-and-feedback.md": "fe2614cab75249cde33a0192d42b94e3fb91c3c2dea1ba0315641a30df90ff68",
+    "working-files/product-development/shared-content-assistants/templates/skills/hanxu-script-agent/docs/platforms.md": "b7edc5c78c6136dfc090ad03bbc949ac85073df0063bdd4156325d49140144a1",
+    "working-files/product-development/shared-content-assistants/templates/skills/hanxu-script-agent/docs/install-update.md": "2c09e963b47d3615f0ccbf53185171cfa4fb9f47ba746ad94a764ba853838b17"
   },
   "validation": "原方法修改已由本次任务回读与检查；导出结构、语法、链接、ZIP和远端文件另有同步收据。不是实际业务效果验证。",
-  "package_skill_sha256": "7d6761b67a95521a6c03c36309da2b308db3d3250dd050bedaf87d46b715ba12",
+  "package_skill_sha256": "2f02ae4584c221203c91b75e320c1ab5f937f902959839cfe8e21bdcc0199d09",
   "package_files": {
-    "README.md": "fb9d99f3c47ebd49ba1d200856c6f60695dfb9f7c91516336c6e1a3f13bc2896",
-    "SKILL.md": "7d6761b67a95521a6c03c36309da2b308db3d3250dd050bedaf87d46b715ba12",
+    "README.md": "267c3085f579517ba155ee7e0259f5944b0353dd178a3f1362cee228f32fba74",
+    "SKILL.md": "2f02ae4584c221203c91b75e320c1ab5f937f902959839cfe8e21bdcc0199d09",
     "agents/openai.yaml": "d9a5bfba3abc9853ce94c8341c1edbc67335c7850dcfc2f6a431bd07d46afb82",
     "docs/examples.md": "7959351f3c27594554bfe367ca559717549823aa868dc99ad18e28c1ca6596a5",
     "docs/faq.md": "d616609c40b6adf5c5a45148bb6819066005f929d0de5416900c615b20df73a1",
-    "docs/install-update.md": "79682d0d30185e1898a001a6c686d94bbe40740e9ee2310725201fc36e430449",
-    "docs/platforms.md": "4ddba6e5ca310f87fe70151ba06f6e45dce2b39cdfe657c8b53ec1499175832f",
+    "docs/install-update.md": "2c09e963b47d3615f0ccbf53185171cfa4fb9f47ba746ad94a764ba853838b17",
+    "docs/platforms.md": "b7edc5c78c6136dfc090ad03bbc949ac85073df0063bdd4156325d49140144a1",
     "docs/quickstart.md": "94da0ceb9483df1befaa4e31bd6b383f723a5657d689cd2e220a4f55c985853d",
     "docs/samples-and-calibration.md": "f29cbe64e27ea12b00e8072d70139cf5d36d8f3d4c0b570c71ab16ba4484b75c",
-    "docs/trial-and-feedback.md": "c331c8ff8fb1a375eacf1da9139a0d89a333178060d945679b84a6b87552c034",
-    "references/个人口播校准.md": "d76b7d92ca4f46c5ecc47652122aac8d5499a5a7fd4cc429a2f665f8d001f72d",
-    "references/内容结构.md": "e3bc62e8b5c79a8d02e8737f99b0d6d0dc7cbdacd6222a841bcdf067a6928e25",
+    "docs/trial-and-feedback.md": "fe2614cab75249cde33a0192d42b94e3fb91c3c2dea1ba0315641a30df90ff68",
+    "references/个人口播校准.md": "ba305fbb7a00d60c5a53156befd43d1c246f13bd604eb80b70b6aebd198571cb",
+    "references/内容结构.md": "1c794d29ce6b5a765f3b5c496ea412311ff98d959bd6c2857f141c9a260c7979",
     "references/正文复核记录与校验.md": "f4953bc0b20651825e83173d1de7ef5e5dec9f4cb788ef7dc77d46f765904d7f",
-    "references/脚本执行标准.md": "5f1e1e81871c9868a4d683e640c4cf9609168bd3d5a767ec8b2c77c5de8b1427",
+    "references/脚本执行标准.md": "117b495cc6a9fc7294eecd720981cea70771c5163d8539aa3edd4d6605e738c9",
     "references/表达学习与应用.md": "a47e6733559be731ce797bc5e1463ac28696b98382f37ae02b2b04f2ca1ea38a",
-    "references/观点立意.md": "81c8b920d0599da22f7c71104a4b7868c00ddb575ded2b767cb3a75aa382a8b5",
-    "references/逐字稿.md": "492ddcfe9cd2943d5512eea628880cc6d36152b72fd9f6c1d5247f8af6521c5f",
+    "references/观点立意.md": "0e527362a4001ed01219c8a2dcdcc9100898525e97f858e8f2ee4baf6b93bc20",
+    "references/逐字稿.md": "6ab388eddc8c51d453392785f9fbd7bf4d755764336ebfade476aede288f60c9",
     "scripts/check_short_video_script_review.py": "f94e9792a55997c1deb8e4556f9474e9d4a3af01689d6c222977d20f00392fad"
-  }
+  },
+  "inline_reference_sources": [
+    "working-files/system-optimization/short-video-workflow-v3/skills/观点立意.md",
+    "working-files/system-optimization/short-video-workflow-v3/skills/内容结构.md",
+    "working-files/system-optimization/short-video-workflow-v3/skills/逐字稿.md"
+  ]
 }

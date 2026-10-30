@@ -16,7 +16,7 @@
 
 **把你的想法整理成讲得清楚、适合你说出口的短视频口播稿。**
 
-用户试用版 **v0.1.5**，包含论点、论证、结构和文风。有本人语料就学习；没有历史语料，从这次对话与改稿逐步校准。你不需要先建语料库，也不必先安装整套内容生产系统。
+用户试用版 **v0.1.6**，包含论点、论证、结构和文风。有本人语料就学习；没有历史语料，从这次对话与改稿逐步校准。你不需要先建语料库，也不必先安装整套内容生产系统。
 
 [下载独立安装包](https://github.com/hanxu66/hanxu-user-skills/raw/main/packages/hanxu-script-agent.zip) · [快速上手](docs/quickstart.md) · [看完整演示](docs/examples.md) · [七个助手总介绍](https://github.com/hanxu66/hanxu-user-skills#readme)
 

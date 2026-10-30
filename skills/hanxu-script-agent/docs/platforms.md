@@ -2,7 +2,7 @@
 
 [返回介绍](../README.md) · [快速上手](quickstart.md) · [检查范围](trial-and-feedback.md)
 
-本助手 v0.1.5 使用同一份技能包，提供 Codex 和 WorkBuddy 两条使用入口。写稿、语料学习和改稿不要求 Python、WSL、Bash 或管理员权限；Python 3 只用于可选的正文证据校验。需要宿主能够加载 Skill 并读取配套参考文件。这里的适配范围只指本助手。
+本助手 v0.1.6 使用同一份技能包，提供 Codex 和 WorkBuddy 两条使用入口。写稿、语料学习和改稿不要求 Python、WSL、Bash 或管理员权限；Python 3 只用于可选的正文证据校验。需要宿主能够加载 Skill 并读取配套参考文件。这里的适配范围只指本助手。
 
 ## 在 WorkBuddy 中使用
 
@@ -24,7 +24,7 @@
 作者记录放在本次工作目录的“口播试用”中。
 ```
 
-WorkBuddy支持本地包上传及已安装技能调用，依据[官方技能说明](https://www.codebuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Skills-Market)。工作目录选择见[官方创建任务说明](https://www.codebuddy.cn/docs/workbuddy/Create-Task)。2026-10-30已在macOS、WorkBuddy 5.9.3、默认“快速”模型中实际导入并启用本助手，完成下方列明的虚构作者任务。Windows桌面客户端仍待实机验证；下方另列Windows云运行器的包与工具检查。
+WorkBuddy支持本地包上传及已安装技能调用，依据[官方技能说明](https://www.codebuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Skills-Market)。工作目录选择见[官方创建任务说明](https://www.codebuddy.cn/docs/workbuddy/Create-Task)。2026-10-30已在macOS、WorkBuddy 5.9.3、默认“快速”模型中实际导入并启用本助手，完成下方列明的虚构作者任务。Windows桌面历史试验的版本与限制见下表，不能由同包或官方支持推定当前版的写稿质量；下方另列Windows云运行器的包与工具检查。
 
 如果没有识别到技能，先检查是否导入、启用成功，以及任务是否能读取配套文件。若客户端拒绝这个包，保留具体错误及版本反馈，不能把普通对话回复当作导入成功。不要只粘贴 `SKILL.md` 后声称已安装完整技能。WorkBuddy不要求照搬Codex的`$`调用前缀。
 
@@ -70,8 +70,9 @@ python3 "/实际安装位置/hanxu-script-agent/scripts/check_short_video_script
 | 对象 | 已完成 | 仍待验证 |
 | --- | --- | --- |
 | macOS上的文件包与工具 | ZIP解压、相对引用、真实脚本调用及有/无语料模拟任务 | 目标用户实际采用、真实听感 |
-| Windows云运行器 | Windows Server 2025、Python 3.12.10中实际PowerShell解压；ZIP/SOURCE哈希与引用、中文/空格路径、9种编码组合、旧证据拒收、作者否定、覆盖保护及作者记录跨进程读写，共13项运行检查 | Windows 10/11桌面、Codex/WorkBuddy的识别导入、写稿与改稿接续 |
-| macOS WorkBuddy 5.9.3 | 官方安装、用户登录、ZIP导入及启用；两位虚构作者分别完成有/无语料写稿、指定末段返修、作者记录保存和新聊天换题回读；中文/空格工作目录实际读写 | 其他客户端版本、Windows客户端、目标作者实际口吻与采用 |
+| Windows 11 / WorkBuddy 5.9.3（历史资料包v60） | 实际导入、写稿、局部返修、作者记录与新聊天接续；首稿问题经明确反馈后修正 | 当前v0.1.6尚未在Windows复测；历史流程完成不等于首稿语义质量通过或自动无推测 |
+| Windows云运行器 | Windows Server 2025、Python 3.12.10中实际PowerShell解压；ZIP/SOURCE哈希与引用、中文/空格路径、9种编码组合、旧证据拒收、作者否定、覆盖保护及作者记录跨进程读写，共13项运行检查 | Windows 10桌面、Windows版Codex，以及不同于上述历史试验的当前包客户端结果 |
+| macOS WorkBuddy 5.9.3 | 官方安装、用户登录、ZIP导入及启用；两位虚构作者分别完成有/无语料写稿、指定末段返修、作者记录保存和新聊天换题回读；中文/空格工作目录实际读写 | 其他客户端版本、当前包在Windows的复测、目标作者实际口吻与采用 |
 
 v0.1.2本轮已在macOS上的WorkBuddy 5.9.3通过官方ZIP导入、启用和参考文件读取，并使用“快速”（DeepSeek-V4.1-Flash）完成相近题材、样本带历史请求的合成口播任务。样本中的业务细节没有进入口播，也未触发索要历史表格；正文保留本题主旨。试跑仍发现个别推测和作者记录分类需局部纠正，不能承诺自动消除所有内容错误。
 
@@ -81,4 +82,4 @@ v0.1.2本轮已在macOS上的WorkBuddy 5.9.3通过官方ZIP导入、启用和参
 
 2026-10-30新增[Windows云运行记录](https://github.com/hanxu66/hanxu-user-skills/actions/runs/41039521590)：实际测试包为`2026-10-30-mini-v52`。仓库的[Windows自动检查](https://github.com/hanxu66/hanxu-user-skills/actions/workflows/script-windows-check.yml)在相关包更新时重跑，查看所用提交和SOURCE版本。临时作者记录从新进程实际读回，只证明文件持久化，不是AI新聊天风格学习。
 
-编码回归已在macOS及Windows云运行器运行；云运行器不是Windows 10/11桌面，未运行Windows版Codex或WorkBuddy，不将其写成客户端全流程通过。官方支持上传本地技能包，也不等于本包已获其认证。遇到差异请附操作系统、客户端版本、SOURCE.json版本及具体错误，见[反馈模板](trial-and-feedback.md)。
+编码回归已在macOS及Windows云运行器运行；云运行器不是Windows 10/11桌面，其检查未运行Windows版Codex或WorkBuddy，不将其写成客户端全流程通过；Windows 11客户端证据单列，不与云检查混用。官方支持上传本地技能包，也不等于本包已获其认证。遇到差异请附操作系统、客户端版本、SOURCE.json版本及具体错误，见[反馈模板](trial-and-feedback.md)。
