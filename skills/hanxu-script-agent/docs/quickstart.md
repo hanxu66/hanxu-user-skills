@@ -2,7 +2,15 @@
 
 [返回介绍](../README.md) · [语料与校准](samples-and-calibration.md) · [完整演示](examples.md)
 
-## 1. 安装完整文件夹
+## 1. 选择安装入口
+
+Windows和macOS共用本包。**WorkBuddy**直接上传ZIP；**Codex**安装解压后的完整文件夹。下面分开说明，详见[平台适配与验证范围](platforms.md)。
+
+### WorkBuddy
+
+下载下面的独立ZIP，在「专家·技能·连接器 → 技能 → 添加技能 → 上传技能」中选择它，再到「已安装」确认启用。新建任务时选好存放作者资料的工作目录。该入口依据[WorkBuddy官方技能说明](https://www.codebuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Skills-Market)，尚未在真实WorkBuddy客户端导入实测。
+
+### Codex
 
 [下载单项 ZIP](https://github.com/hanxu66/hanxu-user-skills/raw/main/packages/hanxu-script-agent.zip)，解压后保留整个 `hanxu-script-agent` 文件夹。里面应有 `SKILL.md`、`README.md`、`references/`、`scripts/`、`agents/`、`docs/` 和 `SOURCE.json`。
 
@@ -24,6 +32,8 @@
 ## 2. 带着一条具体题目开始
 
 在你的内容项目中输入以下文本，替换括号中的内容：
+
+示例第一行用于Codex对话。WorkBuddy把第一行替换为“请使用已安装的短视频口播文风助手（hanxu-script-agent）”；后续写稿、改稿和新题接续相同。无需在系统终端执行这段文字。
 
 ```text
 $hanxu-script-agent
@@ -67,7 +77,7 @@ $hanxu-script-agent
 
 ## 更新与版本
 
-产品试用方法版本为 **v0.1**；每次安装包的构建版本见 [SOURCE.json](../SOURCE.json)，仓库首页显示分享合集版本。补文档不会自动表示写稿方法升级。
+产品试用版为 **v0.1.1**，保留v0.1写稿方法并增加Windows/WorkBuddy适配；每次安装包的构建版本见 [SOURCE.json](../SOURCE.json)，仓库首页显示分享合集版本。
 
 更新前保留你对安装文件的本地修改及作者资料，下载后比较同名文件夹再更新。旧安装标识仍是 `$hanxu-script-agent`，展示名为“短视频口播文风助手”。
 

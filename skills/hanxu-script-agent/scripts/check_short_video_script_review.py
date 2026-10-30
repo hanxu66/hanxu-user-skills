@@ -15,6 +15,20 @@ from pathlib import Path
 STAGES = ('观点立意', '内容结构', '逐字稿')
 
 
+def read_text(path):
+    """Read portable text, preserving universal-newline handling.
+
+    UTF-16 requires a BOM (e.g. Windows PowerShell 5 Out-File). Other
+    inputs must be UTF-8, optionally with BOM; never guess a locale encoding.
+    Evidence hashes still cover the original bytes, including BOM/newlines.
+    """
+    p = Path(path)
+    with p.open('rb') as stream:
+        prefix = stream.read(2)
+    encoding = 'utf-16' if prefix in (b'\xff\xfe', b'\xfe\xff') else 'utf-8-sig'
+    return p.read_text(encoding=encoding)
+
+
 def digest(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
@@ -59,7 +73,7 @@ def check(review,base=Path('.')):
     object_id=required_text(review.get('objectId'),'objectId')
     version=required_text(review.get('version'),'version')
     script=checked_file(review['script'],base)
-    body,paragraphs=body_paragraphs(script.read_text(encoding='utf-8-sig'))
+    body,paragraphs=body_paragraphs(read_text(script))
     task=review.get('taskType')
     if task not in {'method','explanation','correction','opinion','story'}:
         raise ValueError('Explicit task type required; not every video is a method tutorial')
@@ -103,7 +117,7 @@ def check(review,base=Path('.')):
     feedback=[]
     for item in review.get('rejections',[]):
         path=checked_file(item['evidence'],base)
-        quoted(item.get('quote'),path.read_text(),'rejection evidence')
+        quoted(item.get('quote'),read_text(path),'rejection evidence')
         if item.get('scriptSha256')!=digest(script):
             raise ValueError('Rejection must identify this exact script; do not veto another revision')
         required_text(item.get('reason'),'rejection reason')
@@ -120,11 +134,11 @@ def check(review,base=Path('.')):
 
 
 def require_pass(report_path,script_path,object_id,version):
-    report=json.loads(Path(report_path).read_text())
+    report=json.loads(read_text(report_path))
     if not isinstance(report,dict):raise ValueError('Review report must be an object')
     if report.get('toolSha256')!=digest(__file__):raise ValueError('Script reviewer checker changed; rerun check')
     ref=report['reviewInput'];p=checked_file(ref,Path(report_path).resolve().parent)
-    result=check(json.loads(p.read_text()),p.parent)
+    result=check(json.loads(read_text(p)),p.parent)
     if (result['objectId']!=object_id or result['version']!=version or
             Path(result['script']['path'])!=Path(script_path).resolve(strict=True)):
         raise ValueError('Script review object/version/file mismatch')
@@ -143,7 +157,7 @@ def main():
         print(json.dumps({'status':'script_review_invalid','error':'Output cannot overwrite review input'}));return 2
     try:
         source=a.review.resolve(strict=True)
-        review=json.loads(source.read_text())
+        review=json.loads(read_text(source))
         if not isinstance(review,dict):raise ValueError('Review must be a JSON object')
         script=Path(review.get('script',{}).get('path',''))
         script=script if script.is_absolute() else source.parent/script
@@ -155,8 +169,9 @@ def main():
     except (OSError,ValueError,KeyError,TypeError,AttributeError) as exc:
         result={'status':'script_review_invalid','error':str(exc),'toolSha256':digest(__file__)};code=2
     # Always replace an old green report on invalid input as well as failure.
-    a.output.write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n')
-    print(json.dumps(result,ensure_ascii=False));return code
+    a.output.write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    # JSON escapes keep redirected output usable with legacy Windows consoles.
+    print(json.dumps(result,ensure_ascii=True));return code
 
 
 if __name__=='__main__':raise SystemExit(main())

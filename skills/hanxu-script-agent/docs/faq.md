@@ -44,11 +44,19 @@
 
 ## 要安装什么软件或另付API费用吗？
 
-当前为Codex本地Skill文件包，需要可用的AI环境；下载页面本身不能在线写稿。本Skill的正文证据校验脚本只使用Python标准库，不单独调用模型API。模型、转写或其他工具的费用按你实际使用的服务计费，不包含订阅或额度。
+当前为本地Skill文件包，提供Codex和WorkBuddy使用入口，需要可用的AI环境；下载页面本身不能在线写稿。本Skill的正文证据校验脚本只使用Python标准库，不单独调用模型API。模型、转写或其他工具的费用按你实际使用的服务计费，不包含订阅或额度。
 
 没有Python仍可做文字审读，执行者须说明未运行程序。程序能检查引用、覆盖和版本一致性，不能自动判断论证质量、本人听感或平台效果。
 
+## Windows电脑、WorkBuddy能用吗？
+
+本版按Windows/macOS及Codex/WorkBuddy做了文件包和执行说明适配。WorkBuddy按官方「添加技能 → 上传技能」入口导入并启用，按技能名称调用；Codex安装完整目录，在对话中用`$hanxu-script-agent`选择。写稿无需Python或WSL。
+
+实际回归覆盖中文/空格路径、CRLF、BOM、UTF-16和非UTF-8控制台，但在macOS运行；Windows实机和真实WorkBuddy客户端仍待安装及完整任务验证。详见[平台指南](platforms.md)，不能把官方支持本地包理解成这个包已被其认证。
+
 ## 安装后找不到，或者出现两个同名Skill？
+
+WorkBuddy先到「已安装」确认导入及启用状态，查看具体报错；不要把Codex的目录位置或`$`前缀当作WorkBuddy要求。
 
 先检查路径是否直接包含 `hanxu-script-agent/SKILL.md`，有没有重复嵌套或只复制了一个文件。检查是否同时在用户目录和项目目录放了同名版本；Codex不会自动合并同名Skill。变化未出现时再重启，详见 [快速上手及官方文档](quickstart.md)。
 

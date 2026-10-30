@@ -2,7 +2,7 @@
 
 **把你的想法整理成讲得清楚、适合你说出口的短视频口播稿。**
 
-用户试用版 **v0.1**，包含论点、论证、结构和文风。有本人语料就学习；没有历史语料，从这次对话与改稿逐步校准。你不需要先建语料库，也不必先安装整套内容生产系统。
+用户试用版 **v0.1.1**，包含论点、论证、结构和文风。有本人语料就学习；没有历史语料，从这次对话与改稿逐步校准。你不需要先建语料库，也不必先安装整套内容生产系统。
 
 [下载独立安装包](https://github.com/hanxu66/hanxu-user-skills/raw/main/packages/hanxu-script-agent.zip) · [快速上手](docs/quickstart.md) · [看完整演示](docs/examples.md) · [七个助手总介绍](https://github.com/hanxu66/hanxu-user-skills#readme)
 
@@ -25,9 +25,9 @@
 
 ## 安装后直接这样开始
 
-下载ZIP并解压，保留完整的 `hanxu-script-agent` 文件夹。交给电脑上的Codex，说“请检查并安装这个Skill，保留已有资料和本地修改”。安装位置、依赖、更新方法见 [快速上手](docs/quickstart.md)。
+Windows和macOS使用同一包。**WorkBuddy**：下载ZIP，在「技能 → 添加技能 → 上传技能」导入并启用。**Codex**：解压并保留完整的 `hanxu-script-agent` 文件夹，交给它检查和安装。安装位置、依赖、更新方法见 [快速上手](docs/quickstart.md) 和 [平台适配指南](docs/platforms.md)。
 
-安装与调用标识沿用 `$hanxu-script-agent`，展示名为“短视频口播文风助手”。
+目录标识沿用 `hanxu-script-agent`，展示名为“短视频口播文风助手”。下面的`$hanxu-script-agent`用于Codex对话；WorkBuddy改成“请使用已安装的短视频口播文风助手（hanxu-script-agent）”，后面的任务相同。
 
 ```text
 $hanxu-script-agent
@@ -51,6 +51,7 @@ $hanxu-script-agent
 | 你现在需要什么 | 去哪里看 |
 | --- | --- |
 | 安装、首次写稿、返修、新题接续、更新 | [快速上手](docs/quickstart.md) |
+| Windows、macOS、WorkBuddy、可选Python与验证范围 | [平台适配指南](docs/platforms.md) |
 | 什么能当语料、没语料怎么办、如何保存偏好 | [语料与校准指南](docs/samples-and-calibration.md) |
 | 看输入、论点论证、结构、完整稿和修改对照 | [两组完整虚构演示](docs/examples.md) |
 | 依赖、兼容性、记忆、材料处理和许可疑问 | [常见问题](docs/faq.md) |
@@ -63,13 +64,15 @@ $hanxu-script-agent
 
 默认在当前项目的 `口播试用/` 保存本作者的表达记录和各题稿件，也可以指定目录。多人分开记录，新题先回读；跨聊天或换机器须能访问同一文件，或者把记录带过去。
 
-当前按Codex本地Skill文件包交付，需要可用的AI环境及自己的材料；其他工具未专门验证。正文证据校验脚本使用Python标准库，没有Python时可做文字审读并说明范围。音视频读取或转写依赖你的实际工具，包内没有转写、配音或声音克隆服务。
+按本地Skill文件包交付，提供Codex和WorkBuddy使用入口，需要宿主能加载完整Skill及自己的材料。写稿无Python依赖；正文证据校验脚本使用Python标准库，没有Python时做文字审读并说明范围。音视频读取或转写依赖你的实际工具，包内没有转写、配音或声音克隆服务。
 
 本Skill不执行对外上传、发送或发布。表达记录留在你的工作目录；模型服务如何处理输入取决于所用服务，不能把本地记录理解为离线承诺。模型与工具费用按你自己的服务计费。
 
 ## 当前试用边界
 
 已做有语料、无历史语料两组隔离模拟任务，覆盖完整写稿、口吻返修和同作者新题接续；也检查安装包、引用和版本一致性。模拟任务与本页虚构演示均不代表真实目标用户采用，尚无个人口吻、真人听者理解或平台效果结论。
+
+本版补齐Windows与WorkBuddy入口、路径和编码适配；中文/空格目录、CRLF、BOM及旧控制台回归在macOS运行通过。Windows实机和WorkBuddy客户端的安装、完整任务尚未实测，详见[验证矩阵](docs/platforms.md#当前验证状态)。
 
 个人适配需要你自己的反馈。使用自己的材料和已获准使用的来源，不编造本人经历或成果；拍摄、剪辑和平台发布是后续任务。
 
