@@ -1,7 +1,7 @@
 {
   "name": "hanxu-public-account-title",
   "display_name": "韩叙 · 公众号标题助手",
-  "version": "2026-10-30-mini-v59",
+  "version": "2026-10-30-mini-v60",
   "source_relative": "working-files/system-optimization/public-account-workflow-v3/skills/标题生成.md",
   "source_sha256": "64a5b53ef6859019061e195178f8b0883674edc4608f88bb7aff064bd1fb8859",
   "reference_sources": [
