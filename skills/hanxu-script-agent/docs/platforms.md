@@ -20,7 +20,7 @@
 作者记录放在本次工作目录的“口播试用”中。
 ```
 
-WorkBuddy支持本地包上传及已安装技能调用，依据[官方技能说明](https://www.codebuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Skills-Market)。工作目录选择见[官方创建任务说明](https://www.codebuddy.cn/docs/workbuddy/Create-Task)。2026-10-30已在macOS、WorkBuddy 5.9.3、默认“快速”模型中实际导入并启用本助手，完成下方列明的虚构作者任务。Windows客户端仍待实机验证。
+WorkBuddy支持本地包上传及已安装技能调用，依据[官方技能说明](https://www.codebuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Skills-Market)。工作目录选择见[官方创建任务说明](https://www.codebuddy.cn/docs/workbuddy/Create-Task)。2026-10-30已在macOS、WorkBuddy 5.9.3、默认“快速”模型中实际导入并启用本助手，完成下方列明的虚构作者任务。Windows桌面客户端仍待实机验证；下方另列Windows云运行器的包与工具检查。
 
 如果没有识别到技能，先检查是否导入、启用成功，以及任务是否能读取配套文件。若客户端拒绝这个包，保留具体错误及版本反馈，不能把普通对话回复当作导入成功。不要只粘贴 `SKILL.md` 后声称已安装完整技能。WorkBuddy不要求照搬Codex的`$`调用前缀。
 
@@ -66,9 +66,11 @@ python3 "/实际安装位置/hanxu-script-agent/scripts/check_short_video_script
 | 对象 | 已完成 | 仍待验证 |
 | --- | --- | --- |
 | macOS上的文件包与工具 | ZIP解压、相对引用、真实脚本调用及有/无语料模拟任务 | 目标用户实际采用、真实听感 |
-| Windows兼容 | 中文及空格目录、CRLF、BOM、UTF-16、非UTF-8控制台回归 | Windows实机安装与完整任务 |
+| Windows云运行器 | Windows Server 2025、Python 3.12.10中实际PowerShell解压；ZIP/SOURCE哈希与引用、中文/空格路径、9种编码组合、旧证据拒收、作者否定、覆盖保护及作者记录跨进程读写，共13项运行检查 | Windows 10/11桌面、Codex/WorkBuddy的识别导入、写稿与改稿接续 |
 | macOS WorkBuddy 5.9.3 | 官方安装、用户登录、ZIP导入及启用；两位虚构作者分别完成有/无语料写稿、指定末段返修、作者记录保存和新聊天换题回读；中文/空格工作目录实际读写 | 其他客户端版本、Windows客户端、目标作者实际口吻与采用 |
 
 上述客户端试验使用默认“快速”模型（界面显示GLM-5.3-Flash）和虚构验收材料。局部改稿逐段比对，范围外正文保持；新聊天应用各自已确认偏好，没有把旧题约定或经历当成新题事实。试验中也发现首稿需要审稿纠偏，不能把流程跑通理解成自动保证事实、论证或个人口吻正确。A组实际运行了可选证据校验，B组明确采用文字审读、没有假报程序运行。
 
-编码回归在macOS上运行，不冒充Windows实测。官方支持上传本地技能包，也不等于本包已获其认证。遇到差异请附操作系统、客户端版本、SOURCE.json版本及具体错误，见[反馈模板](trial-and-feedback.md)。
+2026-10-30新增[Windows云运行记录](https://github.com/hanxu66/hanxu-user-skills/actions/runs/41039521590)：实际测试包为`2026-10-30-mini-v52`。仓库的[Windows自动检查](https://github.com/hanxu66/hanxu-user-skills/actions/workflows/script-windows-check.yml)在相关包更新时重跑，查看所用提交和SOURCE版本。临时作者记录从新进程实际读回，只证明文件持久化，不是AI新聊天风格学习。
+
+编码回归已在macOS及Windows云运行器运行；云运行器不是Windows 10/11桌面，未运行Windows版Codex或WorkBuddy，不将其写成客户端全流程通过。官方支持上传本地技能包，也不等于本包已获其认证。遇到差异请附操作系统、客户端版本、SOURCE.json版本及具体错误，见[反馈模板](trial-and-feedback.md)。

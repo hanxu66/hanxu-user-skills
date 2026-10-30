@@ -52,7 +52,7 @@
 
 本版按Windows/macOS及Codex/WorkBuddy做了文件包和执行说明适配。WorkBuddy按官方「添加技能 → 上传技能」入口导入并启用，按技能名称调用；Codex安装完整目录，在对话中用`$hanxu-script-agent`选择。写稿无需Python或WSL。
 
-已在macOS上的WorkBuddy 5.9.3实际导入，并完成有/无语料写稿、局部改稿、保存记录和新聊天换题回读。试验使用虚构作者材料，仍须本人审稿。中文/空格路径、CRLF、BOM、UTF-16和非UTF-8控制台回归也在macOS运行；Windows实机仍待验证。详见[平台指南](platforms.md)，不能把官方支持本地包理解成这个包已被其认证。
+已在macOS上的WorkBuddy 5.9.3实际导入，并完成有/无语料写稿、局部改稿、保存记录和新聊天换题回读。试验使用虚构作者材料，仍须本人审稿。中文/空格路径、CRLF、BOM、UTF-16和非UTF-8控制台回归也在macOS运行；Windows Server 2025云运行器已通过13项包/文件/CLI检查；Windows桌面及其AI客户端仍待验证。详见[平台指南](platforms.md)，不能把官方支持本地包理解成这个包已被其认证。
 
 ## 安装后找不到，或者出现两个同名Skill？
 
