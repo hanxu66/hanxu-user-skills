@@ -2,32 +2,9 @@
 
 [返回介绍](../README.md) · [语料与校准](samples-and-calibration.md) · [完整演示](examples.md)
 
-## 1. 选择安装入口
+## 1. 安装并确认版本
 
-Windows和macOS共用本包。**WorkBuddy**直接上传ZIP；**Codex**安装解压后的完整文件夹。下面分开说明，详见[平台适配与验证范围](platforms.md)。
-
-### WorkBuddy
-
-下载下面的独立ZIP，在「专家·技能·连接器 → 技能 → 添加技能 → 上传技能」弹窗中，点底部「选择 ZIP 文件」上传原包，再到「已安装」确认启用。5.9.3的中央大上传区选择的是文件夹，不能拿它选择ZIP所在目录。新建任务时选好存放作者资料的工作目录。官方入口见[WorkBuddy技能说明](https://www.codebuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Skills-Market)，实际验证范围见[平台指南](platforms.md#当前验证状态)。
-
-### Codex
-
-[下载单项 ZIP](https://github.com/hanxu66/hanxu-user-skills/raw/main/packages/hanxu-script-agent.zip)，解压后保留整个 `hanxu-script-agent` 文件夹。里面应有 `SKILL.md`、`README.md`、`references/`、`scripts/`、`agents/`、`docs/` 和 `SOURCE.json`。
-
-可以把文件夹交给 Codex，说：
-
-```text
-请检查这个 Skill 的内容和依赖，将完整的 hanxu-script-agent 文件夹安装到适合我的本地 Skill 目录。不要覆盖已有的个人资料或改动其他 Skill；如果已有同名版本，先比较并保留我的修改。
-```
-
-手动安装可选择以下一个位置：
-
-| 使用范围 | 文件应在的位置 |
-| --- | --- |
-| 当前用户的各个项目 | `~/.agents/skills/hanxu-script-agent/SKILL.md` |
-| 某个项目内使用 | `项目目录/.agents/skills/hanxu-script-agent/SKILL.md` |
-
-不要把 ZIP 原封不动放进目录，也不要形成两层 `hanxu-script-agent/hanxu-script-agent/`。同名 Skill 放在多个位置可能重复出现，更新时先确认正在使用哪份。Codex 会自动发现本地 Skill 变化；没有出现时再重启。目录与发现方式依据 [OpenAI 官方 Skill 文档](https://learn.chatgpt.com/docs/build-skills)。
+按[统一安装与更新](install-update.md)选择Codex或WorkBuddy入口，确认实际位置与版本后继续。WorkBuddy的ZIP选择、同名更新与已验证范围见[平台指南](platforms.md)。
 
 ## 2. 带着一条具体题目开始
 
@@ -77,10 +54,4 @@ $hanxu-script-agent
 
 ## 更新与版本
 
-产品试用版为 **v0.1.1**，整合写稿与表达校准并增加Windows/WorkBuddy入口；本轮按真实WorkBuddy试验修正ZIP安装说明、独立用户导出和事实来源核对；每次安装包的构建版本见 [SOURCE.json](../SOURCE.json)，仓库首页显示分享合集版本。
-
-更新前保留你对安装文件的本地修改及作者资料，下载后比较同名文件夹再更新。旧安装标识仍是 `$hanxu-script-agent`，展示名为“短视频口播文风助手”。
-
-WorkBuddy 5.9.3不覆盖同名上传。先保留本地修改和工作目录里的作者资料，再从「已安装」的技能详情「… → 卸载」移除旧技能，按ZIP入口导入新版，并新开聊天；见[实测平台说明](platforms.md)。
-
-安装或调用遇到问题，见 [常见问题](faq.md)；想反馈试用情况，见 [试用与反馈](trial-and-feedback.md)。
+统一步骤及失败恢复见[安装与更新](install-update.md)。保留工作目录里的作者表达记录、成对稿件和反馈；方法版本和SOURCE.json构建版本分别核对。

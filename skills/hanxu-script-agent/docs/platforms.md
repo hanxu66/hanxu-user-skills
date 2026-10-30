@@ -32,9 +32,7 @@ Windows版WorkBuddy的当前官方要求为Windows 10及以上、x64；ARM64以�
 
 ## 在 Codex 中使用
 
-解压后安装完整的 `hanxu-script-agent` 文件夹，可先让Codex检查并安装。用户级位置为 `~/.agents/skills/hanxu-script-agent/`，项目级为 `项目目录/.agents/skills/hanxu-script-agent/`。Windows的`~`指用户主目录，通常对应`%USERPROFILE%`，可在文件资源管理器中打开；不用在PowerShell里照抄Bash命令。
-
-在Codex对话里用 `$hanxu-script-agent` 选择技能，再提供题目和材料。具体安装及更新步骤见[快速上手](quickstart.md)。这不是要求在系统终端执行的命令。
+统一按[安装与更新](install-update.md)保留完整目录、确认实际版本，再在Codex对话选择 `$hanxu-script-agent`。该说明覆盖Mac与Windows、用户级与项目级目录、旧版备份和失败恢复。WorkBuddy专属操作及实测范围仍按本页。
 
 ## 文件、作者记录与换设备
 

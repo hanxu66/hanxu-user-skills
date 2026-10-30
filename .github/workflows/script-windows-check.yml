@@ -1,0 +1,29 @@
+name: Windows script package checks
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - packages/hanxu-script-agent.zip
+      - packages/SHA256SUMS.txt
+      - .github/workflows/script-windows-check.yml
+      - .github/tests/test_script_package.py
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  package:
+    runs-on: windows-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Extract with Windows PowerShell
+        shell: pwsh
+        run: |
+          $dest = Join-Path $env:RUNNER_TEMP '口播 Windows 包'
+          Expand-Archive -LiteralPath 'packages/hanxu-script-agent.zip' -DestinationPath $dest
+          python -X utf8 .github/tests/test_script_package.py --package-dir "$dest/hanxu-script-agent" --require-windows
