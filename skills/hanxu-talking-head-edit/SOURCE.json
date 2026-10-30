@@ -1,14 +1,16 @@
 {
   "name": "hanxu-talking-head-edit",
   "display_name": "韩叙 · 口播视频剪辑助手",
-  "version": "2026-10-30-mini-v55",
+  "version": "2026-10-30-mini-v56",
   "source_relative": "working-files/system-optimization/short-video-workflow-v3/skills/口播剪辑.md",
-  "source_sha256": "f41ecf48f7d983f03d4215ffad340c2644f5abdae558b94fee68dc10690a7230",
+  "source_sha256": "6e720533f8efcd831a2c1e27631c64115153b16d4c70e3cdfb236e6be0a8975d",
   "reference_sources": [
     "working-files/system-optimization/short-video-workflow-v3/standards/剪辑执行标准.md",
     "working-files/system-optimization/short-video-workflow-v3/skills/references/动画类型与分镜方法.md",
     "working-files/system-optimization/short-video-workflow-v3/skills/产品介绍视频.md",
-    "working-files/system-optimization/short-video-workflow-v3/skills/references/字幕批量质检与执行记录.md"
+    "working-files/system-optimization/short-video-workflow-v3/skills/references/字幕批量质检与执行记录.md",
+    "working-files/system-optimization/short-video-workflow-v3/agents/剪辑Agent.md",
+    "working-files/system-optimization/short-video-workflow-v3/skills/动画视频制作.md"
   ],
   "script_sources": [
     "tools/inspect_video_editing_environment.py",
@@ -21,10 +23,12 @@
     "tools/manage_native_video_handoff.py"
   ],
   "reference_source_hashes": {
-    "working-files/system-optimization/short-video-workflow-v3/standards/剪辑执行标准.md": "ad410a8c1134ae2790f32fcc82aebd32648827a5db6f8d22ce037d90f7358ddc",
+    "working-files/system-optimization/short-video-workflow-v3/standards/剪辑执行标准.md": "6dcc4e5979c1f3c8e59d20a5f486166e1b44886ae26211918763def2050fae77",
     "working-files/system-optimization/short-video-workflow-v3/skills/references/动画类型与分镜方法.md": "4bef2b9b435a0c5db069a67c53b268ea9da9cc3ed3c6336f54070c4346f592fd",
     "working-files/system-optimization/short-video-workflow-v3/skills/产品介绍视频.md": "acb540a5bf984a44af2289e2d86545f2cafa3c3a8c57d10448dcfc9f39ea885a",
-    "working-files/system-optimization/short-video-workflow-v3/skills/references/字幕批量质检与执行记录.md": "772544dbe77fb3c6541def0a7ab5460f7ffce79911a0484693bbef9aab294046"
+    "working-files/system-optimization/short-video-workflow-v3/skills/references/字幕批量质检与执行记录.md": "772544dbe77fb3c6541def0a7ab5460f7ffce79911a0484693bbef9aab294046",
+    "working-files/system-optimization/short-video-workflow-v3/agents/剪辑Agent.md": "3506ec499237fd5acda1908c0478326d84d6cb438af2ebbc819028da3ccd0494",
+    "working-files/system-optimization/short-video-workflow-v3/skills/动画视频制作.md": "7aa9fccfb3aa695d675b3f726b5b2ca91a1afc6ed6d4b2e9925079ec2f476742"
   },
   "script_source_hashes": {
     "tools/inspect_video_editing_environment.py": "0fcca0173fc131cdd4603f051e7774c1cbc0e93b388e4d79068ba95d7811cd7b",
@@ -47,18 +51,28 @@
     "保留当前个人自用原调用",
     "导出文件由原文件生成，不独立维护"
   ],
-  "public_sections": {},
+  "public_sections": {
+    "working-files/system-optimization/short-video-workflow-v3/agents/剪辑Agent.md": [
+      "## 对象、有效要求与定稿接续",
+      "## 每个大步骤的预读、检查与检查点",
+      "## 异常恢复与操作证据",
+      "## 返修路由与版本规则",
+      "## 状态与发布事实接力"
+    ]
+  },
   "dependency_source_hashes": {},
   "documentation_source_hashes": {},
   "validation": "原方法修改已由本次任务回读与检查；导出结构、语法、链接、ZIP和远端文件另有同步收据。不是实际业务效果验证。",
-  "package_skill_sha256": "4c7ff890d0e618e2cd14160d7cb3b36d7a269d76d08a882307705228e1894dc2",
+  "package_skill_sha256": "2c2f4dc6b033895e8a1bf633d7fce898c5b1276833c3b90daf44973cb41cf50a",
   "package_files": {
-    "README.md": "34359955f0a00ba98d5b0bacf39f6d0d7b774a8b2e2e3d498a830a72b5d30732",
-    "SKILL.md": "4c7ff890d0e618e2cd14160d7cb3b36d7a269d76d08a882307705228e1894dc2",
+    "README.md": "3dd8c8b4796fc3221fc810bb264ced8d5687aeba2f2b40bf5d4109795848e44a",
+    "SKILL.md": "2c2f4dc6b033895e8a1bf633d7fce898c5b1276833c3b90daf44973cb41cf50a",
     "agents/openai.yaml": "42ba126808f381a62f5a53359b81c555e270a9ab347bfbb1688aa0a1829857d2",
-    "references/产品介绍视频.md": "79438ab6b953b0ae4f70ffcc5b135be6f12fc442d0cb2293973f1c8307813a0b",
-    "references/剪辑执行标准.md": "2934f895e4475917de9f33b210604f3d764159a8823f2bff17603671766ec9c2",
+    "references/产品介绍视频.md": "263d45287f0faaa2655a9715e634ec614195fa2da7413a0d1b5835c8138b2e9b",
+    "references/剪辑Agent.md": "20481e4501d6afeca63e360417186b57b061a2daca1ddfc3e570799efa9fb934",
+    "references/剪辑执行标准.md": "0c872ac7eb932ee697cbcca306315e9fc87495c0ca62a86f8e71fde4cba8a500",
     "references/动画类型与分镜方法.md": "cae8bed2db8b791291aba1db6392bff503940db99ea453db18d9965bf810af36",
+    "references/动画视频制作.md": "d9ce519a7887a4da57b437a8415cdf5a59f478725a2f1479e49048b97080bc44",
     "references/字幕批量质检与执行记录.md": "dc87b23ca263a50c43669a670d25b7e698f8e343f1e9918423dc500fcb728336",
     "scripts/check_subtitle_render.py": "d8c538cf4c32ebf431565de45ee01645f87556037f106809c2ff3f23c46f70be",
     "scripts/check_subtitle_width.py": "a1fc888d0d4089405eb9a090a0a1d1728b76a2f8a7f82b7943457b72c79c2459",
