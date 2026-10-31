@@ -16,7 +16,7 @@
 
 **把你的想法整理成讲得清楚、适合你说出口的短视频口播稿。**
 
-用户试用版 **v0.1.6**，包含论点、论证、结构和文风。有本人语料就学习；没有历史语料，从这次对话与改稿逐步校准。你不需要先建语料库，也不必先安装整套内容生产系统。
+用户试用版 **v0.1.7**，包含论点、论证、结构和文风。有本人语料就学习；没有历史语料，从这次对话与改稿逐步校准。你不需要先建语料库，也不必先安装整套内容生产系统。
 
 [下载独立安装包](https://github.com/hanxu66/hanxu-user-skills/raw/main/packages/hanxu-script-agent.zip) · [快速上手](docs/quickstart.md) · [看完整演示](docs/examples.md) · [七个助手总介绍](https://github.com/hanxu66/hanxu-user-skills#readme)
 
@@ -98,3 +98,6 @@ $hanxu-script-agent
 由韩叙现行短视频脚本方法及自然表达研究中的可迁移操作适配，原方法仍是唯一维护来源。公开包不含私人直播全文、客户素材或运行日志。
 
 当前可公开下载并安装试用，尚未设置正式开放源代码许可证或再分发、转售条款；本次补充资料不改变许可范围。具体问题可在 [GitHub Issues](https://github.com/hanxu66/hanxu-user-skills/issues) 反馈，先按 [反馈模板](docs/trial-and-feedback.md) 提供必要、脱敏的句段即可。
+
+
+本版为用户试用版。Windows WorkBuddy已验证安装导入，但完整写稿质量回归未通过，现已停止继续验证；不同模型可能附加过程说明或出现冗余。Mac已通过的结果仅限文档列明的版本、模型与案例。详见[实测范围与限制](docs/platforms.md#当前验证状态)。
